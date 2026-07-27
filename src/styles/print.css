@@ -1,0 +1,37 @@
+/*
+ * Print output: only the artwork, centred inside a 0.5in safe margin on a
+ * white sheet. No nav, no footer, no controls, no branding, no filename.
+ */
+@page {
+  margin: 0.5in;
+}
+
+@media print {
+  header,
+  footer,
+  nav,
+  [data-no-print] {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+  }
+
+  [data-print-sheet] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  [data-print-sheet] img,
+  [data-print-sheet] canvas {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}

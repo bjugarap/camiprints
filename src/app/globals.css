@@ -1,0 +1,213 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "../styles/print.css";
+
+/*
+ * CamiPrints design tokens.
+ * Source of truth: design_handoff_camiprints/README.md §Design Tokens.
+ * Teal means "action". Amber is focus only. No other accent, no gradients.
+ */
+@theme {
+  /* Surfaces & ink */
+  --color-paper: #faf6ef;
+  --color-card: #ffffff;
+  --color-ink: #191713;
+  --color-ink-60: #57514a;
+  --color-ink-40: #8a8177;
+  --color-ink-25: #a39a8d;
+
+  /* Lines & borders */
+  --color-line: #e3dcd0;
+  --color-line-strong: #c9c0b1;
+  --color-thumb-line: #ede6d9;
+  --color-trim: #d8d0c2;
+  --color-backdrop: #eae4da;
+
+  /* The one accent */
+  --color-accent: #0e6c5f;
+  --color-accent-hover: #0a574c;
+  --color-accent-tint: #e4f0ec;
+  --color-accent-tint-line: #cfe3dc;
+  --color-accent-ink: #3f6b62;
+
+  /* Signals */
+  --color-focus: #e8a32b;
+  --color-error: #b3401e;
+  --color-disabled: #cfcac1;
+
+  /* Category tints — behind category-tile thumbnails only */
+  --color-tint-animals: #eff3e8;
+  --color-tint-dinosaurs: #e7eff1;
+  --color-tint-ocean: #e6eef6;
+  --color-tint-space: #edeaf4;
+  --color-tint-fantasy: #f5eaf0;
+  --color-tint-vehicles: #f4efe3;
+  --color-tint-nature: #e9f2ea;
+  --color-tint-holidays: #f7ece6;
+
+  /* Placeholder cross-hatch (stands in for line art until assets exist) */
+  --color-hatch-a: #f6f1e8;
+  --color-hatch-b: #fbf8f2;
+
+  /* Type families (variables set by next/font in the root layout) */
+  --font-sans: var(--font-source-sans), "Source Sans 3", system-ui, sans-serif;
+  --font-display: var(--font-baloo), "Baloo 2", var(--font-sans);
+  --font-mono: ui-monospace, Menlo, monospace;
+
+  /* Radii: cards 14, thumbnails/fields 10, promo band 18, phone frame 20, pills 999 */
+  --radius-card: 14px;
+  --radius-thumb: 10px;
+  --radius-field: 10px;
+  --radius-promo: 18px;
+  --radius-phone: 20px;
+
+  /* Elevation */
+  --shadow-card: 0 1px 2px rgba(25, 23, 19, 0.05);
+  --shadow-frame: 0 1px 3px rgba(25, 23, 19, 0.06);
+  --shadow-bar: 0 -2px 8px rgba(25, 23, 19, 0.06);
+  --shadow-paper: 0 2px 10px rgba(25, 23, 19, 0.14);
+}
+
+@custom-variant calm (&:is([data-calm] *));
+@custom-variant not-calm (&:is(:root:not([data-calm]) *));
+
+/* shadcn/ui variable contract, mapped onto the CamiPrints palette (light-only). */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-heading: var(--font-display);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #faf6ef;
+  --foreground: #191713;
+  --card-foreground: #191713;
+  --popover: #ffffff;
+  --popover-foreground: #191713;
+  --primary: #0e6c5f;
+  --primary-foreground: #ffffff;
+  --secondary: #ffffff;
+  --secondary-foreground: #191713;
+  --muted: #e4f0ec;
+  --muted-foreground: #8a8177;
+  --accent-foreground: #ffffff;
+  --destructive: #b3401e;
+  --border: #e3dcd0;
+  --input: #c9c0b1;
+  --ring: #e8a32b;
+  --radius: 10px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans;
+  }
+
+  /*
+   * The focus ring: 3px amber at 2px offset, identical on white, paper and
+   * teal. Every interactive element takes exactly this ring.
+   */
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  /*
+   * Motion: 120–160ms colour/opacity changes on hover and focus only.
+   * Nothing moves on load, nothing auto-advances.
+   */
+  /* The focus ring is excluded: it must appear instantly, never fade in. */
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea,
+  summary {
+    transition-property: color, background-color, border-color, opacity,
+      box-shadow;
+    transition-duration: 140ms;
+    transition-timing-function: ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Type roles — README §Typography. Nothing below 13.5px anywhere. */
+  .text-hero {
+    font: 700 46px/1.08 var(--font-display);
+    text-wrap: pretty;
+  }
+  .text-page-title {
+    font: 700 38px/1.1 var(--font-display);
+  }
+  .text-section {
+    font: 700 30px/1.1 var(--font-display);
+  }
+  .text-subsection {
+    font: 700 26px/1.15 var(--font-display);
+  }
+  .text-wordmark {
+    font: 700 21px/1 var(--font-display);
+  }
+  .text-body {
+    font: 400 17px/1.55 var(--font-sans);
+    text-wrap: pretty;
+    max-width: 52ch;
+  }
+  .text-meta {
+    font: 500 14px/1.4 var(--font-sans);
+  }
+  .text-eyebrow {
+    font: 600 11px/1 var(--font-sans);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  /* The artwork placeholder: 45° cross-hatch standing in for line art. */
+  .placeholder-hatch {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--color-hatch-a),
+      var(--color-hatch-a) 9px,
+      var(--color-hatch-b) 9px,
+      var(--color-hatch-b) 18px
+    );
+  }
+}

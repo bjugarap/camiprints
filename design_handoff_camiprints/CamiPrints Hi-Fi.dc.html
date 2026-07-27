@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFEAE1;font-family:'Source Sans 3',Helvetica,Arial,sans-serif}
+a{color:#0E6C5F}a:hover{color:#0A574C}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#191713;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 'Source Sans 3',Helvetica,sans-serif;color:#191713}
+.dv-opts{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#191713;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 'Source Sans 3',Helvetica,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.07);overflow:hidden}
+.dv-opt:target .dv-oid{background:#0E6C5F;color:#fff}
+.dv-note{font:400 11.5px/1.5 'Source Sans 3',Helvetica,sans-serif;color:rgba(0,0,0,.55)}
+</style></helmet>
+
+<section class="dv-turn" id="t6">
+<div class="dv-thd"><a class="dv-tid" href="#t6">6</a><span class="dv-tname">Listing and detail at full fidelity</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="6a">
+<div class="dv-olabel"><a class="dv-oid" href="#6a">6a</a>Listing — <a class="dv-oid" href="#2c">2c</a> dressed: picture strip, filters, 4-up grid</div>
+<div class="dv-card" style="width:1280px;background:#FAF6EF">
+  <div style="background:#fff;border-bottom:1px solid #E3DCD0;padding:14px 40px;display:flex;align-items:center;gap:28px">
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;border-radius:11px;background:#0E6C5F;display:flex;align-items:center;justify-content:center;color:#fff;font:800 17px 'Baloo 2',sans-serif">C</div><div style="font:700 21px/1 'Baloo 2',sans-serif;color:#191713">CamiPrints</div></div>
+    <div style="display:flex;gap:22px;font:600 16px 'Source Sans 3';color:#191713"><span style="color:#0E6C5F;border-bottom:2.5px solid #0E6C5F;padding-bottom:2px">Browse</span><span>Categories</span><span>Create Your Own</span><span>How It Works</span></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:12px">
+      <div style="height:44px;width:220px;border-radius:999px;background:#FAF6EF;border:1.5px solid #E3DCD0;display:flex;align-items:center;gap:8px;padding:0 16px;font:400 15px 'Source Sans 3';color:#A39A8D"><span style="font-size:14px">⌕</span>Search pages</div>
+      <div style="height:44px;display:flex;align-items:center;gap:9px;padding:0 14px;border-radius:999px;border:1.5px solid #E3DCD0;background:#fff;font:600 14.5px 'Source Sans 3';color:#191713">Calm Mode<div style="width:38px;height:22px;border-radius:999px;background:#fff;border:1.5px solid #C9C0B1;display:flex;align-items:center;padding:0 2px"><div style="width:16px;height:16px;border-radius:999px;background:#C9C0B1"></div></div></div>
+    </div>
+  </div>
+
+  <div style="padding:24px 40px 0">
+    <div style="font:500 14.5px 'Source Sans 3';color:#8A8177">Home › Coloring pages</div>
+    <div style="font:700 38px/1.1 'Baloo 2',sans-serif;color:#191713;margin-top:6px">Coloring pages</div>
+
+    <div style="display:flex;gap:12px;margin-top:18px">
+      <div style="flex:1;background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:9px;text-align:center"><div style="height:64px;border-radius:8px;background:#EFF3E8;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#8A9179">animals</div><div style="font:600 15px 'Source Sans 3';color:#191713;margin-top:7px">Animals</div></div>
+      <div style="flex:1;background:#E4F0EC;border:2px solid #0E6C5F;border-radius:12px;padding:8px;text-align:center"><div style="height:64px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#8FA79F">dinosaurs</div><div style="font:600 15px 'Source Sans 3';color:#0E6C5F;margin-top:7px">Dinosaurs ✓</div></div>
+      <div style="flex:1;background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:9px;text-align:center"><div style="height:64px;border-radius:8px;background:#F5EAF0;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#997F8D">fantasy</div><div style="font:600 15px 'Source Sans 3';color:#191713;margin-top:7px">Fantasy</div></div>
+      <div style="flex:1;background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:9px;text-align:center"><div style="height:64px;border-radius:8px;background:#E6EEF6;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#7C8A99">ocean</div><div style="font:600 15px 'Source Sans 3';color:#191713;margin-top:7px">Ocean</div></div>
+      <div style="flex:1;background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:9px;text-align:center"><div style="height:64px;border-radius:8px;background:#EDEAF4;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#8B8598">space</div><div style="font:600 15px 'Source Sans 3';color:#191713;margin-top:7px">Space</div></div>
+      <div style="flex:1;background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:9px;text-align:center"><div style="height:64px;border-radius:8px;background:#F4EFE3;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#948B77">vehicles</div><div style="font:600 15px 'Source Sans 3';color:#191713;margin-top:7px">Vehicles</div></div>
+      <div style="flex:1;background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:9px;text-align:center"><div style="height:64px;border-radius:8px;background:#E9F2EA;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#7F9183">nature</div><div style="font:600 15px 'Source Sans 3';color:#191713;margin-top:7px">Nature</div></div>
+      <div style="flex:1;background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:9px;text-align:center"><div style="height:64px;border-radius:8px;background:#F7ECE6;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#9A867C">holidays</div><div style="font:600 15px 'Source Sans 3';color:#191713;margin-top:7px">Holidays</div></div>
+      <div style="flex:1;background:#fff;border:1.5px dashed #C9C0B1;border-radius:12px;padding:9px;display:flex;align-items:center;justify-content:center;text-align:center;font:600 14.5px/1.3 'Source Sans 3';color:#57514A">All<br>categories</div>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px">
+      <div style="height:48px;flex:1;min-width:260px;border-radius:10px;background:#fff;border:1.5px solid #C9C0B1;display:flex;align-items:center;gap:9px;padding:0 16px;font:400 16px 'Source Sans 3';color:#A39A8D"><span style="font-size:15px">⌕</span>Search within dinosaurs</div>
+      <div style="height:48px;display:flex;align-items:center;gap:8px;padding:0 16px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15.5px 'Source Sans 3'">Easy <span style="opacity:.8">▾</span></div>
+      <div style="height:48px;display:flex;align-items:center;gap:8px;padding:0 16px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15.5px 'Source Sans 3'">Ages 6–8 <span style="opacity:.8">▾</span></div>
+      <div style="height:48px;display:flex;align-items:center;gap:8px;padding:0 16px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;font:500 15.5px 'Source Sans 3'">Detail level <span style="color:#8A8177">▾</span></div>
+      <div style="height:48px;display:flex;align-items:center;gap:8px;padding:0 16px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;font:500 15.5px 'Source Sans 3'">Orientation <span style="color:#8A8177">▾</span></div>
+      <div style="height:48px;display:flex;align-items:center;gap:8px;padding:0 16px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;font:500 15.5px 'Source Sans 3';margin-left:auto">Most popular <span style="color:#8A8177">▾</span></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;margin-top:14px;flex-wrap:wrap">
+      <div style="font:400 16.5px 'Source Sans 3';color:#57514A"><b style="color:#191713;font-weight:700">24 pages</b> match</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><div style="height:36px;display:flex;align-items:center;gap:7px;padding:0 13px;border-radius:999px;background:#E4F0EC;border:1px solid #CFE3DC;font:500 14px 'Source Sans 3';color:#0E6C5F">Dinosaurs ✕</div><div style="height:36px;display:flex;align-items:center;gap:7px;padding:0 13px;border-radius:999px;background:#E4F0EC;border:1px solid #CFE3DC;font:500 14px 'Source Sans 3';color:#0E6C5F">Easy ✕</div><div style="height:36px;display:flex;align-items:center;gap:7px;padding:0 13px;border-radius:999px;background:#E4F0EC;border:1px solid #CFE3DC;font:500 14px 'Source Sans 3';color:#0E6C5F">Ages 6–8 ✕</div></div>
+      <div style="font:600 15px 'Source Sans 3';color:#0E6C5F;text-decoration:underline;text-underline-offset:3px">Clear filters</div>
+    </div>
+  </div>
+
+  <div style="padding:22px 40px 0">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:190px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 9px,#FBF8F2 9px,#FBF8F2 18px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — friendly t-rex</div><div style="font:600 18px 'Source Sans 3';color:#191713;margin-top:10px">Friendly T-Rex</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">Easy · Ages 6–8</div><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15.5px 'Source Sans 3'">View</div><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15.5px 'Source Sans 3'">Print</div></div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:190px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 9px,#FBF8F2 9px,#FBF8F2 18px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — stegosaurus</div><div style="font:600 18px 'Source Sans 3';color:#191713;margin-top:10px">Stegosaurus Walk</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">Easy · Ages 6–8</div><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15.5px 'Source Sans 3'">View</div><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15.5px 'Source Sans 3'">Print</div></div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:190px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 9px,#FBF8F2 9px,#FBF8F2 18px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — triceratops</div><div style="font:600 18px 'Source Sans 3';color:#191713;margin-top:10px">Triceratops Field</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">Easy · Ages 6–8</div><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15.5px 'Source Sans 3'">View</div><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15.5px 'Source Sans 3'">Print</div></div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:190px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 9px,#FBF8F2 9px,#FBF8F2 18px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — pterodactyl</div><div style="font:600 18px 'Source Sans 3';color:#191713;margin-top:10px">Pterodactyl Sky</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">Medium · Ages 6–8</div><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15.5px 'Source Sans 3'">View</div><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15.5px 'Source Sans 3'">Print</div></div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:190px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 9px,#FBF8F2 9px,#FBF8F2 18px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — brachiosaurus</div><div style="font:600 18px 'Source Sans 3';color:#191713;margin-top:10px">Tall Brachiosaurus</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">Easy · Ages 6–8</div><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15.5px 'Source Sans 3'">View</div><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15.5px 'Source Sans 3'">Print</div></div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:190px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 9px,#FBF8F2 9px,#FBF8F2 18px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — hatching egg</div><div style="font:600 18px 'Source Sans 3';color:#191713;margin-top:10px">Hatching Egg</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">Easy · Ages 3–5</div><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15.5px 'Source Sans 3'">View</div><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15.5px 'Source Sans 3'">Print</div></div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:190px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 9px,#FBF8F2 9px,#FBF8F2 18px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — little raptor</div><div style="font:600 18px 'Source Sans 3';color:#191713;margin-top:10px">Little Raptor</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">Medium · Ages 6–8</div><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15.5px 'Source Sans 3'">View</div><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15.5px 'Source Sans 3'">Print</div></div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:190px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 9px,#FBF8F2 9px,#FBF8F2 18px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — fossil dig</div><div style="font:600 18px 'Source Sans 3';color:#191713;margin-top:10px">Fossil Dig</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">Detailed · Ages 9+</div><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15.5px 'Source Sans 3'">View</div><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15.5px 'Source Sans 3'">Print</div></div></div>
+    </div>
+    <div style="display:flex;justify-content:center;align-items:center;gap:10px;margin:26px 0 34px">
+      <div style="height:48px;display:flex;align-items:center;padding:0 20px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15.5px 'Source Sans 3'">← Previous</div>
+      <div style="width:48px;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;display:flex;align-items:center;justify-content:center;font:600 16px 'Source Sans 3'">1</div>
+      <div style="width:48px;height:48px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;display:flex;align-items:center;justify-content:center;font:600 16px 'Source Sans 3'">2</div>
+      <div style="width:48px;height:48px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;display:flex;align-items:center;justify-content:center;font:600 16px 'Source Sans 3'">3</div>
+      <div style="height:48px;display:flex;align-items:center;padding:0 20px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15.5px 'Source Sans 3'">Next →</div>
+    </div>
+  </div>
+
+  <div style="background:#fff;border-top:1px solid #E3DCD0;padding:22px 40px;display:flex;gap:26px;flex-wrap:wrap;font:500 14.5px 'Source Sans 3';color:#57514A"><span>About</span><span>How It Works</span><span>Accessibility</span><span>Parent guidance</span><span>Privacy</span><span>Terms</span><span>Copyright</span><span>Contact</span><span style="margin-left:auto;color:#A39A8D">© 2026 CamiPrints</span></div>
+</div>
+<div class="dv-note" style="width:1280px">Active filters are the only place teal appears as a fill outside actions — a deliberate exception, because “what is switched on” has to read at a glance for the adult scanning the bar. Selected category is doubled up: teal border, tint, and a check, so it never depends on colour alone.</div>
+</div>
+
+<div class="dv-opt" id="6b">
+<div class="dv-olabel"><a class="dv-oid" href="#6b">6b</a>Detail — <a class="dv-oid" href="#2d">2d</a> dressed, portrait artwork</div>
+<div class="dv-card" style="width:1080px;background:#FAF6EF">
+  <div style="background:#fff;border-bottom:1px solid #E3DCD0;padding:14px 36px;display:flex;align-items:center;gap:24px">
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;border-radius:11px;background:#0E6C5F;display:flex;align-items:center;justify-content:center;color:#fff;font:800 17px 'Baloo 2',sans-serif">C</div><div style="font:700 21px/1 'Baloo 2',sans-serif;color:#191713">CamiPrints</div></div>
+    <div style="display:flex;gap:20px;font:600 15.5px 'Source Sans 3';color:#191713"><span style="color:#0E6C5F;border-bottom:2.5px solid #0E6C5F;padding-bottom:2px">Browse</span><span>Categories</span><span>Create Your Own</span><span>How It Works</span></div>
+    <div style="margin-left:auto;height:44px;display:flex;align-items:center;gap:9px;padding:0 14px;border-radius:999px;border:1.5px solid #E3DCD0;background:#fff;font:600 14.5px 'Source Sans 3';color:#191713">Calm Mode<div style="width:38px;height:22px;border-radius:999px;background:#fff;border:1.5px solid #C9C0B1;display:flex;align-items:center;padding:0 2px"><div style="width:16px;height:16px;border-radius:999px;background:#C9C0B1"></div></div></div>
+  </div>
+
+  <div style="padding:22px 36px 0;font:500 14.5px 'Source Sans 3';color:#8A8177">Home › Coloring pages › Dinosaurs › <span style="color:#191713">Friendly T-Rex</span></div>
+  <div style="display:flex;gap:34px;padding:18px 36px 30px;align-items:flex-start">
+    <div style="flex:none;width:420px">
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:20px;box-shadow:0 1px 3px rgba(25,23,19,.06)"><div style="height:490px;border-radius:6px;background:#fff;border:1.5px dashed #D8D0C2;display:flex;align-items:center;justify-content:center;text-align:center;font:400 12px/1.7 ui-monospace,monospace;color:#A39A8D">coloring page — friendly t-rex<br>shown on US Letter, 8.5 × 11 in<br>portrait</div></div>
+      <div style="display:flex;gap:10px;margin-top:12px;justify-content:center">
+        <div style="height:44px;display:flex;align-items:center;padding:0 18px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;font:600 14.5px 'Source Sans 3'">Zoom in</div>
+        <div style="height:44px;display:flex;align-items:center;padding:0 18px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;font:600 14.5px 'Source Sans 3'">Full screen preview</div>
+      </div>
+    </div>
+    <div style="flex:1">
+      <div style="font:700 40px/1.1 'Baloo 2',sans-serif;color:#191713;text-wrap:pretty">Friendly T-Rex</div>
+      <div style="font:400 18px/1.55 'Source Sans 3';color:#57514A;margin-top:10px;max-width:44ch;text-wrap:pretty">A smiling dinosaur with big open shapes — good for younger children and thick crayons.</div>
+      <div style="display:flex;align-items:center;justify-content:center;height:64px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 20px 'Source Sans 3';margin-top:22px">Print this page</div>
+      <div style="display:flex;gap:10px;margin-top:10px">
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;height:52px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16.5px 'Source Sans 3'">Download PNG</div>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;height:52px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16.5px 'Source Sans 3'">Download PDF</div>
+        <div style="width:52px;height:52px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;display:flex;align-items:center;justify-content:center;font-size:19px">♡</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:18px 20px;margin-top:20px;display:grid;grid-template-columns:auto 1fr;gap:11px 24px;font:400 16px 'Source Sans 3';color:#191713">
+        <span style="color:#8A8177">Category</span><span>Dinosaurs</span>
+        <span style="color:#8A8177">Difficulty</span><span>Easy</span>
+        <span style="color:#8A8177">Age range</span><span>Ages 3–5</span>
+        <span style="color:#8A8177">Detail level</span><span>Large spaces</span>
+        <span style="color:#8A8177">Orientation</span><span>Portrait</span>
+        <span style="color:#8A8177">Paper</span><span>US Letter — A4 also fits</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 36px 30px">
+    <div style="font:700 26px/1.1 'Baloo 2',sans-serif;color:#191713;margin-bottom:16px">More dinosaur pages</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:11px"><div style="height:130px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#A39A8D">stegosaurus</div><div style="font:600 16px 'Source Sans 3';color:#191713;margin-top:9px">Stegosaurus Walk</div><div style="display:flex;align-items:center;justify-content:center;height:44px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15px 'Source Sans 3';margin-top:9px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:11px"><div style="height:130px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#A39A8D">triceratops</div><div style="font:600 16px 'Source Sans 3';color:#191713;margin-top:9px">Triceratops Field</div><div style="display:flex;align-items:center;justify-content:center;height:44px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15px 'Source Sans 3';margin-top:9px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:11px"><div style="height:130px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#A39A8D">raptor</div><div style="font:600 16px 'Source Sans 3';color:#191713;margin-top:9px">Little Raptor</div><div style="display:flex;align-items:center;justify-content:center;height:44px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15px 'Source Sans 3';margin-top:9px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:11px"><div style="height:130px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#A39A8D">egg</div><div style="font:600 16px 'Source Sans 3';color:#191713;margin-top:9px">Hatching Egg</div><div style="display:flex;align-items:center;justify-content:center;height:44px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15px 'Source Sans 3';margin-top:9px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:11px"><div style="height:130px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#A39A8D">fossil</div><div style="font:600 16px 'Source Sans 3';color:#191713;margin-top:9px">Fossil Dig</div><div style="display:flex;align-items:center;justify-content:center;height:44px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15px 'Source Sans 3';margin-top:9px">Print</div></div>
+    </div>
+  </div>
+</div>
+<div class="dv-note" style="width:1080px">Print is 64px tall and the only filled button above the fold. The artwork sits on a real white sheet with a dashed trim edge, so the preview reads as paper rather than as a card.</div>
+</div>
+
+<div class="dv-opt" id="6c">
+<div class="dv-olabel"><a class="dv-oid" href="#6c">6c</a>Detail — mobile sticky print bar, print preview, and the three error states</div>
+<div class="dv-card" style="width:1080px;padding:26px 28px;background:#EFEAE1;display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap">
+  <div style="width:290px">
+    <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin-bottom:10px">Mobile · 390</div>
+    <div style="background:#FAF6EF;border:1px solid #E3DCD0;border-radius:20px;overflow:hidden">
+      <div style="background:#fff;border-bottom:1px solid #E3DCD0;padding:12px 14px;display:flex;align-items:center;gap:10px"><div style="font:600 15px 'Source Sans 3';color:#0E6C5F">‹ Dinosaurs</div><div style="margin-left:auto;width:44px;height:44px;border-radius:999px;border:1.5px solid #E3DCD0;background:#fff;display:flex;align-items:center;justify-content:center;color:#57514A">⌕</div></div>
+      <div style="padding:14px">
+        <div style="background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:12px"><div style="height:230px;border-radius:6px;background:#fff;border:1.5px dashed #D8D0C2;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#A39A8D">page — friendly t-rex</div></div>
+        <div style="font:700 27px/1.1 'Baloo 2',sans-serif;color:#191713;margin-top:14px">Friendly T-Rex</div>
+        <div style="font:400 15.5px/1.5 'Source Sans 3';color:#57514A;margin-top:6px">Big open shapes, good for thick crayons.</div>
+        <div style="background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:14px;margin-top:14px;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font:400 15px 'Source Sans 3';color:#191713"><span style="color:#8A8177">Category</span><span>Dinosaurs</span><span style="color:#8A8177">Difficulty</span><span>Easy</span><span style="color:#8A8177">Ages</span><span>3–5</span><span style="color:#8A8177">Orientation</span><span>Portrait</span></div>
+      </div>
+      <div style="background:#fff;border-top:1px solid #E3DCD0;padding:12px 14px;box-shadow:0 -2px 8px rgba(25,23,19,.06)">
+        <div style="display:flex;align-items:center;justify-content:center;height:56px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 18px 'Source Sans 3'">Print this page</div>
+        <div style="display:flex;gap:8px;margin-top:9px"><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15px 'Source Sans 3'">PNG</div><div style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 15px 'Source Sans 3'">PDF</div><div style="width:48px;height:48px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;display:flex;align-items:center;justify-content:center;color:#191713;font-size:17px">♡</div></div>
+      </div>
+    </div>
+    <div class="dv-note" style="margin-top:9px">The print bar is the only sticky element anywhere on the site.</div>
+  </div>
+
+  <div style="width:290px">
+    <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin-bottom:10px">Print preview · a route, not a modal</div>
+    <div style="background:#EAE4DA;border:1px solid #E3DCD0;border-radius:14px;overflow:hidden">
+      <div style="background:#fff;border-bottom:1px solid #E3DCD0;padding:12px 14px;display:flex;align-items:center;gap:10px"><div style="font:600 15px 'Source Sans 3';color:#0E6C5F;text-decoration:underline;text-underline-offset:3px">← Back to page</div><div style="margin-left:auto;height:48px;display:flex;align-items:center;padding:0 22px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';outline:3px solid #E8A32B;outline-offset:2px">Print</div></div>
+      <div style="padding:22px;display:flex;justify-content:center"><div style="width:196px;height:254px;background:#fff;box-shadow:0 2px 10px rgba(25,23,19,.14);padding:18px;box-sizing:border-box"><div style="width:100%;height:100%;border:1.5px dashed #D8D0C2;display:flex;align-items:center;justify-content:center;text-align:center;font:400 10.5px/1.7 ui-monospace,monospace;color:#A39A8D">artwork centred<br>0.5in safe margin<br>no branding</div></div></div>
+      <div style="padding:0 18px 20px;font:400 14px/1.5 'Source Sans 3';color:#57514A;text-align:center">Nav, footer and every control are hidden in the printed sheet.</div>
+    </div>
+    <div class="dv-note" style="margin-top:9px">Back works, Esc exits, focus lands on Print — shown here with the amber ring.</div>
+  </div>
+
+  <div style="flex:1;min-width:400px;display:flex;flex-direction:column;gap:14px">
+    <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177">Error and edge states</div>
+    <div style="background:#FAF6EF;border:1px solid #E3DCD0;border-radius:14px;padding:18px 20px">
+      <div style="font:600 15px 'Source Sans 3';color:#8A8177;margin-bottom:10px">Preview image missing</div>
+      <div style="background:#fff;border:1.5px dashed #C9C0B1;border-radius:12px;padding:18px;text-align:center">
+        <div style="font:400 16px/1.5 'Source Sans 3';color:#57514A">This preview isn’t available right now. The print and download files still work.</div>
+        <div style="display:flex;gap:10px;justify-content:center;margin-top:14px"><div style="height:48px;display:flex;align-items:center;padding:0 20px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3'">Print this page</div><div style="height:48px;display:flex;align-items:center;padding:0 20px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16px 'Source Sans 3'">Reload preview</div></div>
+      </div>
+    </div>
+    <div style="background:#FAF6EF;border:1px solid #E3DCD0;border-radius:14px;padding:18px 20px">
+      <div style="font:600 15px 'Source Sans 3';color:#8A8177;margin-bottom:10px">Download failed · polite live region, never auto-hides</div>
+      <div style="background:#fff;border:1.5px solid #B3401E;border-radius:12px;padding:16px 18px">
+        <div style="font:700 18px/1.25 'Baloo 2',sans-serif;color:#B3401E">The PDF didn’t download</div>
+        <div style="font:400 15.5px/1.5 'Source Sans 3';color:#57514A;margin-top:5px">Nothing was lost. Try again, or print the page instead.</div>
+        <div style="display:flex;gap:10px;margin-top:14px"><div style="height:48px;display:flex;align-items:center;padding:0 20px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3'">Try again</div><div style="height:48px;display:flex;align-items:center;padding:0 20px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16px 'Source Sans 3'">Print instead</div><div style="height:48px;display:flex;align-items:center;padding:0 12px;color:#57514A;font:600 15.5px 'Source Sans 3';text-decoration:underline;text-underline-offset:3px">Dismiss</div></div>
+      </div>
+    </div>
+    <div style="background:#FAF6EF;border:1px solid #E3DCD0;border-radius:14px;padding:18px 20px">
+      <div style="font:600 15px 'Source Sans 3';color:#8A8177;margin-bottom:10px">Page unavailable · 404</div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:22px;text-align:center">
+        <div style="width:64px;height:64px;border-radius:999px;background:#E4F0EC;border:1px solid #CFE3DC;margin:0 auto;display:flex;align-items:center;justify-content:center;font:700 26px 'Baloo 2',sans-serif;color:#0E6C5F">?</div>
+        <div style="font:700 24px/1.15 'Baloo 2',sans-serif;color:#191713;margin-top:12px">We can’t find that page</div>
+        <div style="font:400 16px/1.5 'Source Sans 3';color:#57514A;margin-top:5px">It may have been renamed. Here’s where to go next.</div>
+        <div style="display:flex;gap:10px;justify-content:center;margin-top:16px"><div style="height:52px;display:flex;align-items:center;padding:0 22px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16.5px 'Source Sans 3'">Browse all pages</div><div style="height:52px;display:flex;align-items:center;padding:0 22px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16.5px 'Source Sans 3'">Categories</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-note" style="margin:22px 0 0">Next: the Claude Code handoff — tokens, component inventory, route map, and the state matrix per screen.</p>
+</section>
+
+<section class="dv-turn" id="t5">
+<div class="dv-thd"><a class="dv-tid" href="#t5">5</a><span class="dv-tname">Visual system, then hi-fi: home, the photo converter, Calm Mode</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="5a">
+<div class="dv-olabel"><a class="dv-oid" href="#5a">5a</a>Foundations — one accent, warm paper, two typefaces</div>
+<div class="dv-card" style="width:600px;padding:26px 28px;background:#FAF6EF">
+  <div style="font:700 24px/1.1 'Baloo 2',sans-serif;color:#191713">Foundations</div>
+  <div style="font:400 14px/1.5 'Source Sans 3';color:#57514A;margin-top:4px;max-width:44ch">Warm paper ground, near-black warm ink, one teal accent that only ever means “this is an action”. Amber is reserved for focus and attention — never decoration.</div>
+
+  <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin:22px 0 10px">Color</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+    <div><div style="height:56px;border-radius:10px;background:#FAF6EF;border:1px solid #E3DCD0"></div><div style="font:600 12px 'Source Sans 3';color:#191713;margin-top:6px">Paper</div><div style="font:400 11px ui-monospace,monospace;color:#8A8177">#FAF6EF</div></div>
+    <div><div style="height:56px;border-radius:10px;background:#FFFFFF;border:1px solid #E3DCD0"></div><div style="font:600 12px 'Source Sans 3';color:#191713;margin-top:6px">Card</div><div style="font:400 11px ui-monospace,monospace;color:#8A8177">#FFFFFF</div></div>
+    <div><div style="height:56px;border-radius:10px;background:#191713"></div><div style="font:600 12px 'Source Sans 3';color:#191713;margin-top:6px">Ink</div><div style="font:400 11px ui-monospace,monospace;color:#8A8177">#191713</div></div>
+    <div><div style="height:56px;border-radius:10px;background:#57514A"></div><div style="font:600 12px 'Source Sans 3';color:#191713;margin-top:6px">Ink 60</div><div style="font:400 11px ui-monospace,monospace;color:#8A8177">#57514A</div></div>
+    <div><div style="height:56px;border-radius:10px;background:#0E6C5F"></div><div style="font:600 12px 'Source Sans 3';color:#191713;margin-top:6px">Accent</div><div style="font:400 11px ui-monospace,monospace;color:#8A8177">#0E6C5F</div></div>
+    <div><div style="height:56px;border-radius:10px;background:#E4F0EC;border:1px solid #CFE3DC"></div><div style="font:600 12px 'Source Sans 3';color:#191713;margin-top:6px">Accent tint</div><div style="font:400 11px ui-monospace,monospace;color:#8A8177">#E4F0EC</div></div>
+    <div><div style="height:56px;border-radius:10px;background:#E8A32B"></div><div style="font:600 12px 'Source Sans 3';color:#191713;margin-top:6px">Focus</div><div style="font:400 11px ui-monospace,monospace;color:#8A8177">#E8A32B</div></div>
+    <div><div style="height:56px;border-radius:10px;background:#B3401E"></div><div style="font:600 12px 'Source Sans 3';color:#191713;margin-top:6px">Error</div><div style="font:400 11px ui-monospace,monospace;color:#8A8177">#B3401E</div></div>
+  </div>
+
+  <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin:24px 0 10px">Type</div>
+  <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #E3DCD0;padding-top:12px">
+    <div style="display:flex;align-items:baseline;gap:14px"><div style="font:400 10.5px ui-monospace,monospace;color:#A39A8D;width:130px;flex:none">Baloo 2 · 700 · 40/1.1</div><div style="font:700 40px/1.1 'Baloo 2',sans-serif;color:#191713">Print something today</div></div>
+    <div style="display:flex;align-items:baseline;gap:14px"><div style="font:400 10.5px ui-monospace,monospace;color:#A39A8D;width:130px;flex:none">Baloo 2 · 700 · 26/1.15</div><div style="font:700 26px/1.15 'Baloo 2',sans-serif;color:#191713">Pick a picture</div></div>
+    <div style="display:flex;align-items:baseline;gap:14px"><div style="font:400 10.5px ui-monospace,monospace;color:#A39A8D;width:130px;flex:none">Source Sans 3 · 600 · 19</div><div style="font:600 19px/1.3 'Source Sans 3';color:#191713">Sitting Fox</div></div>
+    <div style="display:flex;align-items:baseline;gap:14px"><div style="font:400 10.5px ui-monospace,monospace;color:#A39A8D;width:130px;flex:none">Source Sans 3 · 400 · 17/1.55</div><div style="font:400 17px/1.55 'Source Sans 3';color:#57514A">Body copy. Adults read this; children never have to.</div></div>
+    <div style="display:flex;align-items:baseline;gap:14px"><div style="font:400 10.5px ui-monospace,monospace;color:#A39A8D;width:130px;flex:none">Source Sans 3 · 500 · 14</div><div style="font:500 14px/1.4 'Source Sans 3';color:#8A8177">Easy · Ages 3–5 · 148 pages</div></div>
+  </div>
+
+  <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin:24px 0 10px">Spacing &amp; radius</div>
+  <div style="display:flex;gap:22px;align-items:flex-end">
+    <div style="display:flex;gap:6px;align-items:flex-end">
+      <div style="width:4px;height:18px;background:#0E6C5F;border-radius:2px"></div>
+      <div style="width:8px;height:26px;background:#0E6C5F;border-radius:2px"></div>
+      <div style="width:12px;height:34px;background:#0E6C5F;border-radius:2px"></div>
+      <div style="width:16px;height:42px;background:#0E6C5F;border-radius:2px"></div>
+      <div style="width:24px;height:50px;background:#0E6C5F;border-radius:2px"></div>
+      <div style="width:32px;height:58px;background:#0E6C5F;border-radius:2px"></div>
+    </div>
+    <div style="font:400 12.5px/1.6 'Source Sans 3';color:#57514A">4 · 8 · 12 · 16 · 24 · 32 · 48<br>Cards 14px · inputs 10px · buttons 999px<br>Min tap target 48×48</div>
+  </div>
+</div>
+<div class="dv-note" style="width:600px">Teal reads as calm and confident at large sizes and passes 4.5:1 on paper and white. Baloo 2 gives the friendliness a children's product needs without the cartoon register of a comic face; Source Sans 3 carries the adult reading load.</div>
+</div>
+
+<div class="dv-opt" id="5b">
+<div class="dv-olabel"><a class="dv-oid" href="#5b">5b</a>Controls — buttons, fields, focus, states</div>
+<div class="dv-card" style="width:520px;padding:26px 28px;background:#FAF6EF">
+  <div style="font:700 24px/1.1 'Baloo 2',sans-serif;color:#191713">Controls</div>
+
+  <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin:20px 0 10px">Buttons — 48px tall, label always a verb</div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+    <div style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3'">Print this page</div>
+    <div style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:999px;background:#0A574C;color:#fff;font:600 16px 'Source Sans 3'">Hover</div>
+    <div style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';outline:3px solid #E8A32B;outline-offset:2px">Focus</div>
+    <div style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:999px;background:#CFCAC1;color:#fff;font:600 16px 'Source Sans 3'">Disabled</div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px">
+    <div style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16px 'Source Sans 3'">Download PDF</div>
+    <div style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 18px;border-radius:999px;color:#0E6C5F;font:600 16px 'Source Sans 3';text-decoration:underline;text-underline-offset:3px">Start over</div>
+    <div style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;font:600 18px 'Source Sans 3'">♡</div>
+  </div>
+
+  <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin:22px 0 10px">Fields</div>
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div><div style="font:600 14px 'Source Sans 3';color:#191713;margin-bottom:6px">Search pages</div><div style="height:48px;border-radius:10px;background:#fff;border:1.5px solid #C9C0B1;display:flex;align-items:center;padding:0 14px;font:400 16px 'Source Sans 3';color:#A39A8D">e.g. dinosaur</div></div>
+    <div><div style="font:600 14px 'Source Sans 3';color:#191713;margin-bottom:6px">Page title <span style="color:#8A8177;font-weight:400">— focused</span></div><div style="height:48px;border-radius:10px;background:#fff;border:1.5px solid #0E6C5F;outline:3px solid #E8A32B;outline-offset:2px;display:flex;align-items:center;padding:0 14px;font:400 16px 'Source Sans 3';color:#191713">Sleeping Dragon<span style="width:1.5px;height:20px;background:#0E6C5F;margin-left:2px"></span></div></div>
+    <div><div style="font:600 14px 'Source Sans 3';color:#191713;margin-bottom:6px">Email</div><div style="height:48px;border-radius:10px;background:#fff;border:1.5px solid #B3401E;display:flex;align-items:center;padding:0 14px;font:400 16px 'Source Sans 3';color:#191713">cami@</div><div style="font:500 13.5px 'Source Sans 3';color:#B3401E;margin-top:5px">Add the rest of the address, like cami@example.com</div></div>
+  </div>
+
+  <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin:22px 0 10px">Choice &amp; toggle</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px">
+    <div style="height:44px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 15px 'Source Sans 3'">Easy</div>
+    <div style="height:44px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;font:500 15px 'Source Sans 3'">Medium</div>
+    <div style="height:44px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;background:#fff;border:1.5px solid #E3DCD0;color:#191713;font:500 15px 'Source Sans 3'">Detailed</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;margin-top:12px">
+    <div style="width:64px;height:36px;border-radius:999px;background:#0E6C5F;display:flex;align-items:center;justify-content:flex-end;padding:0 4px"><div style="width:28px;height:28px;border-radius:999px;background:#fff"></div></div>
+    <div style="font:600 15px 'Source Sans 3';color:#191713">Calm Mode is on</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;margin-top:8px">
+    <div style="width:64px;height:36px;border-radius:999px;background:#fff;border:1.5px solid #C9C0B1;display:flex;align-items:center;padding:0 4px"><div style="width:28px;height:28px;border-radius:999px;background:#C9C0B1"></div></div>
+    <div style="font:500 15px 'Source Sans 3';color:#57514A">Calm Mode is off</div>
+  </div>
+
+  <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin:22px 0 10px">Slider — the only converter control a novice sees</div>
+  <div style="background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:16px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font:600 16px 'Source Sans 3';color:#191713">How much detail</div><div style="font:500 14px 'Source Sans 3';color:#57514A">Just right</div></div>
+    <div style="height:10px;border-radius:999px;background:#E3DCD0;margin-top:14px;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:52%;background:#0E6C5F;border-radius:999px"></div><div style="position:absolute;left:52%;top:50%;transform:translate(-50%,-50%);width:28px;height:28px;border-radius:999px;background:#fff;border:2.5px solid #0E6C5F;box-shadow:0 1px 3px rgba(25,23,19,.2)"></div></div>
+    <div style="display:flex;justify-content:space-between;font:500 13.5px 'Source Sans 3';color:#8A8177;margin-top:10px"><span>Simpler</span><span>More lines</span></div>
+  </div>
+</div>
+<div class="dv-note" style="width:520px">Every interactive element is at least 48px tall and carries the same amber focus ring at 3px with 2px offset, so keyboard position is unmistakable on white, paper, and teal alike.</div>
+</div>
+
+<div class="dv-opt" id="5c">
+<div class="dv-olabel"><a class="dv-oid" href="#5c">5c</a>Home at full fidelity — <a class="dv-oid" href="#2a">2a</a> dressed</div>
+<div class="dv-card" style="width:1280px;background:#FAF6EF">
+  <div style="background:#fff;border-bottom:1px solid #E3DCD0;padding:14px 40px;display:flex;align-items:center;gap:28px">
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;border-radius:11px;background:#0E6C5F;display:flex;align-items:center;justify-content:center;color:#fff;font:800 17px 'Baloo 2',sans-serif">C</div><div style="font:700 21px/1 'Baloo 2',sans-serif;color:#191713">CamiPrints</div></div>
+    <div style="display:flex;gap:22px;font:600 16px 'Source Sans 3';color:#191713"><span style="color:#0E6C5F;border-bottom:2.5px solid #0E6C5F;padding-bottom:2px">Browse</span><span>Categories</span><span>Create Your Own</span><span>How It Works</span></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:12px">
+      <div style="height:44px;width:220px;border-radius:999px;background:#FAF6EF;border:1.5px solid #E3DCD0;display:flex;align-items:center;gap:8px;padding:0 16px;font:400 15px 'Source Sans 3';color:#A39A8D"><span style="font-size:14px">⌕</span>Search pages</div>
+      <div style="height:44px;display:flex;align-items:center;gap:9px;padding:0 14px;border-radius:999px;border:1.5px solid #E3DCD0;background:#fff;font:600 14.5px 'Source Sans 3';color:#191713">Calm Mode<div style="width:38px;height:22px;border-radius:999px;background:#fff;border:1.5px solid #C9C0B1;display:flex;align-items:center;padding:0 2px"><div style="width:16px;height:16px;border-radius:999px;background:#C9C0B1"></div></div></div>
+    </div>
+  </div>
+
+  <div style="padding:40px 40px 34px;display:flex;gap:40px;align-items:center">
+    <div style="flex:1">
+      <div style="font:700 46px/1.08 'Baloo 2',sans-serif;color:#191713;text-wrap:pretty;max-width:16ch">Free coloring pages, made simple.</div>
+      <div style="font:400 18px/1.55 'Source Sans 3';color:#57514A;margin-top:12px;max-width:46ch;text-wrap:pretty">Browse, print, download — or turn your own photo into a page. No clutter, no ads, nothing that jumps at you.</div>
+      <div style="display:flex;gap:12px;margin-top:22px">
+        <div style="display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 26px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 18px 'Source Sans 3'">Browse coloring pages</div>
+        <div style="display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 26px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 18px 'Source Sans 3'">Turn a photo into a page</div>
+      </div>
+    </div>
+    <div style="width:400px;height:250px;border-radius:16px;background:repeating-linear-gradient(45deg,#F4EFE5,#F4EFE5 9px,#FBF8F2 9px,#FBF8F2 18px);border:1px solid #E3DCD0;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#A39A8D;text-align:center;padding:10px">hero artwork — one printed sheet,<br>photographed on a table</div>
+  </div>
+
+  <div style="padding:8px 40px 0">
+    <div style="display:flex;align-items:baseline;gap:14px">
+      <div style="font:700 30px/1.1 'Baloo 2',sans-serif;color:#191713">Pick a picture</div>
+      <div style="font:400 16px 'Source Sans 3';color:#8A8177">Tap any picture to see those pages</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px">
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:150px;border-radius:10px;background:#EFF3E8;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#8A9179">animals</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:10px">Animals</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">148 pages</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:150px;border-radius:10px;background:#E7EFF1;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#7F8C90">dinosaurs</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:10px">Dinosaurs</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">62 pages</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:150px;border-radius:10px;background:#E6EEF6;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#7C8A99">ocean</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:10px">Ocean</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">74 pages</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:150px;border-radius:10px;background:#EDEAF4;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#8B8598">space</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:10px">Space</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">39 pages</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px">
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:150px;border-radius:10px;background:#F5EAF0;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#997F8D">fantasy</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:10px">Fantasy</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">55 pages</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:150px;border-radius:10px;background:#F4EFE3;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#948B77">vehicles</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:10px">Vehicles</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">48 pages</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:150px;border-radius:10px;background:#E9F2EA;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#7F9183">nature</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:10px">Nature</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">67 pages</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:150px;border-radius:10px;background:#F7ECE6;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#9A867C">holidays</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:10px">Holidays</div><div style="font:500 14px 'Source Sans 3';color:#8A8177">81 pages</div></div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:20px"><div style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16px 'Source Sans 3'">See all 24 categories</div></div>
+  </div>
+
+  <div style="padding:34px 40px 0">
+    <div style="display:flex;align-items:baseline;gap:14px"><div style="font:700 30px/1.1 'Baloo 2',sans-serif;color:#191713">Easy pages for younger children</div><div style="font:400 16px 'Source Sans 3';color:#8A8177">Big shapes, thick lines</div></div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:18px">
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:170px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — fox</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:10px">Sitting Fox</div><div style="font:500 13.5px 'Source Sans 3';color:#8A8177">Easy · Ages 3–5</div><div style="display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';margin-top:10px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:170px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — castle</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:10px">Cloud Castle</div><div style="font:500 13.5px 'Source Sans 3';color:#8A8177">Easy · Ages 3–5</div><div style="display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';margin-top:10px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:170px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — tractor</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:10px">Farm Tractor</div><div style="font:500 13.5px 'Source Sans 3';color:#8A8177">Easy · Ages 3–5</div><div style="display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';margin-top:10px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:170px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — whale</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:10px">Blue Whale</div><div style="font:500 13.5px 'Source Sans 3';color:#8A8177">Easy · Ages 3–5</div><div style="display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';margin-top:10px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:170px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — bunny</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:10px">Hop the Bunny</div><div style="font:500 13.5px 'Source Sans 3';color:#8A8177">Easy · Ages 3–5</div><div style="display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';margin-top:10px">Print</div></div>
+    </div>
+  </div>
+
+  <div style="padding:34px 40px 0">
+    <div style="display:flex;align-items:baseline;gap:14px"><div style="font:700 30px/1.1 'Baloo 2',sans-serif;color:#191713">New this week</div></div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:18px">
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:170px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — owl</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:10px">Night Owl</div><div style="font:500 13.5px 'Source Sans 3';color:#8A8177">Detailed</div><div style="display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';margin-top:10px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:170px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — dragon</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:10px">Sleeping Dragon</div><div style="font:500 13.5px 'Source Sans 3';color:#8A8177">Detailed</div><div style="display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';margin-top:10px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:170px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — reef</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:10px">Sea Turtle Reef</div><div style="font:500 13.5px 'Source Sans 3';color:#8A8177">Medium</div><div style="display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';margin-top:10px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:170px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — rocket</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:10px">Rocket Launch</div><div style="font:500 13.5px 'Source Sans 3';color:#8A8177">Easy</div><div style="display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';margin-top:10px">Print</div></div>
+      <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px;box-shadow:0 1px 2px rgba(25,23,19,.05)"><div style="height:170px;border-radius:10px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11.5px ui-monospace,monospace;color:#A39A8D">page — camper</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:10px">Camper Van</div><div style="font:500 13.5px 'Source Sans 3';color:#8A8177">Medium</div><div style="display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 16px 'Source Sans 3';margin-top:10px">Print</div></div>
+    </div>
+  </div>
+
+  <div style="margin:34px 40px 0;background:#E4F0EC;border:1px solid #CFE3DC;border-radius:18px;padding:26px 28px;display:flex;gap:30px;align-items:center">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div style="width:92px;height:92px;border-radius:12px;background:#fff;border:1px solid #CFE3DC;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#8FA79F;text-align:center;padding:6px">photo of<br>a dog</div>
+      <div style="color:#0E6C5F;font-size:20px">→</div>
+      <div style="width:92px;height:92px;border-radius:12px;background:#fff;border:1px solid #CFE3DC;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#8FA79F;text-align:center;padding:6px">line art</div>
+      <div style="color:#0E6C5F;font-size:20px">→</div>
+      <div style="width:92px;height:92px;border-radius:12px;background:#fff;border:1px solid #CFE3DC;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#8FA79F;text-align:center;padding:6px">printed<br>sheet</div>
+    </div>
+    <div style="flex:1">
+      <div style="font:700 26px/1.15 'Baloo 2',sans-serif;color:#191713">Make one from your own photo</div>
+      <div style="font:400 16.5px/1.5 'Source Sans 3';color:#3F6B62;margin-top:6px;max-width:52ch">Upload, convert, print — about a minute. Your photo stays private: it is never published or added to the library.</div>
+    </div>
+    <div style="display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 34px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 18px 'Source Sans 3'">Start</div>
+  </div>
+
+  <div style="margin:26px 40px 34px;border-top:1px solid #E3DCD0;padding-top:22px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px">
+    <div><div style="font:600 15.5px 'Source Sans 3';color:#191713">No disruptive ads</div><div style="font:400 14px/1.45 'Source Sans 3';color:#8A8177;margin-top:3px">Nothing moves unless you touch it.</div></div>
+    <div><div style="font:600 15.5px 'Source Sans 3';color:#191713">Predictable navigation</div><div style="font:400 14px/1.45 'Source Sans 3';color:#8A8177;margin-top:3px">The same four links, always.</div></div>
+    <div><div style="font:600 15.5px 'Source Sans 3';color:#191713">Reduced motion</div><div style="font:400 14px/1.45 'Source Sans 3';color:#8A8177;margin-top:3px">Respects your system setting.</div></div>
+    <div><div style="font:600 15.5px 'Source Sans 3';color:#191713">Full keyboard support</div><div style="font:400 14px/1.45 'Source Sans 3';color:#8A8177;margin-top:3px">Visible focus on every control.</div></div>
+    <div><div style="font:600 15.5px 'Source Sans 3';color:#191713">Calm Mode</div><div style="font:400 14px/1.45 'Source Sans 3';color:#8A8177;margin-top:3px">Fewer things on screen at once.</div></div>
+  </div>
+
+  <div style="background:#fff;border-top:1px solid #E3DCD0;padding:22px 40px;display:flex;gap:26px;flex-wrap:wrap;font:500 14.5px 'Source Sans 3';color:#57514A"><span>About</span><span>How It Works</span><span>Accessibility</span><span>Parent guidance</span><span>Privacy</span><span>Terms</span><span>Copyright</span><span>Contact</span><span style="margin-left:auto;color:#A39A8D">© 2026 CamiPrints</span></div>
+</div>
+<div class="dv-note" style="width:1280px">Category tiles carry a soft per-category tint behind the thumbnail so a child can recognise a destination by colour as well as picture; everything else stays paper and white. Print is the only filled button on a card, so the primary action is the same shape and colour everywhere on the site.</div>
+</div>
+
+<div class="dv-opt" id="5d">
+<div class="dv-olabel"><a class="dv-oid" href="#5d">5d</a>Converter at full fidelity — step 4 (adjust), step 5 (preview), step 6 (print)</div>
+<div class="dv-card" style="width:1280px;padding:26px 28px;background:#EFEAE1;display:flex;flex-direction:column;gap:22px">
+
+  <div style="background:#FAF6EF;border:1px solid #E3DCD0;border-radius:14px;overflow:hidden">
+    <div style="background:#fff;border-bottom:1px solid #E3DCD0;padding:14px 26px;display:flex;align-items:center;gap:20px">
+      <div style="font:700 19px/1 'Baloo 2',sans-serif;color:#191713">Turn a photo into a coloring page</div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:10px;font:600 14px 'Source Sans 3';color:#8A8177">
+        <div style="display:flex;align-items:center;gap:7px"><div style="width:26px;height:26px;border-radius:999px;background:#0E6C5F;color:#fff;display:flex;align-items:center;justify-content:center;font:600 13px 'Source Sans 3'">✓</div>Photo</div>
+        <div style="width:22px;height:1.5px;background:#E3DCD0"></div>
+        <div style="display:flex;align-items:center;gap:7px"><div style="width:26px;height:26px;border-radius:999px;background:#0E6C5F;color:#fff;display:flex;align-items:center;justify-content:center;font:600 13px 'Source Sans 3'">✓</div>Crop</div>
+        <div style="width:22px;height:1.5px;background:#E3DCD0"></div>
+        <div style="display:flex;align-items:center;gap:7px"><div style="width:26px;height:26px;border-radius:999px;background:#0E6C5F;color:#fff;display:flex;align-items:center;justify-content:center;font:600 13px 'Source Sans 3'">✓</div>Style</div>
+        <div style="width:22px;height:1.5px;background:#0E6C5F"></div>
+        <div style="display:flex;align-items:center;gap:7px;color:#191713"><div style="width:26px;height:26px;border-radius:999px;background:#191713;color:#fff;display:flex;align-items:center;justify-content:center;font:600 13px 'Source Sans 3'">4</div>Adjust</div>
+        <div style="width:22px;height:1.5px;background:#E3DCD0"></div>
+        <div style="display:flex;align-items:center;gap:7px"><div style="width:26px;height:26px;border-radius:999px;border:1.5px solid #C9C0B1;display:flex;align-items:center;justify-content:center;font:600 13px 'Source Sans 3'">5</div>Preview</div>
+        <div style="width:22px;height:1.5px;background:#E3DCD0"></div>
+        <div style="display:flex;align-items:center;gap:7px"><div style="width:26px;height:26px;border-radius:999px;border:1.5px solid #C9C0B1;display:flex;align-items:center;justify-content:center;font:600 13px 'Source Sans 3'">6</div>Print</div>
+      </div>
+    </div>
+    <div style="padding:26px;display:flex;gap:26px;align-items:flex-start">
+      <div style="flex:1;background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:14px">
+        <div style="height:330px;border-radius:8px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 9px,#FBF8F2 9px,#FBF8F2 18px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#A39A8D">live line-art preview of the uploaded photo</div>
+      </div>
+      <div style="width:392px;flex:none;display:flex;flex-direction:column;gap:14px">
+        <div><div style="font:700 26px/1.15 'Baloo 2',sans-serif;color:#191713">Make it look right</div><div style="font:400 16px/1.5 'Source Sans 3';color:#57514A;margin-top:5px">Move the slider until the lines look good. You can skip this.</div></div>
+        <div style="background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:16px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font:600 17px 'Source Sans 3';color:#191713">How much detail</div><div style="font:500 15px 'Source Sans 3';color:#0E6C5F">Just right</div></div>
+          <div style="height:10px;border-radius:999px;background:#E3DCD0;margin-top:16px;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:52%;background:#0E6C5F;border-radius:999px"></div><div style="position:absolute;left:52%;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:999px;background:#fff;border:2.5px solid #0E6C5F;box-shadow:0 1px 3px rgba(25,23,19,.2)"></div></div>
+          <div style="display:flex;justify-content:space-between;font:500 13.5px 'Source Sans 3';color:#8A8177;margin-top:10px"><span>Simpler</span><span>More lines</span></div>
+        </div>
+        <div style="background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between"><div><div style="font:600 16px 'Source Sans 3';color:#191713">More adjustments</div><div style="font:400 13.5px 'Source Sans 3';color:#8A8177;margin-top:2px">Line thickness, contrast, background removal</div></div><div style="width:40px;height:40px;border-radius:999px;border:1.5px solid #E3DCD0;display:flex;align-items:center;justify-content:center;color:#57514A;font-size:14px">▾</div></div>
+        <div style="display:flex;gap:12px;margin-top:2px">
+          <div style="flex:1;display:inline-flex;align-items:center;justify-content:center;height:56px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 18px 'Source Sans 3'">Make my page</div>
+          <div style="display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 22px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 17px 'Source Sans 3'">Back</div>
+        </div>
+        <div style="font:400 14px/1.45 'Source Sans 3';color:#8A8177">Your photo is deleted after you leave. Nothing is published.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:22px;align-items:stretch">
+    <div style="flex:1;background:#FAF6EF;border:1px solid #E3DCD0;border-radius:14px;padding:22px 24px">
+      <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177">Step 5 · working</div>
+      <div style="font:700 26px/1.15 'Baloo 2',sans-serif;color:#191713;margin-top:8px">Making your page…</div>
+      <div style="height:10px;border-radius:999px;background:#E3DCD0;margin-top:16px;overflow:hidden"><div style="width:64%;height:100%;background:#0E6C5F;border-radius:999px"></div></div>
+      <div style="font:400 15.5px 'Source Sans 3';color:#57514A;margin-top:10px">About 10 seconds left. You can wait here.</div>
+      <div style="height:200px;border-radius:10px;background:#fff;border:1px solid #E3DCD0;margin-top:16px;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#A39A8D">low-res preview fading in</div>
+      <div style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16px 'Source Sans 3';margin-top:16px">Cancel</div>
+    </div>
+    <div style="flex:1;background:#FAF6EF;border:1px solid #E3DCD0;border-radius:14px;padding:22px 24px">
+      <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177">Step 5 · it didn’t work</div>
+      <div style="background:#fff;border:1.5px solid #B3401E;border-radius:12px;padding:16px 18px;margin-top:12px">
+        <div style="font:700 21px/1.2 'Baloo 2',sans-serif;color:#B3401E">That photo came out too dark to trace</div>
+        <div style="font:400 15.5px/1.5 'Source Sans 3';color:#57514A;margin-top:6px">Your settings are still here. Try one of these:</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px">
+          <div style="display:inline-flex;align-items:center;justify-content:center;height:52px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 17px 'Source Sans 3'">Try again with more contrast</div>
+          <div style="display:inline-flex;align-items:center;justify-content:center;height:52px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 17px 'Source Sans 3'">Pick a different photo</div>
+          <div style="display:inline-flex;align-items:center;justify-content:center;height:48px;border-radius:999px;color:#0E6C5F;font:600 16px 'Source Sans 3';text-decoration:underline;text-underline-offset:3px">Back to adjustments</div>
+        </div>
+      </div>
+      <div style="font:400 14px/1.5 'Source Sans 3';color:#8A8177;margin-top:12px">Every failure keeps the user on step 5 with settings intact — no restart, no lost work. The same shell carries the upload, size, format, timeout and server errors.</div>
+    </div>
+    <div style="width:420px;flex:none;background:#FAF6EF;border:1px solid #E3DCD0;border-radius:14px;padding:22px 24px">
+      <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177">Step 6 · done</div>
+      <div style="font:700 26px/1.15 'Baloo 2',sans-serif;color:#191713;margin-top:8px">Your page is ready</div>
+      <div style="height:230px;border-radius:10px;background:#fff;border:1px solid #E3DCD0;margin-top:14px;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#A39A8D">finished page — A4 portrait, 8mm margin</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+        <div style="display:inline-flex;align-items:center;justify-content:center;height:56px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 18px 'Source Sans 3'">Print it</div>
+        <div style="display:flex;gap:10px"><div style="flex:1;display:inline-flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16px 'Source Sans 3'">Download PDF</div><div style="flex:1;display:inline-flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16px 'Source Sans 3'">Make another</div></div>
+      </div>
+      <div style="font:400 14px/1.5 'Source Sans 3';color:#8A8177;margin-top:12px">Print sends the sheet straight to the system dialog — no intermediate page, no ads between the child and paper.</div>
+    </div>
+  </div>
+</div>
+<div class="dv-note" style="width:1280px">The stepper is the only chrome that persists. Step 4 shows exactly one control by default; “More adjustments” holds the four expert ones. The finished-page card repeats the print-first hierarchy from the library so the action a child already learned still works here.</div>
+</div>
+
+<div class="dv-opt" id="5e">
+<div class="dv-olabel"><a class="dv-oid" href="#5e">5e</a>Calm Mode and mobile — the same system, less on screen</div>
+<div class="dv-card" style="width:940px;padding:26px 28px;background:#EFEAE1;display:flex;gap:22px;align-items:flex-start">
+  <div style="flex:1">
+    <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin-bottom:10px">Calm Mode · home</div>
+    <div style="background:#FAF6EF;border:1px solid #E3DCD0;border-radius:14px;overflow:hidden">
+      <div style="background:#fff;border-bottom:1px solid #E3DCD0;padding:14px 20px;display:flex;align-items:center;gap:14px"><div style="width:30px;height:30px;border-radius:10px;background:#0E6C5F;display:flex;align-items:center;justify-content:center;color:#fff;font:800 15px 'Baloo 2',sans-serif">C</div><div style="font:700 18px/1 'Baloo 2',sans-serif;color:#191713">CamiPrints</div><div style="margin-left:auto;height:40px;display:flex;align-items:center;gap:8px;padding:0 12px;border-radius:999px;background:#E4F0EC;border:1.5px solid #CFE3DC;font:600 13.5px 'Source Sans 3';color:#0E6C5F">Calm Mode on<div style="width:34px;height:20px;border-radius:999px;background:#0E6C5F;display:flex;align-items:center;justify-content:flex-end;padding:0 2px"><div style="width:15px;height:15px;border-radius:999px;background:#fff"></div></div></div></div>
+      <div style="padding:26px 24px">
+        <div style="font:700 30px/1.1 'Baloo 2',sans-serif;color:#191713">Pick a picture</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+          <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px"><div style="height:120px;border-radius:10px;background:#EFF3E8;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#8A9179">animals</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:9px">Animals</div></div>
+          <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px"><div style="height:120px;border-radius:10px;background:#E7EFF1;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#7F8C90">dinosaurs</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:9px">Dinosaurs</div></div>
+          <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px"><div style="height:120px;border-radius:10px;background:#E6EEF6;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#7C8A99">ocean</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:9px">Ocean</div></div>
+          <div style="background:#fff;border:1px solid #E3DCD0;border-radius:14px;padding:12px"><div style="height:120px;border-radius:10px;background:#EDEAF4;display:flex;align-items:center;justify-content:center;font:400 12px ui-monospace,monospace;color:#8B8598">space</div><div style="font:600 19px 'Source Sans 3';color:#191713;margin-top:9px">Space</div></div>
+        </div>
+        <div style="display:inline-flex;align-items:center;justify-content:center;height:52px;width:100%;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 16.5px 'Source Sans 3';margin-top:16px;box-sizing:border-box">Show more pictures</div>
+      </div>
+    </div>
+    <div class="dv-note" style="margin-top:9px">Calm Mode drops the hero, the search field, the counts, the promo band and the feature row; four tiles at a time, one way forward.</div>
+  </div>
+  <div style="width:290px;flex:none">
+    <div style="font:600 11px/1 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:#8A8177;margin-bottom:10px">Mobile · 390</div>
+    <div style="width:290px;background:#FAF6EF;border:1px solid #E3DCD0;border-radius:20px;overflow:hidden">
+      <div style="background:#fff;border-bottom:1px solid #E3DCD0;padding:12px 14px;display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:9px;background:#0E6C5F;display:flex;align-items:center;justify-content:center;color:#fff;font:800 14px 'Baloo 2',sans-serif">C</div><div style="font:700 16px/1 'Baloo 2',sans-serif;color:#191713">CamiPrints</div><div style="margin-left:auto;display:flex;gap:8px"><div style="width:44px;height:44px;border-radius:999px;border:1.5px solid #E3DCD0;background:#fff;display:flex;align-items:center;justify-content:center;color:#57514A">⌕</div><div style="width:44px;height:44px;border-radius:999px;border:1.5px solid #E3DCD0;background:#fff;display:flex;align-items:center;justify-content:center;color:#57514A">☰</div></div></div>
+      <div style="padding:16px 14px">
+        <div style="font:700 27px/1.1 'Baloo 2',sans-serif;color:#191713;text-wrap:pretty">Free coloring pages, made simple.</div>
+        <div style="display:inline-flex;align-items:center;justify-content:center;height:56px;width:100%;border-radius:999px;background:#0E6C5F;color:#fff;font:600 17px 'Source Sans 3';margin-top:14px;box-sizing:border-box">Browse coloring pages</div>
+        <div style="display:inline-flex;align-items:center;justify-content:center;height:56px;width:100%;border-radius:999px;background:#fff;border:1.5px solid #191713;color:#191713;font:600 17px 'Source Sans 3';margin-top:10px;box-sizing:border-box">Turn a photo into a page</div>
+        <div style="font:700 23px/1.1 'Baloo 2',sans-serif;color:#191713;margin-top:22px">Pick a picture</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+          <div style="background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:9px"><div style="height:88px;border-radius:8px;background:#EFF3E8;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#8A9179">animals</div><div style="font:600 16px 'Source Sans 3';color:#191713;margin-top:7px">Animals</div></div>
+          <div style="background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:9px"><div style="height:88px;border-radius:8px;background:#E7EFF1;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#7F8C90">dinosaurs</div><div style="font:600 16px 'Source Sans 3';color:#191713;margin-top:7px">Dinosaurs</div></div>
+        </div>
+        <div style="background:#fff;border:1px solid #E3DCD0;border-radius:12px;padding:10px;margin-top:14px"><div style="height:150px;border-radius:8px;background:repeating-linear-gradient(45deg,#F6F1E8,#F6F1E8 8px,#FBF8F2 8px,#FBF8F2 16px);border:1px solid #EDE6D9;display:flex;align-items:center;justify-content:center;font:400 11px ui-monospace,monospace;color:#A39A8D">page — fox</div><div style="font:600 17px 'Source Sans 3';color:#191713;margin-top:9px">Sitting Fox</div><div style="font:500 13px 'Source Sans 3';color:#8A8177">Easy · Ages 3–5</div><div style="display:flex;align-items:center;justify-content:center;height:52px;border-radius:999px;background:#0E6C5F;color:#fff;font:600 17px 'Source Sans 3';margin-top:10px">Print</div></div>
+      </div>
+    </div>
+    <div class="dv-note" style="margin-top:9px">Mobile keeps 2-up tiles and a 52–56px action height; nothing important sits under the thumb rest.</div>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-note" style="margin:22px 0 0">Next: apply the system to the listing and detail pages, then write the Claude Code handoff (tokens, component list, route map, states).</p>
+</section>
+
+</x-dc>
+</body>
+</html>
