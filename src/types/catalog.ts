@@ -39,6 +39,7 @@ export const PAPER_LABEL = "US Letter — A4 also fits";
 export interface Category {
   slug: string;
   name: string;
+  description: string;
   /** Tint key for the tile thumbnail background; null = neutral. */
   tint: string | null;
   /** Real asset field — null renders the marked placeholder. */

@@ -48,6 +48,7 @@ model Category {
   id           String         @id @default(uuid())
   slug         String         @unique
   name         String
+  description  String         @default("")
   /// Tint token key for the tile thumbnail; null = neutral.
   tint         String?
   thumbnailUrl String?

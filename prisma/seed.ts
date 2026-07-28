@@ -26,6 +26,7 @@ async function main() {
       where: { slug: category.slug },
       update: {
         name: category.name,
+        description: category.description,
         tint: category.tint,
         thumbnailUrl: category.thumbnailUrl,
         featured: category.featured,
@@ -34,6 +35,7 @@ async function main() {
       create: {
         slug: category.slug,
         name: category.name,
+        description: category.description,
         tint: category.tint,
         thumbnailUrl: category.thumbnailUrl,
         featured: category.featured,

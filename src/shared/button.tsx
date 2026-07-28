@@ -47,7 +47,7 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.ComponentProps<"button">,
     VariantProps<typeof buttonVariants> {
   /** Render the child element (e.g. a Link) with button styling. */
   asChild?: boolean;

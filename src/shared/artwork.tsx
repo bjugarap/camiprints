@@ -19,6 +19,7 @@ export interface ArtworkProps {
   sizes?: string;
   className?: string;
   labelClassName?: string;
+  style?: React.CSSProperties;
 }
 
 export function Artwork({
@@ -29,10 +30,11 @@ export function Artwork({
   sizes,
   className,
   labelClassName,
+  style,
 }: ArtworkProps) {
   if (src) {
     return (
-      <div className={cn("relative overflow-hidden", className)}>
+      <div className={cn("relative overflow-hidden", className)} style={style}>
         <Image src={src} alt={alt} fill sizes={sizes} className="object-cover" />
       </div>
     );
@@ -40,8 +42,10 @@ export function Artwork({
 
   return (
     <div
-      role="img"
-      aria-label={alt}
+      role={alt ? "img" : undefined}
+      aria-label={alt || undefined}
+      aria-hidden={alt ? undefined : true}
+      style={style}
       className={cn(
         "flex items-center justify-center overflow-hidden p-1 text-center",
         placeholder === "hatch" ? "placeholder-hatch" : placeholder,
