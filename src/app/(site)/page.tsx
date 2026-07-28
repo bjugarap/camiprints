@@ -8,9 +8,13 @@ import { Button } from "@/shared/button";
 import type { ColoringPage } from "@/types/catalog";
 
 /**
- * Home — hi-fi 5c, Calm Mode per 5e. Calm Mode removes the hero, page
- * counts, promo band and reassurance row (CSS-driven via the calm:
- * variant); the card rows and the category picker remain.
+ * Home — child-first. Many visitors are pre-readers: the page is a compact
+ * greeting, then every category as a large picture grid, then rows of real
+ * pages — a child scrolls until they recognise something and taps it.
+ * Parent-facing material (the photo converter, the reassurance row) sits
+ * below the pictures. Calm Mode removes the hero, promo band and
+ * reassurance row (CSS-driven via the calm: variant); the picture grid and
+ * card rows remain.
  */
 function CardRow({
   id,
@@ -47,46 +51,20 @@ export default async function HomePage() {
     repo.getEasyPicks(5),
     repo.getNewThisWeek(5),
   ]);
-  const featured = categories.filter((category) => category.featured);
-
   return (
     <div className="mx-auto max-w-[1280px]">
-      {/* Hero — removed entirely in Calm Mode. */}
-      <section className="flex items-center gap-10 px-4 pb-[34px] pt-10 md:px-10 calm:hidden">
-        <div className="flex-1">
-          <h1 className="text-hero max-w-[16ch] text-[27px]/[1.1] text-ink md:text-[46px]/[1.08]">
-            Free coloring pages, made simple.
-          </h1>
-          <p className="text-body mt-3 max-w-[46ch] text-ink-60">
-            Browse, print, download — or turn your own photo into a page. No
-            clutter, no ads, nothing that jumps at you.
-          </p>
-          <div className="mt-[22px] flex w-full flex-col gap-3 md:w-auto md:flex-row">
-            <Button asChild size="xl" className="w-full md:w-auto">
-              <Link href="/coloring-pages">Browse coloring pages</Link>
-            </Button>
-            <Button
-              asChild
-              variant="secondary"
-              size="xl"
-              className="w-full md:w-auto"
-            >
-              <Link href="/create/photo">Turn a photo into a page</Link>
-            </Button>
-          </div>
-        </div>
-        <Artwork
-          alt="A printed coloring sheet photographed on a table"
-          label={"hero artwork — one printed sheet,\nphotographed on a table"}
-          className="hidden h-[250px] w-[400px] shrink-0 rounded-2xl border border-line md:flex"
-          labelClassName="whitespace-pre-line text-xs"
-        />
+      {/* Compact hero — a greeting, not a pitch. The pictures below are the
+          call to action. Removed entirely in Calm Mode. */}
+      <section className="px-4 pb-3 pt-7 md:px-10 calm:hidden">
+        <h1 className="text-hero max-w-[22ch] text-[27px]/[1.1] text-ink md:text-[36px]/[1.1]">
+          Free coloring pages, made simple.
+        </h1>
+        <p className="text-body mt-2 max-w-[46ch] text-ink-60">
+          Tap a picture you like — printing takes one tap more.
+        </p>
       </section>
 
-      <HomeCategoryPicker
-        categories={featured}
-        totalCategories={categories.length}
-      />
+      <HomeCategoryPicker categories={categories} />
 
       <CardRow
         id="easy-pages"
@@ -121,12 +99,13 @@ export default async function HomePage() {
           )}
         </div>
         <div className="flex-1 text-center md:text-left">
-          <h2 id="promo-heading" className="text-subsection text-ink">
+          <p className="text-eyebrow text-accent-ink">For grown-ups</p>
+          <h2 id="promo-heading" className="text-subsection mt-1 text-ink">
             Make one from your own photo
           </h2>
           <p className="mt-1.5 max-w-[52ch] text-[16.5px]/[1.5] text-accent-ink">
-            Upload, convert, print — about a minute. Your photo stays private:
-            it is never published or added to the library.
+            Upload, convert, print — about a minute. Photos stay private,
+            never published.
           </p>
         </div>
         <Button asChild size="xl" className="w-full px-[34px] md:w-auto">

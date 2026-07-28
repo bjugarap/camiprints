@@ -7,14 +7,15 @@ import type { CategoryWithCount } from "@/server/repositories/catalog-repository
 /**
  * Category tile (handoff §Category tile). Pictures navigate: the whole tile
  * is one link. Selected state doubles colour with a trailing ✓ so meaning
- * never rides on colour alone.
+ * never rides on colour alone. Home tiles are image-dominant — a pre-reader
+ * recognises the picture; the name below is for the adult reading along.
  */
 export interface CategoryTileProps {
   category: CategoryWithCount;
   /**
-   * home: 150px tint, title 19 + count (hi-fi 5c)
+   * home: image-dominant, 150–180px tint, centred title 19, no count
    * strip: 64px tint, label 15 (listing picture strip, hi-fi 6a)
-   * calm: 120px tint, title 19, no count (hi-fi 5e)
+   * calm: 120px tint, title 19 (hi-fi 5e)
    */
   variant?: "home" | "strip" | "calm";
   selected?: boolean;
@@ -40,7 +41,7 @@ export function CategoryTile({
       aria-current={selected ? "true" : undefined}
       className={cn(
         "block bg-card text-center",
-        isStrip ? "rounded-xl p-[9px]" : "rounded-card p-3 text-left shadow-card",
+        isStrip ? "rounded-xl p-[9px]" : "rounded-card p-3 shadow-card",
         selected
           ? "border-2 border-accent bg-accent-tint p-[8px]"
           : "border border-line",
@@ -57,7 +58,7 @@ export function CategoryTile({
           isStrip ? "h-16 rounded-lg" : "rounded-thumb",
           // Home tiles shrink to the 120px Calm Mode treatment via CSS so
           // the calm layout never depends on client-side branching.
-          variant === "home" && "h-[150px] calm:h-[120px]",
+          variant === "home" && "h-[150px] xl:h-[180px] calm:h-[120px]",
           variant === "calm" && "h-[120px]",
         )}
       />
@@ -71,11 +72,6 @@ export function CategoryTile({
         {category.name}
         {selected ? " ✓" : ""}
       </div>
-      {variant === "home" ? (
-        <div className="text-meta text-ink-40 calm:hidden">
-          {category.pageCount} pages
-        </div>
-      ) : null}
     </Link>
   );
 }

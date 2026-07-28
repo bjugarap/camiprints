@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -10,16 +9,16 @@ import type { CategoryWithCount } from "@/server/repositories/catalog-repository
 import { CategoryTile } from "./category-tile";
 
 /**
- * "Pick a picture" (hi-fi 5c / 5e). Normal: 2×4 tiles with counts and a
- * "See all N categories" secondary. Calm Mode: four tiles at a time in
- * 2-up with a single 52px "Show more pictures" below — one way forward.
+ * "Pick a picture" — the heart of the child-first home. Every category is
+ * on the page in a 5-up image grid (3-up tablet, 2-up mobile): a pre-reader
+ * scrolls until a picture they recognise appears, no "See all" detour.
+ * Calm Mode: four tiles at a time in 2-up with a single 52px "Show more
+ * pictures" below — one way forward.
  */
 export function HomeCategoryPicker({
   categories,
-  totalCategories,
 }: {
   categories: CategoryWithCount[];
-  totalCategories: number;
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -34,7 +33,7 @@ export function HomeCategoryPicker({
         </p>
       </div>
 
-      <div className="mt-[18px] grid grid-cols-2 gap-2.5 md:grid-cols-3 md:gap-[18px] xl:grid-cols-4 calm:grid-cols-2">
+      <div className="mt-[18px] grid grid-cols-2 gap-2.5 md:grid-cols-3 md:gap-[18px] xl:grid-cols-5 calm:grid-cols-2">
         {categories.map((category, index) => (
           <CategoryTile
             key={category.slug}
@@ -43,12 +42,6 @@ export function HomeCategoryPicker({
             className={cn(index >= 4 && !expanded && "calm:hidden")}
           />
         ))}
-      </div>
-
-      <div className="mt-5 flex justify-center calm:hidden">
-        <Button asChild variant="secondary" size="md">
-          <Link href="/categories">See all {totalCategories} categories</Link>
-        </Button>
       </div>
 
       {!expanded ? (
