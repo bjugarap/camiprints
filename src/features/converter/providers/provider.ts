@@ -1,32 +1,37 @@
 import type {
+  ConversionEngine,
   ConversionJob,
   ConversionProgress,
   ConversionProviderId,
   ConversionSettings,
   CropState,
 } from "@/types/converter";
-import { CONVERSION_PROVIDER_IDS } from "@/types/converter";
 
 /**
  * The provider seam. The wizard talks only to this interface; which
- * implementation answers is configuration (`NEXT_PUBLIC_COLORING_PROVIDER`),
- * never a UI concern. The interface is shaped for the *hardest* provider —
- * an asynchronous, job-submitting, polling service — and the LocalProvider
- * simply happens to complete its job within a single `convert()` call.
+ * implementation answers is configuration, never a UI concern.
  *
- * Contract:
- *  - `convert()` creates a ConversionJob and returns when the job reaches a
- *    terminal state (immediate providers) or is safely submitted (async
- *    providers, which return a queued/processing job to poll via `getJob`).
+ * Since Sprint 4 the user-facing choice is the *engine*:
+ *  - "ai"    → ServerAiProvider, a thin client for /api/conversions. The
+ *              actual vendor (Flux today; OpenAI/Imagen later) is chosen
+ *              server-side by AI_PROVIDER — the browser cannot tell.
+ *  - "local" → LocalProvider ("Quick Outline"): on-device, instant,
+ *              private, lower quality.
+ *
+ * The interface is shaped for the hardest case — an asynchronous,
+ * job-submitting, polling service:
+ *  - `convert()` returns a terminal job (immediate providers) or a
+ *    queued/processing job to poll via `getJob` (async providers).
  *  - Progress is reported through `onProgress` with real stage counts.
  *  - `signal` aborts: the job must end "cancelled", never half-done.
- *  - The output image travels as a Blob via `fetchOutput`, kept out of the
- *    serializable job record.
+ *  - The output image travels as a Blob via `fetchOutput`.
  */
 export interface ConversionRequest {
   photo: Blob;
   crop: CropState;
   settings: ConversionSettings;
+  /** 1-based try counter for this photo — cost/diagnostics only. */
+  attempt?: number;
 }
 
 export interface ConversionCallbacks {
@@ -39,6 +44,8 @@ export interface PhotoConversionProvider {
   readonly displayName: string;
   /** "immediate": convert() resolves with a terminal job. "async": poll. */
   readonly mode: "immediate" | "async";
+  /** Client poll cadence for async providers. */
+  readonly pollIntervalMs?: number;
   convert(
     request: ConversionRequest,
     callbacks?: ConversionCallbacks,
@@ -55,48 +62,42 @@ export interface PhotoConversionProvider {
   preview?(request: ConversionRequest): Promise<Blob | null>;
 }
 
-/** Thrown by stub providers until their integration lands. */
-export class ProviderNotConfiguredError extends Error {
-  constructor(providerId: ConversionProviderId) {
-    super(`Conversion provider "${providerId}" is not configured`);
-    this.name = "ProviderNotConfiguredError";
-  }
+/* --------------------------------------------------------------- config */
+
+export interface EngineConfig {
+  aiEnabled: boolean;
+  localEnabled: boolean;
+  defaultEngine: ConversionEngine;
 }
-
-/* -------------------------------------------------------------- registry */
-
-type ProviderFactory = () => Promise<PhotoConversionProvider>;
 
 /**
- * Lazy factories so heavy implementations only load when selected — the
- * local pipeline never ships to a deployment that uses a remote provider,
- * and vice versa.
+ * Client-visible engine flags. (The sprint's AI_ENABLED / LOCAL_ENABLED /
+ * LOCAL_DEFAULT names carry the NEXT_PUBLIC_ prefix because the browser
+ * bundle needs them; the server-only variables keep their bare names.)
  */
-const FACTORIES: Record<ConversionProviderId, ProviderFactory> = {
-  local: async () =>
-    new (await import("./local/local-provider")).LocalProvider(),
-  openai: async () => new (await import("./openai-provider")).OpenAIProvider(),
-  flux: async () => new (await import("./flux-provider")).FluxProvider(),
-  imagen: async () =>
-    new (await import("./imagen-provider")).ImagenProvider(),
-};
-
-export function getConfiguredProviderId(): ConversionProviderId {
-  const configured = process.env.NEXT_PUBLIC_COLORING_PROVIDER;
-  if (
-    configured &&
-    (CONVERSION_PROVIDER_IDS as readonly string[]).includes(configured)
-  ) {
-    return configured as ConversionProviderId;
-  }
-  return "local";
+export function getEngineConfig(): EngineConfig {
+  const aiEnabled = process.env.NEXT_PUBLIC_AI_ENABLED !== "false";
+  const localEnabled = process.env.NEXT_PUBLIC_LOCAL_ENABLED !== "false";
+  const localDefault = process.env.NEXT_PUBLIC_LOCAL_DEFAULT === "true";
+  const defaultEngine: ConversionEngine =
+    !aiEnabled || (localDefault && localEnabled) ? "local" : "ai";
+  return { aiEnabled, localEnabled, defaultEngine };
 }
 
-let instance: PhotoConversionProvider | null = null;
+/* ------------------------------------------------------------- registry */
 
-export async function getConversionProvider(): Promise<PhotoConversionProvider> {
-  if (!instance || instance.id !== getConfiguredProviderId()) {
-    instance = await FACTORIES[getConfiguredProviderId()]();
+const instances = new Map<ConversionEngine, PhotoConversionProvider>();
+
+export async function getConversionProvider(
+  engine: ConversionEngine,
+): Promise<PhotoConversionProvider> {
+  let instance = instances.get(engine);
+  if (!instance) {
+    instance =
+      engine === "local"
+        ? new (await import("./local/local-provider")).LocalProvider()
+        : new (await import("./server-ai-provider")).ServerAiProvider();
+    instances.set(engine, instance);
   }
   return instance;
 }

@@ -48,6 +48,22 @@ browser: MIME allowlist, byte budget, real decode via
 (`src/features/converter/intake/photo-input.ts`). Server headers from the
 redeem response are treated as hints, not truth.
 
+## AI conversion endpoints (Sprint 4)
+
+`POST /api/conversions` · `GET /api/conversions/poll` · `GET
+/api/conversions/output` — logic in `src/server/conversions/`.
+
+| Control | Implementation |
+| --- | --- |
+| Vendor key | `BFL_API_KEY` exists only in server code; never in NEXT_PUBLIC, the extension, logs or responses |
+| Job continuity | AES-256-GCM encrypted, authenticated client-held tokens (`conversion-token.ts`); tampering = generic failure; `kind` binds poll vs output tokens; key derived from the vendor secret |
+| Server-side timeout | `JOB_TIMEOUT_MS` (default 90s) anchored to the sealed `createdAt` — clients cannot extend it |
+| Input validation | MIME allowlist, 8 MB cap, real sharp decode before any vendor spend |
+| Output quality gate | Result downloaded and validated server-side (decodes, dimensions, not blank/black, white paper, line content) before "completed" |
+| SSRF guards | Vendor poll/result URLs accepted only on bfl.ai (+ result CDN) hosts; URLs travel only inside authenticated tokens |
+| Daily budget | `AI_LIMIT_ANON_PER_DAY` per IP per 24h (auth tiers reserved: `AI_LIMIT_AUTH_PER_DAY`; admin unlimited once roles exist) |
+| Cost telemetry | Structured JSON log lines: provider, model, requestId, status, duration, estimated cost, retry count — never image data |
+
 ## Known gaps before multi-instance production
 
 These are single-instance implementations behind clean seams — they must
@@ -57,5 +73,7 @@ be swapped, not rewritten, before horizontal scaling:
    R2 implementation of `TemporaryPhotoStore` (create and redeem may land
    on different instances).
 2. In-memory rate limiter → shared store (e.g. Upstash) behind
-   `checkRateLimit`'s signature.
+   `checkRateLimit`'s signature. This now also guards the **paid** AI
+   daily budget, so it is pre-launch (not just pre-scale) debt: separate
+   serverless instances each grant their own daily allowance.
 3. Consider a scheduled sweep (cron) in addition to the opportunistic one.

@@ -52,16 +52,25 @@ export function StepWorking({
 
 export function StepFailed({
   error,
+  quickOutlineAvailable,
+  onQuickOutline,
   onRetryPrimary,
   onPickDifferentPhoto,
   onBackToAdjustments,
 }: {
   error: ConversionErrorInfo;
+  /** AI failed and the on-device engine can stand in. */
+  quickOutlineAvailable: boolean;
+  onQuickOutline: () => void;
   onRetryPrimary: () => void;
   onPickDifferentPhoto: () => void;
   onBackToAdjustments: () => void;
 }) {
   const copy = CONVERTER_ERROR_COPY[error.code];
+  // When the daily AI budget is spent, Quick Outline IS the primary remedy
+  // — don't offer it twice.
+  const offerQuickOutline =
+    quickOutlineAvailable && error.code !== "ai-daily-limit";
   return (
     <div className="mx-auto max-w-[560px]">
       <p className="text-eyebrow text-ink-40">Step 5 · it didn’t work</p>
@@ -79,6 +88,11 @@ export function StepFailed({
           <Button size="lg" onClick={onRetryPrimary}>
             {copy.remedy}
           </Button>
+          {offerQuickOutline ? (
+            <Button variant="secondary" size="lg" onClick={onQuickOutline}>
+              Use Quick Outline instead
+            </Button>
+          ) : null}
           <Button variant="secondary" size="lg" onClick={onPickDifferentPhoto}>
             Pick a different photo
           </Button>

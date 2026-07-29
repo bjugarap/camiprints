@@ -4,6 +4,19 @@ Six steps at `/create/photo`: **1 Photo · 2 Crop · 3 Style · 4 Adjust ·
 5 Preview · 6 Print**, one route, one guided wizard (hi-fi 5d). `/create`
 is the hub: one live tool, inert "coming later" cards.
 
+Two engines answer the same wizard (ADR 012):
+
+- **AI Coloring Page** (default, best quality) — the server sends the
+  original cropped photo to the configured vendor (Flux) with a centrally
+  built prompt; the result is quality-validated before the browser sees
+  it. Step 4 shows the cropped photo; the drawing first appears on step 5.
+- **Quick Outline** (fast · private · lower quality) — the on-device
+  ADR-011 pipeline, with its live line-art preview on step 4. Also the
+  fallback remedy when AI fails or the daily AI budget is spent.
+
+One quiet control on step 4 switches engines; the choice survives
+replace-photo, start-over and refresh.
+
 ## Code map
 
 ```
@@ -11,11 +24,20 @@ src/features/converter/
   machine/    converter-machine.ts — pure reducer state machine (ADR 010)
   intake/     PhotoInputAdapter — file-upload, drag-and-drop,
               chrome-extension; one shared validator (ADR 009)
-  providers/  PhotoConversionProvider seam + LocalProvider + AI stubs
-              (ADR 003, 011)
+  providers/  PhotoConversionProvider seam + LocalProvider (Quick
+              Outline) + ServerAiProvider (ADR 003, 011, 012)
   session/    sessionStorage state + IndexedDB blobs — refresh-proof
   export/     PNG download, pdf-lib US Letter PDF
   ui/         wizard orchestrator + one component per step
+src/server/conversions/
+  prompt-builder.ts     the ONE place prompt text exists
+  vendor-adapter.ts     AiVendorAdapter seam (flux / mock / future)
+  flux-adapter.ts       Black Forest Labs API (docs.bfl.ai)
+  conversion-service.ts create/poll/output orchestration, rate limits,
+                        cost logging
+  conversion-token.ts   AES-GCM stateless job continuity
+  validate-output.ts    sharp quality gate before "completed"
+src/app/api/conversions/  POST create · GET poll · GET output
 ```
 
 ## State machine

@@ -16,12 +16,28 @@ you leave. Nothing is published."* This document is the precise version.
 
 ## Where photo data lives, and for how long
 
-**Normal upload / drag-and-drop (LocalProvider)**
+**Quick Outline engine (LocalProvider)**
 - The photo is processed entirely in the user's browser. It is never
   transmitted to CamiPrints servers.
 - Browser copies: wizard session state in `sessionStorage` (dies with the
   tab session) and the photo/result blobs in IndexedDB (overwritten by the
   next session; wiped by "Start Over" / "Make another").
+
+**AI Coloring Page engine (default)**
+- On "Create AI Coloring Page" the cropped photo is sent to the
+  CamiPrints server, which forwards it to the configured AI vendor
+  (Black Forest Labs) with a drawing prompt. The UI states this before
+  the button is pressed.
+- CamiPrints keeps **no server-side copy**: the image passes through the
+  request, and job continuity uses encrypted client-held tokens, not
+  stored state. Nothing about the image is logged.
+- The vendor holds the input and the generated result transiently to
+  serve the request; results are fetched via signed URLs that expire in
+  minutes. Per BFL's API terms, API inputs/outputs are not used to train
+  their models. CamiPrints likewise does not use photos for advertising
+  or training.
+- The finished page is stored only in the user's own browser, exactly
+  like a Quick Outline result.
 
 **Chrome-extension handoff**
 - The image transits `TemporaryPhotoStore` on the server, private, keyed

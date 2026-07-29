@@ -13,33 +13,45 @@ import {
   DETAIL_WORDS,
   LINE_WEIGHT_LABELS,
   LINE_WEIGHTS,
+  type ConversionEngine,
   type ConversionSettings,
 } from "@/types/converter";
 
 import { WordSlider } from "./word-slider";
 
 /**
- * Step 4 · Adjust (hi-fi 5d): live preview left; right column shows
- * exactly one control — the detail slider — until "More adjustments" opens
- * the four expert controls. Deliberate: novices stay unblocked.
+ * Step 4 · Adjust (hi-fi 5d): preview left; right column shows exactly
+ * one control — the detail slider — until "More adjustments" opens the
+ * four expert controls. Deliberate: novices stay unblocked.
+ *
+ * AI engine (default): the pane shows the ORIGINAL cropped photo — the AI
+ * result first appears on step 5. Local "Quick Outline": the pane is the
+ * live line-art preview. One quiet control switches engines.
  */
 export function StepAdjust({
+  engine,
+  canSwitchEngine,
   settings,
   previewUrl,
   previewPending,
   onSettingsChange,
+  onEngineChange,
   onBack,
   onConvert,
 }: {
+  engine: ConversionEngine;
+  canSwitchEngine: boolean;
   settings: ConversionSettings;
-  /** Provider preview if the provider offers one, else the cropped photo. */
+  /** AI: the cropped photo. Local: the provider's live preview. */
   previewUrl: string | null;
   previewPending: boolean;
   onSettingsChange: (settings: Partial<ConversionSettings>) => void;
+  onEngineChange: (engine: ConversionEngine) => void;
   onBack: () => void;
   onConvert: () => void;
 }) {
   const [moreOpen, setMoreOpen] = useState(false);
+  const ai = engine === "ai";
 
   return (
     <div className="flex flex-col items-start gap-[26px] md:flex-row">
@@ -51,17 +63,26 @@ export function StepAdjust({
             // whole pane would sink its text below WCAG AA contrast.
             <Image
               src={previewUrl}
-              alt="Preview of your coloring page so far"
+              alt={
+                ai
+                  ? "Your cropped photo, ready to be drawn"
+                  : "Preview of your coloring page so far"
+              }
               fill
               unoptimized
               className={cn("object-contain", previewPending && "opacity-60")}
             />
           ) : (
             <p className="absolute inset-0 flex items-center justify-center p-4 text-center font-mono text-[11.5px] text-ink-40">
-              live line-art preview of your photo
+              {ai ? "your cropped photo" : "live line-art preview of your photo"}
             </p>
           )}
         </div>
+        {ai ? (
+          <p className="mt-2.5 text-sm/[1.45] text-ink-40">
+            The finished drawing appears on the next step.
+          </p>
+        ) : null}
       </div>
 
       {/* Controls. */}
@@ -69,7 +90,9 @@ export function StepAdjust({
         <div>
           <h2 className="text-subsection text-ink">Make it look right</h2>
           <p className="mt-1 text-base/[1.5] text-ink-60">
-            Move the slider until the lines look good. You can skip this.
+            {ai
+              ? "Tell the AI how the page should look. You can skip this."
+              : "Move the slider until the lines look good. You can skip this."}
           </p>
         </div>
 
@@ -168,15 +191,30 @@ export function StepAdjust({
 
         <div className="mt-0.5 flex gap-3">
           <Button size="xl" className="flex-1" onClick={onConvert}>
-            Make my page
+            {ai ? "Create AI Coloring Page" : "Make my page"}
           </Button>
           <Button variant="secondary" size="xl" onClick={onBack}>
             Back
           </Button>
         </div>
 
+        {canSwitchEngine ? (
+          <Button
+            variant="quiet"
+            size="md"
+            className="self-start text-[15px]"
+            onClick={() => onEngineChange(ai ? "local" : "ai")}
+          >
+            {ai
+              ? "Use Quick Outline instead — fast · private · lower quality"
+              : "Use AI Coloring Page instead — best quality"}
+          </Button>
+        ) : null}
+
         <p className="text-sm/[1.45] text-ink-40">
-          Your photo is deleted after you leave. Nothing is published.
+          {ai
+            ? "Your photo is sent securely to draw the page, then deleted. It is never published or added to the library."
+            : "Quick Outline runs on this device — your photo never leaves it. Nothing is published."}
         </p>
       </div>
     </div>

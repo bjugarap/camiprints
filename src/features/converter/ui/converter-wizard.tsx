@@ -11,6 +11,7 @@ import {
 } from "react";
 
 import type {
+  ConversionEngine,
   ConversionJob,
   ConversionSettings,
   CropState,
@@ -29,10 +30,10 @@ import {
   type ConverterState,
 } from "../machine/converter-machine";
 import {
-  getConfiguredProviderId,
   getConversionProvider,
-  ProviderNotConfiguredError,
+  getEngineConfig,
 } from "../providers/provider";
+import { encodeRasterBlob, rasterizeCrop } from "../providers/local/rasterize";
 import {
   clearConverterSession,
   loadConverterState,
@@ -83,12 +84,13 @@ function useObjectUrl(): [
 }
 
 function makePendingJob(
+  engine: ConversionEngine,
   settings: ConversionSettings,
   crop: CropState,
 ): ConversionJob {
   return {
     id: `pending-${Date.now()}`,
-    provider: getConfiguredProviderId(),
+    provider: engine === "local" ? "local" : "flux",
     status: "queued",
     createdAt: new Date().toISOString(),
     completedAt: null,
@@ -109,10 +111,10 @@ const TERMINAL: ReadonlyArray<ConversionJob["status"]> = [
 export function ConverterWizard() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [state, dispatch] = useReducer(
-    converterReducer,
-    INITIAL_CONVERTER_STATE,
-  );
+  const [state, dispatch] = useReducer(converterReducer, undefined, () => ({
+    ...INITIAL_CONVERTER_STATE,
+    engine: getEngineConfig().defaultEngine,
+  }));
   const stateRef = useRef<ConverterState>(state);
   stateRef.current = state;
 
@@ -127,6 +129,8 @@ export function ConverterWizard() {
     INITIAL_CONVERTER_STATE.error,
   );
   const [booted, setBooted] = useState(false);
+  const attemptRef = useRef(0);
+  const engineConfig = getEngineConfig();
 
   const acceptPhoto = useCallback(
     (input: ResolvedPhotoInput) => {
@@ -135,6 +139,7 @@ export function ConverterWizard() {
       resultBlobRef.current = null;
       setResultBlobUrl(null);
       setIntakeError(null);
+      attemptRef.current = 0;
       dispatch({
         type: "PHOTO_RESOLVED",
         photo: {
@@ -209,7 +214,11 @@ export function ConverterWizard() {
     if (booted) saveConverterState(state);
   }, [state, booted]);
 
-  /* Live preview on the Adjust step, debounced, provider-optional. */
+  /*
+   * Adjust-step preview, debounced. AI engine: always the ORIGINAL
+   * cropped photo — the AI result first appears on step 5, never a local
+   * edge map. Local engine: the provider's fast line-art preview.
+   */
   useEffect(() => {
     if (state.step !== 4 || !photoBlobRef.current) return;
     let live = true;
@@ -217,14 +226,24 @@ export function ConverterWizard() {
     const timer = setTimeout(async () => {
       const photo = photoBlobRef.current;
       if (!photo) return;
-      const provider = await getConversionProvider();
-      const blob = provider.preview
-        ? await provider.preview({
-            photo,
-            crop: state.crop,
-            settings: state.settings,
-          })
-        : null;
+      let blob: Blob | null = null;
+      if (state.engine === "ai") {
+        try {
+          const raster = await rasterizeCrop(photo, state.crop, 480);
+          blob = await encodeRasterBlob(raster, "image/jpeg", 0.85);
+        } catch {
+          blob = null;
+        }
+      } else {
+        const provider = await getConversionProvider("local");
+        blob = provider.preview
+          ? await provider.preview({
+              photo,
+              crop: state.crop,
+              settings: state.settings,
+            })
+          : null;
+      }
       if (!live) return;
       if (blob) setPreviewBlobUrl(blob);
       setPreviewPending(false);
@@ -233,28 +252,31 @@ export function ConverterWizard() {
       live = false;
       clearTimeout(timer);
     };
-  }, [state.step, state.crop, state.settings, setPreviewBlobUrl]);
+  }, [state.step, state.engine, state.crop, state.settings, setPreviewBlobUrl]);
 
-  /* The conversion itself — provider-agnostic, poll-ready, cancellable. */
+  /* The conversion itself — engine/provider-agnostic, poll-ready,
+     cancellable. */
   const startConversion = useCallback(
-    async (settingsOverride?: ConversionSettings) => {
+    async (settingsOverride?: ConversionSettings, engineOverride?: ConversionEngine) => {
       const photo = photoBlobRef.current;
       const current = stateRef.current;
       if (!photo || !current.photo || !current.rightsConfirmed) return;
       const settings = settingsOverride ?? current.settings;
+      const engine = engineOverride ?? current.engine;
       const crop = current.crop;
+      attemptRef.current += 1;
 
       dispatch({
         type: "CONVERT_REQUESTED",
-        job: makePendingJob(settings, crop),
+        job: makePendingJob(engine, settings, crop),
       });
       const controller = new AbortController();
       abortRef.current = controller;
 
       try {
-        const provider = await getConversionProvider();
+        const provider = await getConversionProvider(engine);
         let job = await provider.convert(
-          { photo, crop, settings },
+          { photo, crop, settings, attempt: attemptRef.current },
           {
             signal: controller.signal,
             onProgress: (progress) =>
@@ -264,7 +286,9 @@ export function ConverterWizard() {
 
         // Async providers return a queued/processing job; poll it home.
         while (!TERMINAL.includes(job.status)) {
-          await new Promise((resolve) => setTimeout(resolve, 1500));
+          await new Promise((resolve) =>
+            setTimeout(resolve, provider.pollIntervalMs ?? 1500),
+          );
           if (controller.signal.aborted) {
             await provider.cancel(job.id);
             dispatch({ type: "JOB_CANCELLED" });
@@ -309,15 +333,12 @@ export function ConverterWizard() {
         setResultBlobUrl(output);
         void saveSessionBlob(RESULT_BLOB_KEY, output);
         dispatch({ type: "JOB_COMPLETED", job });
-      } catch (error) {
+      } catch {
         dispatch({
           type: "JOB_FAILED",
           job: null,
           error: {
-            code:
-              error instanceof ProviderNotConfiguredError
-                ? "provider-not-configured"
-                : "processing-failed",
+            code: "processing-failed",
             message: "Something went wrong while tracing",
           },
         });
@@ -325,6 +346,12 @@ export function ConverterWizard() {
     },
     [setResultBlobUrl],
   );
+
+  /** Failure remedy: run the on-device Quick Outline with settings intact. */
+  const switchToQuickOutline = useCallback(() => {
+    dispatch({ type: "ENGINE_SELECTED", engine: "local" });
+    void startConversion(undefined, "local");
+  }, [startConversion]);
 
   const startOver = useCallback(() => {
     abortRef.current?.abort();
@@ -334,6 +361,7 @@ export function ConverterWizard() {
     setResultBlobUrl(null);
     setPreviewBlobUrl(null);
     setIntakeError(null);
+    attemptRef.current = 0;
     void clearConverterSession();
     dispatch({ type: "START_OVER" });
   }, [setPhotoBlobUrl, setResultBlobUrl, setPreviewBlobUrl]);
@@ -409,11 +437,20 @@ export function ConverterWizard() {
 
             {state.step === 4 ? (
               <StepAdjust
+                engine={state.engine}
+                canSwitchEngine={
+                  state.engine === "ai"
+                    ? engineConfig.localEnabled
+                    : engineConfig.aiEnabled
+                }
                 settings={state.settings}
                 previewUrl={previewUrl}
                 previewPending={previewPending}
                 onSettingsChange={(settings) =>
                   dispatch({ type: "SETTINGS_CHANGED", settings })
+                }
+                onEngineChange={(engine) =>
+                  dispatch({ type: "ENGINE_SELECTED", engine })
                 }
                 onBack={() => dispatch({ type: "BACK" })}
                 onConvert={() => void startConversion()}
@@ -430,8 +467,22 @@ export function ConverterWizard() {
             {state.step === 5 && state.status === "error" && state.error ? (
               <StepFailed
                 error={state.error}
+                quickOutlineAvailable={
+                  state.engine === "ai" && engineConfig.localEnabled
+                }
+                onQuickOutline={switchToQuickOutline}
                 onRetryPrimary={() => {
                   const { error, settings } = stateRef.current;
+                  if (error?.code === "ai-daily-limit") {
+                    switchToQuickOutline();
+                    return;
+                  }
+                  if (error?.code === "ai-moderated") {
+                    photoBlobRef.current = null;
+                    setPhotoBlobUrl(null);
+                    dispatch({ type: "PHOTO_REPLACED" });
+                    return;
+                  }
                   if (
                     error?.code === "photo-too-dark" ||
                     error?.code === "not-enough-detail"
@@ -442,9 +493,9 @@ export function ConverterWizard() {
                     };
                     dispatch({ type: "RETRY_WITH_MORE_CONTRAST" });
                     void startConversion(bumped);
-                  } else {
-                    void startConversion();
+                    return;
                   }
+                  void startConversion();
                 }}
                 onPickDifferentPhoto={() => {
                   photoBlobRef.current = null;

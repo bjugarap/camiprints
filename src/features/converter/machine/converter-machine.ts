@@ -1,6 +1,7 @@
 import {
   DEFAULT_CROP,
   DEFAULT_SETTINGS,
+  type ConversionEngine,
   type ConversionErrorInfo,
   type ConversionJob,
   type ConversionProgress,
@@ -38,6 +39,8 @@ export type ConverterStatus =
 export interface ConverterState {
   status: ConverterStatus;
   step: ConverterStep;
+  /** "ai" (the default, best quality) or "local" (Quick Outline). */
+  engine: ConversionEngine;
   photo: ResolvedPhotoMeta | null;
   rightsConfirmed: boolean;
   crop: CropState;
@@ -51,6 +54,7 @@ export interface ConverterState {
 export const INITIAL_CONVERTER_STATE: ConverterState = {
   status: "idle",
   step: 1,
+  engine: "ai",
   photo: null,
   rightsConfirmed: false,
   crop: DEFAULT_CROP,
@@ -68,6 +72,7 @@ export type ConverterEvent =
   | { type: "BACK" }
   | { type: "GO_TO_STEP"; step: ConverterStep } // stepper: completed steps only
   | { type: "CROP_CHANGED"; crop: Partial<CropState> }
+  | { type: "ENGINE_SELECTED"; engine: ConversionEngine }
   | { type: "STYLE_SELECTED"; style: ConversionSettings["style"] }
   | { type: "SETTINGS_CHANGED"; settings: Partial<ConversionSettings> }
   | { type: "CONVERT_REQUESTED"; job: ConversionJob }
@@ -126,10 +131,16 @@ export function converterReducer(
       };
 
     case "PHOTO_REPLACED":
+      // Settings and engine are preferences, not photo state — keep them.
       return {
         ...INITIAL_CONVERTER_STATE,
         settings: state.settings,
+        engine: state.engine,
       };
+
+    case "ENGINE_SELECTED":
+      if (state.status === "processing") return state;
+      return { ...state, engine: event.engine };
 
     case "RIGHTS_CHANGED":
       if (!state.photo) return state;
@@ -249,7 +260,7 @@ export function converterReducer(
       return { ...atStep(state, 4), error: null };
 
     case "START_OVER":
-      return INITIAL_CONVERTER_STATE;
+      return { ...INITIAL_CONVERTER_STATE, engine: state.engine };
 
     case "SESSION_RESTORED":
       // Never restore into a mid-flight job — the work is gone after a

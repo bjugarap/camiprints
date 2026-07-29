@@ -109,6 +109,15 @@ export interface ResolvedPhotoInput {
 /** The serializable part of a resolved input (the blob lives in IndexedDB). */
 export type ResolvedPhotoMeta = Omit<ResolvedPhotoInput, "blob">;
 
+/* ---------------------------------------------------------------- engine */
+/**
+ * Which conversion engine the user is working with. "ai" is the primary
+ * production path (server-mediated vendor per AI_PROVIDER); "local" is the
+ * on-device Quick Outline mode — fast, private, lower quality.
+ */
+export const CONVERSION_ENGINES = ["ai", "local"] as const;
+export type ConversionEngine = (typeof CONVERSION_ENGINES)[number];
+
 /* ------------------------------------------------------------------ jobs */
 export const CONVERSION_PROVIDER_IDS = [
   "local",
@@ -184,6 +193,10 @@ export const CONVERTER_ERROR_CODES = [
   "handoff-invalid",
   "handoff-expired",
   "rate-limited",
+  "ai-timeout",
+  "ai-moderated",
+  "ai-bad-output",
+  "ai-daily-limit",
 ] as const;
 export type ConverterErrorCode = (typeof CONVERTER_ERROR_CODES)[number];
 
@@ -250,5 +263,21 @@ export const CONVERTER_ERROR_COPY: Record<
   "rate-limited": {
     heading: "Too many tries at once",
     remedy: "Wait a moment, then try again",
+  },
+  "ai-timeout": {
+    heading: "The AI took too long to draw",
+    remedy: "Try again",
+  },
+  "ai-moderated": {
+    heading: "That photo can’t be turned into a page",
+    remedy: "Pick a different photo",
+  },
+  "ai-bad-output": {
+    heading: "The page didn’t come out right",
+    remedy: "Try again",
+  },
+  "ai-daily-limit": {
+    heading: "Today’s AI page is used up",
+    remedy: "Try Quick Outline instead",
   },
 };

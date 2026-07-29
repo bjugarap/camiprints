@@ -1,7 +1,13 @@
 # Provider pattern — photo conversion
 
-The UI never knows which engine converts a photo. All conversion goes
-through one interface (`src/features/converter/providers/provider.ts`):
+Two layers of "which engine": the **user** picks an engine (AI Coloring
+Page — the default — or Quick Outline), and for the AI engine the
+**server** picks a vendor (`AI_PROVIDER`: flux today, mock for dev/e2e,
+openai/imagen later). The browser bundle contains no vendor name, URL or
+key — it talks only to `/api/conversions` (ADR 012).
+
+All conversion goes through one interface
+(`src/features/converter/providers/provider.ts`):
 
 ```ts
 interface PhotoConversionProvider {
@@ -24,28 +30,26 @@ those to its own parameters internally. Progress arrives via `onProgress`
 with real stage counts; cancellation via `AbortSignal`; every run produces
 a `ConversionJob` record (ADR 010).
 
-The active provider is configuration:
+Engine availability and default are configuration
+(`NEXT_PUBLIC_AI_ENABLED`, `NEXT_PUBLIC_LOCAL_ENABLED`,
+`NEXT_PUBLIC_LOCAL_DEFAULT`); the AI vendor is server configuration
+(`AI_PROVIDER`, plus `BFL_*` for Flux).
 
-```
-NEXT_PUBLIC_COLORING_PROVIDER=local   # default
-```
+| Implementation | Where | Status | Notes |
+|---|---|---|---|
+| `LocalProvider` ("Quick Outline") | client | Implemented | On-device Canvas + typed-array pipeline (ADR 011). Photo never leaves the device. Implements `preview()`. |
+| `ServerAiProvider` ("AI Coloring Page") | client shim | Implemented | Crops the original photo on-canvas, uploads once to `/api/conversions`, polls with an opaque encrypted token. Vendor-agnostic. |
+| `FluxVendorAdapter` | server | **Implemented** | Black Forest Labs async API: create → poll → download, `x-key` auth, host allowlists. Model/base URL from env. |
+| `MockVendorAdapter` | server | Implemented | Dev/e2e: the full production path with a deterministic generated page — no cost, no key. |
+| OpenAI / Imagen adapters | server | Future | One `AiVendorAdapter` class each in `src/server/conversions/`; prompt comes from the shared prompt builder. |
 
-| Provider | Status | Notes |
-|---|---|---|
-| `LocalProvider` | **Implemented** | On-device Canvas + typed-array pipeline (ADR 011). No data leaves the browser. Implements `preview()`. |
-| `OpenAIProvider` (GPT Image) | Stub | Selectable today; `convert()` fails as a normal "provider-not-configured" job, which the wizard renders with its standard failure shell — proving zero UI changes are needed. Integration notes in the class docblock. |
-| `FluxProvider` (Flux Pro) | Stub | Flux's submit → poll → download maps 1:1 onto the interface. |
-| `ImagenProvider` (Google Imagen) | Stub | Vertex AI long-running operation maps onto `getJob` polling. |
+The wizard's polling loop drives any `mode: "async"` provider (convert
+returns a queued job → poll `getJob` → `fetchOutput`); webhooks can later
+short-circuit vendor polling server-side without touching the UI.
 
-The registry (`FACTORIES`) lazy-imports implementations, so the local
-pipeline never ships to a deployment on a remote provider and vice versa.
-The wizard's polling loop already drives `mode: "async"` providers
-(convert returns a queued job → poll `getJob` → `fetchOutput`); webhooks
-can later short-circuit polling server-side without touching the UI.
-
-Adding a real AI provider = one class + credentials in a server route +
-one env var. No UI changes; that is enforced by the e2e suite, which only
-ever speaks to the wizard.
+Adding a new AI vendor = one server adapter class + `AI_PROVIDER=<id>`.
+No UI changes; that is enforced by the e2e suite, which only ever speaks
+to the wizard (and runs the AI path against the mock adapter).
 
 Privacy contract every provider must honour (ADR 003): the photo is never
 published, never added to the library, and deleted per

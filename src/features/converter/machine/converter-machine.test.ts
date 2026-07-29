@@ -199,6 +199,54 @@ describe("converter machine — guards", () => {
   });
 });
 
+describe("converter machine — engine selection", () => {
+  it("switches engine and keeps it across replace-photo and start-over", () => {
+    const local = converterReducer(adjusting, {
+      type: "ENGINE_SELECTED",
+      engine: "local",
+    });
+    expect(local.engine).toBe("local");
+    expect(
+      converterReducer(local, { type: "PHOTO_REPLACED" }).engine,
+    ).toBe("local");
+    expect(converterReducer(local, { type: "START_OVER" }).engine).toBe(
+      "local",
+    );
+  });
+
+  it("cannot switch engine mid-processing", () => {
+    const processing = run(
+      [{ type: "CONVERT_REQUESTED", job: job("processing") }],
+      adjusting,
+    );
+    expect(
+      converterReducer(processing, { type: "ENGINE_SELECTED", engine: "local" })
+        .engine,
+    ).toBe("ai");
+  });
+
+  it("engine switch after a failure preserves error state until retry", () => {
+    const failed = run(
+      [
+        { type: "CONVERT_REQUESTED", job: job("processing") },
+        {
+          type: "JOB_FAILED",
+          job: job("failed"),
+          error: { code: "ai-daily-limit", message: "Used up" },
+        },
+      ],
+      adjusting,
+    );
+    const switched = converterReducer(failed, {
+      type: "ENGINE_SELECTED",
+      engine: "local",
+    });
+    expect(switched.engine).toBe("local");
+    expect(switched.step).toBe(5);
+    expect(switched.settings).toEqual(failed.settings);
+  });
+});
+
 describe("converter machine — session restore", () => {
   it("restores a mid-flow session as saved", () => {
     const restored = converterReducer(INITIAL_CONVERTER_STATE, {

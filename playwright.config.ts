@@ -22,5 +22,16 @@ export default defineConfig({
     url: "http://localhost:3100",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
+    env: {
+      // The AI path runs against the mock vendor adapter: the full
+      // production pipeline (create → poll → validate → download) with no
+      // cost, network, or key. There is no mock-only client code.
+      AI_PROVIDER: "mock",
+      AI_LIMIT_ANON_PER_DAY: "1000",
+      NEXT_PUBLIC_AI_ENABLED: "true",
+      NEXT_PUBLIC_LOCAL_ENABLED: "true",
+      NEXT_PUBLIC_LOCAL_DEFAULT: "false",
+      NEXT_PUBLIC_POLL_INTERVAL_MS: "500",
+    },
   },
 });

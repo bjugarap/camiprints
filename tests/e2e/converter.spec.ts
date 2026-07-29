@@ -38,14 +38,26 @@ async function confirmRightsAndAdvance(page: Page): Promise<void> {
   ).toBeVisible();
 }
 
-async function completeWizardFromCrop(page: Page): Promise<void> {
+async function completeWizardFromCrop(
+  page: Page,
+  engine: "ai" | "local" = "ai",
+): Promise<void> {
   await page.getByRole("button", { name: "Next: pick a style" }).click();
   await page.getByRole("radio", { name: /Bold & simple/ }).click();
   await page.getByRole("button", { name: "Next: adjust it" }).click();
   await expect(
     page.getByRole("heading", { name: "Make it look right" }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Make my page" }).click();
+  if (engine === "local") {
+    await page
+      .getByRole("button", { name: /Use Quick Outline instead/ })
+      .click();
+    await page.getByRole("button", { name: "Make my page" }).click();
+  } else {
+    await page
+      .getByRole("button", { name: "Create AI Coloring Page" })
+      .click();
+  }
   await expect(
     page.getByRole("heading", { name: "Here’s your page" }),
   ).toBeVisible({ timeout: 45_000 });
@@ -68,13 +80,13 @@ test.describe("photo converter — upload flow", () => {
     ).toBeVisible();
   });
 
-  test("completes all six steps and downloads PNG and PDF", async ({
+  test("completes all six steps via AI and downloads PNG and PDF", async ({
     page,
   }) => {
     await page.goto("/create/photo");
     await uploadPhoto(page);
     await confirmRightsAndAdvance(page);
-    await completeWizardFromCrop(page);
+    await completeWizardFromCrop(page, "ai");
 
     const pngDownload = page.waitForEvent("download");
     await page.getByRole("button", { name: "Download PNG" }).click();
@@ -84,6 +96,14 @@ test.describe("photo converter — upload flow", () => {
     await page.getByRole("button", { name: "Download PDF" }).click();
     expect((await pdfDownload).suggestedFilename()).toBe("coloring-page.pdf");
 
+    await expect(page.getByRole("button", { name: "Print it" })).toBeVisible();
+  });
+
+  test("Quick Outline mode still completes on-device", async ({ page }) => {
+    await page.goto("/create/photo");
+    await uploadPhoto(page);
+    await confirmRightsAndAdvance(page);
+    await completeWizardFromCrop(page, "local");
     await expect(page.getByRole("button", { name: "Print it" })).toBeVisible();
   });
 

@@ -83,16 +83,18 @@ export async function rasterizeCrop(
   }
 }
 
-/** Encode a raster to a PNG blob. */
-export async function encodePng(raster: Raster): Promise<Blob> {
+/** Encode a raster to a PNG or JPEG blob. */
+export async function encodeRasterBlob(
+  raster: Raster,
+  type: "image/png" | "image/jpeg",
+  quality = 0.9,
+): Promise<Blob> {
   const canvas = makeCanvas(raster.width, raster.height);
   const ctx = canvas.getContext("2d") as
     | CanvasRenderingContext2D
     | OffscreenCanvasRenderingContext2D
     | null;
   if (!ctx) throw new Error("2d context unavailable");
-  // Copy into a fresh ArrayBuffer-backed array — ImageData refuses views
-  // that could sit on a SharedArrayBuffer.
   ctx.putImageData(
     new ImageData(
       new Uint8ClampedArray(raster.data),
@@ -106,9 +108,15 @@ export async function encodePng(raster: Raster): Promise<Blob> {
     return new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(
         (blob) => (blob ? resolve(blob) : reject(new Error("encode failed"))),
-        "image/png",
+        type,
+        quality,
       );
     });
   }
-  return canvas.convertToBlob({ type: "image/png" });
+  return canvas.convertToBlob({ type, quality });
+}
+
+/** Encode a raster to a PNG blob. */
+export function encodePng(raster: Raster): Promise<Blob> {
+  return encodeRasterBlob(raster, "image/png");
 }

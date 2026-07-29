@@ -45,6 +45,10 @@ export function loadConverterState(): ConverterState | null {
     if (!raw) return null;
     const snapshot = JSON.parse(raw) as SessionSnapshot;
     if (snapshot.version !== 1 || !snapshot.state?.status) return null;
+    // Pre-engine (Sprint 3) snapshots are discarded rather than guessed at.
+    if (snapshot.state.engine !== "ai" && snapshot.state.engine !== "local") {
+      return null;
+    }
     return snapshot.state;
   } catch {
     return null;
