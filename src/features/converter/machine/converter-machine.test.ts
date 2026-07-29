@@ -26,7 +26,7 @@ const photo: ResolvedPhotoMeta = {
 function job(status: ConversionJob["status"]): ConversionJob {
   return {
     id: "j1",
-    provider: "local",
+    provider: "flux",
     status,
     createdAt: "2026-07-28T00:00:00.000Z",
     completedAt: null,
@@ -42,51 +42,64 @@ function run(events: ConverterEvent[], from = INITIAL_CONVERTER_STATE) {
   return events.reduce(converterReducer, from);
 }
 
-/** State just before conversion: photo resolved, rights confirmed, step 4. */
-const adjusting: ConverterState = run([
+/** Settings home: photo resolved, rights confirmed, at Style (step 3). */
+const styling: ConverterState = run([
   { type: "PHOTO_RESOLVED", photo },
   { type: "RIGHTS_CHANGED", confirmed: true },
   { type: "NEXT" },
   { type: "NEXT" },
-  { type: "NEXT" },
 ]);
 
+/** A finished result under review on the Adjust step. */
+const reviewing: ConverterState = run(
+  [
+    { type: "CONVERT_REQUESTED", job: job("processing") },
+    { type: "JOB_COMPLETED", job: job("completed") },
+  ],
+  styling,
+);
+
 describe("converter machine — forward path", () => {
-  it("walks 1 → 4 once a photo exists and rights are confirmed", () => {
-    expect(adjusting.step).toBe(4);
-    expect(adjusting.status).toBe("adjusting");
+  it("walks 1 → 3; generation is the only door to Adjust", () => {
+    expect(styling.step).toBe(3);
+    expect(styling.status).toBe("style-selected");
+    expect(converterReducer(styling, { type: "NEXT" }).step).toBe(3);
   });
 
-  it("refuses NEXT from step 1 without a photo", () => {
+  it("refuses NEXT from step 1 without a photo or rights", () => {
     expect(run([{ type: "NEXT" }])).toEqual(INITIAL_CONVERTER_STATE);
+    const noRights = run([{ type: "PHOTO_RESOLVED", photo }, { type: "NEXT" }]);
+    expect(noRights.step).toBe(1);
   });
 
-  it("refuses NEXT from step 1 without rights confirmation", () => {
-    const state = run([{ type: "PHOTO_RESOLVED", photo }, { type: "NEXT" }]);
-    expect(state.step).toBe(1);
+  it("generation lands the result on Adjust, then preview, then print", () => {
+    expect(reviewing.step).toBe(4);
+    expect(reviewing.status).toBe("completed");
+    const previewing = converterReducer(reviewing, {
+      type: "CONTINUE_TO_PREVIEW",
+    });
+    expect(previewing.step).toBe(5);
+    expect(previewing.status).toBe("previewing");
+    const printing = converterReducer(previewing, {
+      type: "CONTINUE_TO_PRINT",
+    });
+    expect(printing.step).toBe(6);
+    expect(printing.status).toBe("printing");
   });
 
-  it("runs a job to completion and on to print", () => {
-    const state = run(
-      [
-        { type: "CONVERT_REQUESTED", job: job("processing") },
-        {
-          type: "JOB_PROGRESS",
-          progress: {
-            stage: "edges",
-            message: "Finding the main outlines…",
-            completedStages: 2,
-            totalStages: 6,
-          },
-        },
-        { type: "JOB_COMPLETED", job: job("completed") },
-        { type: "CONTINUE_TO_PRINT" },
-      ],
-      adjusting,
-    );
-    expect(state.step).toBe(6);
-    expect(state.status).toBe("printing");
-    expect(state.error).toBeNull();
+  it("CONTINUE_TO_PRINT only works from the preview", () => {
+    expect(
+      converterReducer(reviewing, { type: "CONTINUE_TO_PRINT" }).step,
+    ).toBe(4);
+  });
+
+  it("a redraw from Adjust is a normal CONVERT_REQUESTED", () => {
+    const redrawing = converterReducer(reviewing, {
+      type: "CONVERT_REQUESTED",
+      job: job("processing"),
+    });
+    expect(redrawing.status).toBe("processing");
+    expect(redrawing.step).toBe(4);
   });
 });
 
@@ -103,7 +116,7 @@ describe("converter machine — the failure invariant", () => {
   };
   const tuned = run(
     [{ type: "SETTINGS_CHANGED", settings: customSettings }],
-    adjusting,
+    styling,
   );
   const failed = run(
     [
@@ -111,14 +124,14 @@ describe("converter machine — the failure invariant", () => {
       {
         type: "JOB_FAILED",
         job: job("failed"),
-        error: { code: "photo-too-dark", message: "Too dark to trace" },
+        error: { code: "ai-bad-output", message: "Didn’t come out right" },
       },
     ],
     tuned,
   );
 
-  it("failure stays on step 5 with every setting intact", () => {
-    expect(failed.step).toBe(5);
+  it("failure stays on step 4 with every setting intact", () => {
+    expect(failed.step).toBe(4);
     expect(failed.status).toBe("error");
     expect(failed.settings).toEqual(customSettings);
     expect(failed.photo).toEqual(photo);
@@ -130,34 +143,34 @@ describe("converter machine — the failure invariant", () => {
     });
     expect(retried.settings.advanced.contrast).toBe("stronger");
     expect(retried.settings.style).toBe("detailed");
-    expect(retried.settings.advanced.removeBackground).toBe(true);
   });
 
-  it("back-to-adjustments clears the error, keeps settings", () => {
-    const back = converterReducer(failed, { type: "BACK_TO_ADJUSTMENTS" });
-    expect(back.step).toBe(4);
+  it("back-to-settings clears the error, keeps settings, lands on Style", () => {
+    const back = converterReducer(failed, { type: "BACK_TO_SETTINGS" });
+    expect(back.step).toBe(3);
     expect(back.error).toBeNull();
     expect(back.settings).toEqual(customSettings);
   });
 
-  it("cancel during processing returns to step 4 losslessly", () => {
+  it("cancel during processing returns to Style losslessly", () => {
     const processing = run(
       [{ type: "CONVERT_REQUESTED", job: job("processing") }],
       tuned,
     );
     const cancelled = converterReducer(processing, { type: "JOB_CANCELLED" });
-    expect(cancelled.step).toBe(4);
+    expect(cancelled.step).toBe(3);
     expect(cancelled.settings).toEqual(customSettings);
     expect(cancelled.job).toBeNull();
   });
 });
 
 describe("converter machine — guards", () => {
-  it("ignores navigation while processing", () => {
-    const processing = run(
-      [{ type: "CONVERT_REQUESTED", job: job("processing") }],
-      adjusting,
-    );
+  const processing = run(
+    [{ type: "CONVERT_REQUESTED", job: job("processing") }],
+    styling,
+  );
+
+  it("ignores navigation and duplicate converts while processing", () => {
     expect(converterReducer(processing, { type: "BACK" }).status).toBe(
       "processing",
     );
@@ -165,31 +178,56 @@ describe("converter machine — guards", () => {
       "processing",
     );
     expect(
-      converterReducer(processing, { type: "GO_TO_STEP", step: 1 }).status,
+      converterReducer(processing, {
+        type: "CONVERT_REQUESTED",
+        job: job("queued"),
+      }).job?.status,
     ).toBe("processing");
   });
 
   it("ignores stray job events outside processing", () => {
     expect(
-      converterReducer(adjusting, {
-        type: "JOB_COMPLETED",
-        job: job("completed"),
-      }),
-    ).toEqual(adjusting);
+      converterReducer(styling, { type: "JOB_COMPLETED", job: job("completed") }),
+    ).toEqual(styling);
   });
 
-  it("stepper can revisit earlier steps but never skip ahead", () => {
+  it("stepper revisits earlier steps; Adjust only exists with a result", () => {
+    expect(converterReducer(reviewing, { type: "GO_TO_STEP", step: 2 }).step).toBe(2);
+    const printingNoJob = { ...reviewing, step: 6 as const, job: null };
     expect(
-      converterReducer(adjusting, { type: "GO_TO_STEP", step: 2 }).step,
-    ).toBe(2);
-    expect(
-      converterReducer(adjusting, { type: "GO_TO_STEP", step: 6 }).step,
-    ).toBe(4);
+      converterReducer(printingNoJob, { type: "GO_TO_STEP", step: 4 }).step,
+    ).toBe(6);
   });
 
-  it("replace-photo keeps settings but drops photo, crop and rights", () => {
+  it("back from the preview returns to the result, not the settings", () => {
+    const previewing = converterReducer(reviewing, {
+      type: "CONTINUE_TO_PREVIEW",
+    });
+    const back = converterReducer(previewing, { type: "BACK" });
+    expect(back.step).toBe(4);
+    expect(back.status).toBe("completed");
+    expect(back.job?.status).toBe("completed");
+  });
+
+  it("back from a failure clears it and lands on Style", () => {
+    const failed = run(
+      [
+        {
+          type: "JOB_FAILED",
+          job: job("failed"),
+          error: { code: "ai-timeout", message: "Too slow" },
+        },
+      ],
+      processing,
+    );
+    const back = converterReducer(failed, { type: "BACK" });
+    expect(back.step).toBe(3);
+    expect(back.error).toBeNull();
+  });
+
+  it("replace-photo keeps settings and engine but drops photo state", () => {
     const replaced = converterReducer(
-      run([{ type: "SETTINGS_CHANGED", settings: { detail: "simpler" } }], adjusting),
+      run([{ type: "SETTINGS_CHANGED", settings: { detail: "simpler" } }], reviewing),
       { type: "PHOTO_REPLACED" },
     );
     expect(replaced.photo).toBeNull();
@@ -201,14 +239,14 @@ describe("converter machine — guards", () => {
 
 describe("converter machine — engine selection", () => {
   it("switches engine and keeps it across replace-photo and start-over", () => {
-    const local = converterReducer(adjusting, {
+    const local = converterReducer(styling, {
       type: "ENGINE_SELECTED",
       engine: "local",
     });
     expect(local.engine).toBe("local");
-    expect(
-      converterReducer(local, { type: "PHOTO_REPLACED" }).engine,
-    ).toBe("local");
+    expect(converterReducer(local, { type: "PHOTO_REPLACED" }).engine).toBe(
+      "local",
+    );
     expect(converterReducer(local, { type: "START_OVER" }).engine).toBe(
       "local",
     );
@@ -217,56 +255,35 @@ describe("converter machine — engine selection", () => {
   it("cannot switch engine mid-processing", () => {
     const processing = run(
       [{ type: "CONVERT_REQUESTED", job: job("processing") }],
-      adjusting,
+      styling,
     );
     expect(
       converterReducer(processing, { type: "ENGINE_SELECTED", engine: "local" })
         .engine,
     ).toBe("ai");
   });
-
-  it("engine switch after a failure preserves error state until retry", () => {
-    const failed = run(
-      [
-        { type: "CONVERT_REQUESTED", job: job("processing") },
-        {
-          type: "JOB_FAILED",
-          job: job("failed"),
-          error: { code: "ai-daily-limit", message: "Used up" },
-        },
-      ],
-      adjusting,
-    );
-    const switched = converterReducer(failed, {
-      type: "ENGINE_SELECTED",
-      engine: "local",
-    });
-    expect(switched.engine).toBe("local");
-    expect(switched.step).toBe(5);
-    expect(switched.settings).toEqual(failed.settings);
-  });
 });
 
 describe("converter machine — session restore", () => {
-  it("restores a mid-flow session as saved", () => {
+  it("restores a completed result onto the Adjust step as saved", () => {
     const restored = converterReducer(INITIAL_CONVERTER_STATE, {
       type: "SESSION_RESTORED",
-      state: adjusting,
+      state: reviewing,
     });
-    expect(restored).toEqual(adjusting);
+    expect(restored).toEqual(reviewing);
   });
 
-  it("never restores into a mid-flight or failed job", () => {
+  it("never restores into a mid-flight or failed job — lands on Style", () => {
     const processing = run(
       [{ type: "CONVERT_REQUESTED", job: job("processing") }],
-      adjusting,
+      styling,
     );
     const restored = converterReducer(INITIAL_CONVERTER_STATE, {
       type: "SESSION_RESTORED",
       state: processing,
     });
-    expect(restored.step).toBe(4);
-    expect(restored.status).toBe("adjusting");
+    expect(restored.step).toBe(3);
+    expect(restored.status).toBe("style-selected");
     expect(restored.job).toBeNull();
   });
 });

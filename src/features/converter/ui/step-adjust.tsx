@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/shared/button";
 import { Toggle } from "@/shared/toggle";
 import {
@@ -20,69 +19,51 @@ import {
 import { WordSlider } from "./word-slider";
 
 /**
- * Step 4 · Adjust (hi-fi 5d): preview left; right column shows exactly
- * one control — the detail slider — until "More adjustments" opens the
- * four expert controls. Deliberate: novices stay unblocked.
- *
- * AI engine (default): the pane shows the ORIGINAL cropped photo — the AI
- * result first appears on step 5. Local "Quick Outline": the pane is the
- * live line-art preview. One quiet control switches engines.
+ * Step 4 · Adjust — operates on the FINISHED page: the result sits beside
+ * the controls, so every slider has something visible to change. Nothing
+ * regenerates on its own; "Redraw" is an explicit button (an AI redraw is
+ * a new request), enabled only once a setting actually differs from the
+ * ones this page was drawn with. One control is visible until "More
+ * adjustments" opens the rest (hi-fi 5d's disclosure pattern).
  */
 export function StepAdjust({
   engine,
-  canSwitchEngine,
+  resultUrl,
   settings,
-  previewUrl,
-  previewPending,
+  dirty,
   onSettingsChange,
-  onEngineChange,
+  onRedraw,
+  onContinue,
   onBack,
-  onConvert,
 }: {
   engine: ConversionEngine;
-  canSwitchEngine: boolean;
+  resultUrl: string | null;
   settings: ConversionSettings;
-  /** AI: the cropped photo. Local: the provider's live preview. */
-  previewUrl: string | null;
-  previewPending: boolean;
+  /** True when settings differ from the ones the result was made with. */
+  dirty: boolean;
   onSettingsChange: (settings: Partial<ConversionSettings>) => void;
-  onEngineChange: (engine: ConversionEngine) => void;
+  onRedraw: () => void;
+  onContinue: () => void;
   onBack: () => void;
-  onConvert: () => void;
 }) {
   const [moreOpen, setMoreOpen] = useState(false);
   const ai = engine === "ai";
 
   return (
     <div className="flex flex-col items-start gap-[26px] md:flex-row">
-      {/* Live preview. */}
+      {/* The finished page. */}
       <div className="w-full flex-1 rounded-xl border border-line bg-card p-3.5">
         <div className="relative min-h-[330px] overflow-hidden rounded-lg border border-thumb-line bg-card">
-          {previewUrl ? (
-            // Only the image dims while a refresh is pending — dimming the
-            // whole pane would sink its text below WCAG AA contrast.
+          {resultUrl ? (
             <Image
-              src={previewUrl}
-              alt={
-                ai
-                  ? "Your cropped photo, ready to be drawn"
-                  : "Preview of your coloring page so far"
-              }
+              src={resultUrl}
+              alt="Your coloring page as it looks right now"
               fill
               unoptimized
-              className={cn("object-contain", previewPending && "opacity-60")}
+              className="object-contain"
             />
-          ) : (
-            <p className="absolute inset-0 flex items-center justify-center p-4 text-center font-mono text-[11.5px] text-ink-40">
-              {ai ? "your cropped photo" : "live line-art preview of your photo"}
-            </p>
-          )}
+          ) : null}
         </div>
-        {ai ? (
-          <p className="mt-2.5 text-sm/[1.45] text-ink-40">
-            The finished drawing appears on the next step.
-          </p>
-        ) : null}
       </div>
 
       {/* Controls. */}
@@ -90,9 +71,7 @@ export function StepAdjust({
         <div>
           <h2 className="text-subsection text-ink">Make it look right</h2>
           <p className="mt-1 text-base/[1.5] text-ink-60">
-            {ai
-              ? "Tell the AI how the page should look. You can skip this."
-              : "Move the slider until the lines look good. You can skip this."}
+            Happy with it? Continue. Otherwise change anything and redraw.
           </p>
         </div>
 
@@ -189,32 +168,32 @@ export function StepAdjust({
           ) : null}
         </div>
 
-        <div className="mt-0.5 flex gap-3">
-          <Button size="xl" className="flex-1" onClick={onConvert}>
-            {ai ? "Create AI Coloring Page" : "Make my page"}
+        <div className="mt-0.5 flex flex-col gap-2.5">
+          <Button size="xl" onClick={onContinue}>
+            Looks right — continue
           </Button>
-          <Button variant="secondary" size="xl" onClick={onBack}>
-            Back
-          </Button>
+          <div className="flex gap-2.5">
+            <Button
+              variant="secondary"
+              size="lg"
+              className="flex-1"
+              disabled={!dirty}
+              onClick={onRedraw}
+            >
+              {ai ? "Redraw with these changes" : "Apply these changes"}
+            </Button>
+            <Button variant="secondary" size="lg" onClick={onBack}>
+              Back
+            </Button>
+          </div>
         </div>
 
-        {canSwitchEngine ? (
-          <Button
-            variant="quiet"
-            size="md"
-            className="self-start text-[15px]"
-            onClick={() => onEngineChange(ai ? "local" : "ai")}
-          >
-            {ai
-              ? "Use Quick Outline instead — fast · private · lower quality"
-              : "Use AI Coloring Page instead — best quality"}
-          </Button>
-        ) : null}
-
         <p className="text-sm/[1.45] text-ink-40">
-          {ai
-            ? "Your photo is sent securely to draw the page, then deleted. It is never published or added to the library."
-            : "Quick Outline runs on this device — your photo never leaves it. Nothing is published."}
+          {dirty
+            ? ai
+              ? "Redrawing asks the AI for a fresh page with these settings."
+              : "Applying redraws the page on this device — instant and free."
+            : "Move a slider to enable redrawing."}
         </p>
       </div>
     </div>

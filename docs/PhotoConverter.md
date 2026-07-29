@@ -8,14 +8,19 @@ Two engines answer the same wizard (ADR 012):
 
 - **AI Coloring Page** (default, best quality) — the server sends the
   original cropped photo to the configured vendor (Flux) with a centrally
-  built prompt; the result is quality-validated before the browser sees
-  it. Step 4 shows the cropped photo; the drawing first appears on step 5.
+  built prompt; the result is quality-validated before the browser sees it.
 - **Quick Outline** (fast · private · lower quality) — the on-device
-  ADR-011 pipeline, with its live line-art preview on step 4. Also the
-  fallback remedy when AI fails or the daily AI budget is spent.
+  ADR-011 pipeline. Also the fallback remedy when AI fails or the daily
+  AI budget is spent.
 
-One quiet control on step 4 switches engines; the choice survives
-replace-photo, start-over and refresh.
+**Generation fires from the Style step (3), and the Adjust step (4)
+operates on the finished result**: the page sits beside the sliders, and
+"Redraw with these changes" is an explicit button that arms only when a
+setting differs from the ones the page was drawn with — sliders are never
+shown without a picture they can visibly change, and a paid AI redraw
+can never fire from a slider drag. Step 5 is the full-size paper preview,
+step 6 print. The engine switch and the engine-aware privacy line live on
+step 3; the choice survives replace-photo, start-over and refresh.
 
 ## Code map
 

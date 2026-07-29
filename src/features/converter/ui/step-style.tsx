@@ -5,13 +5,15 @@ import { Button } from "@/shared/button";
 import {
   CONVERTER_STYLE_LABELS,
   CONVERTER_STYLES,
+  type ConversionEngine,
   type ConverterStyle,
 } from "@/types/converter";
 
 /**
- * Step 3 · Style. Three cards, one choice. Selection mirrors the category
- * tile pattern: accent border + tint + a trailing ✓, never colour alone.
- * The mini swatches suggest line density with a plain stripe pattern.
+ * Step 3 · Style — the settings home and the launch pad: generation fires
+ * from here, so the very next thing the user sees is their picture.
+ * Selection mirrors the category tile pattern: accent border + tint + a
+ * trailing ✓, never colour alone.
  */
 const SWATCH_SPACING: Record<ConverterStyle, number> = {
   bold: 12,
@@ -21,20 +23,29 @@ const SWATCH_SPACING: Record<ConverterStyle, number> = {
 
 export function StepStyle({
   style,
+  engine,
+  canSwitchEngine,
   onStyleSelect,
+  onEngineChange,
   onBack,
-  onNext,
+  onConvert,
 }: {
   style: ConverterStyle;
+  engine: ConversionEngine;
+  canSwitchEngine: boolean;
   onStyleSelect: (style: ConverterStyle) => void;
+  onEngineChange: (engine: ConversionEngine) => void;
   onBack: () => void;
-  onNext: () => void;
+  onConvert: () => void;
 }) {
+  const ai = engine === "ai";
   return (
     <div className="mx-auto max-w-[640px]">
       <h2 className="text-subsection text-ink">Pick a style</h2>
       <p className="mt-1.5 text-base/[1.5] text-ink-60">
-        You can fine-tune it on the next step.
+        {ai
+          ? "The AI draws your page in this style. You can fine-tune it after."
+          : "You can fine-tune the result after."}
       </p>
 
       <div
@@ -88,10 +99,29 @@ export function StepStyle({
         <Button variant="secondary" size="xl" onClick={onBack}>
           Back
         </Button>
-        <Button size="xl" className="flex-1" onClick={onNext}>
-          Next: adjust it
+        <Button size="xl" className="flex-1" onClick={onConvert}>
+          {ai ? "Create AI Coloring Page" : "Make my page"}
         </Button>
       </div>
+
+      {canSwitchEngine ? (
+        <Button
+          variant="quiet"
+          size="md"
+          className="mt-3 text-[15px]"
+          onClick={() => onEngineChange(ai ? "local" : "ai")}
+        >
+          {ai
+            ? "Use Quick Outline instead — fast · private · lower quality"
+            : "Use AI Coloring Page instead — best quality"}
+        </Button>
+      ) : null}
+
+      <p className="mt-3 text-sm/[1.45] text-ink-40">
+        {ai
+          ? "Your photo is sent securely to draw the page, then deleted. It is never published or added to the library."
+          : "Quick Outline runs on this device — your photo never leaves it. Nothing is published."}
+      </p>
     </div>
   );
 }

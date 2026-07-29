@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import {
+  CONVERSION_UPLOAD_LIMITS,
   CONVERSIONS_API_VERSION,
   conversionSettingsSchema,
   type ConversionCreateResponse,
@@ -40,6 +41,10 @@ export async function POST(request: NextRequest) {
   const image = form.get("image");
   if (!(image instanceof File)) {
     return errorResponse("corrupt-image", 400);
+  }
+  // Declared-size rejection before buffering (see handoffs route).
+  if (image.size > CONVERSION_UPLOAD_LIMITS.maxBytes) {
+    return errorResponse("file-too-large", 413);
   }
   const settings = conversionSettingsSchema.safeParse(
     (() => {

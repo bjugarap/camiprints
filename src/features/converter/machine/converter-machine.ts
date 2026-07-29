@@ -25,16 +25,21 @@ import {
  */
 export type ConverterStep = 1 | 2 | 3 | 4 | 5 | 6;
 
+/**
+ * Generation fires from the Style step; the Adjust step operates on the
+ * finished result (see the page → tweak → redraw). Sliders are never
+ * shown before there is a picture for them to change.
+ */
 export type ConverterStatus =
   | "idle" // step 1, no photo yet
   | "uploaded" // step 1, photo resolved, rights pending/confirmed
   | "cropping" // step 2
-  | "style-selected" // step 3
-  | "adjusting" // step 4
-  | "processing" // step 5, job running
-  | "completed" // step 5, result ready for review
+  | "style-selected" // step 3 — settings home; generation starts here
+  | "processing" // step 4, job running
+  | "completed" // step 4, result shown WITH the adjustment controls
+  | "previewing" // step 5, full-size paper preview
   | "printing" // step 6
-  | "error"; // step 5, job failed — settings intact
+  | "error"; // step 4, job failed — settings intact
 
 export interface ConverterState {
   status: ConverterStatus;
@@ -75,30 +80,24 @@ export type ConverterEvent =
   | { type: "ENGINE_SELECTED"; engine: ConversionEngine }
   | { type: "STYLE_SELECTED"; style: ConversionSettings["style"] }
   | { type: "SETTINGS_CHANGED"; settings: Partial<ConversionSettings> }
-  | { type: "CONVERT_REQUESTED"; job: ConversionJob }
+  | { type: "CONVERT_REQUESTED"; job: ConversionJob } // 3→4, or a redraw/retry on 4
   | { type: "JOB_PROGRESS"; progress: ConversionProgress }
   | { type: "JOB_COMPLETED"; job: ConversionJob }
   | { type: "JOB_FAILED"; job: ConversionJob | null; error: ConversionErrorInfo }
-  | { type: "JOB_CANCELLED" } // returns to step 4, settings intact
-  | { type: "RETRY_WITH_MORE_CONTRAST" } // remedy: bump contrast, stay on 5
-  | { type: "CONTINUE_TO_PRINT" }
-  | { type: "BACK_TO_ADJUSTMENTS" }
+  | { type: "JOB_CANCELLED" } // returns to step 3, settings intact
+  | { type: "RETRY_WITH_MORE_CONTRAST" } // remedy: bump contrast, stay on 4
+  | { type: "CONTINUE_TO_PREVIEW" } // 4 (completed) → 5
+  | { type: "CONTINUE_TO_PRINT" } // 5 → 6
+  | { type: "BACK_TO_SETTINGS" } // failure remedy → step 3, error cleared
   | { type: "START_OVER" }
   | { type: "SESSION_RESTORED"; state: ConverterState };
-
-/** Steps whose entry requirements are met, given the current state. */
-export function reachableStep(state: ConverterState): ConverterStep {
-  if (!state.photo || !state.rightsConfirmed) return 1;
-  if (state.job?.status === "completed") return 6;
-  return 4;
-}
 
 const STEP_STATUS: Record<ConverterStep, ConverterStatus> = {
   1: "uploaded",
   2: "cropping",
   3: "style-selected",
-  4: "adjusting",
-  5: "completed",
+  4: "completed",
+  5: "previewing",
   6: "printing",
 };
 
@@ -150,23 +149,28 @@ export function converterReducer(
       if (state.status === "processing") return state;
       if (state.step === 1 && (!state.photo || !state.rightsConfirmed))
         return state;
-      if (state.step >= 4) return state; // 4→5 is CONVERT_REQUESTED, 5→6 is CONTINUE_TO_PRINT
+      // 3→4 is CONVERT_REQUESTED (the picture must exist before Adjust);
+      // 4→5 is CONTINUE_TO_PREVIEW; 5→6 is CONTINUE_TO_PRINT.
+      if (state.step >= 3) return state;
       return atStep(state, (state.step + 1) as ConverterStep);
     }
 
     case "BACK": {
       if (state.status === "processing") return state;
       if (state.step === 1) return state;
-      // From step 5/6, Back returns to Adjust — lossless by construction.
-      const target = (state.step >= 5 ? 4 : state.step - 1) as ConverterStep;
-      return atStep(state, target);
+      // Leaving a failure via Back is the same as the remedy: settings
+      // home, error cleared. All Back moves are lossless by construction.
+      const target = (state.status === "error" ? 3 : state.step - 1) as ConverterStep;
+      return { ...atStep(state, target), error: null, progress: null };
     }
 
     case "GO_TO_STEP": {
       if (state.status === "processing") return state;
       if (event.step >= state.step) return state; // stepper only goes back
       if (event.step === 5 || event.step === 6) return state;
-      return atStep(state, event.step);
+      // Step 4 only exists once a result does.
+      if (event.step === 4 && state.job?.status !== "completed") return state;
+      return { ...atStep(state, event.step), error: null };
     }
 
     case "CROP_CHANGED":
@@ -195,10 +199,11 @@ export function converterReducer(
 
     case "CONVERT_REQUESTED":
       if (!state.photo || !state.rightsConfirmed) return state;
+      if (state.status === "processing") return state;
       return {
         ...state,
         status: "processing",
-        step: 5,
+        step: 4,
         job: event.job,
         progress: null,
         error: null,
@@ -213,7 +218,7 @@ export function converterReducer(
       return {
         ...state,
         status: "completed",
-        step: 5,
+        step: 4,
         job: event.job,
         progress: null,
         error: null,
@@ -221,11 +226,11 @@ export function converterReducer(
 
     case "JOB_FAILED":
       if (state.status !== "processing") return state;
-      // The core invariant: stay on step 5, keep every setting.
+      // The core invariant: stay put (step 4), keep every setting.
       return {
         ...state,
         status: "error",
-        step: 5,
+        step: 4,
         job: event.job,
         progress: null,
         error: event.error,
@@ -234,7 +239,7 @@ export function converterReducer(
     case "JOB_CANCELLED":
       if (state.status !== "processing") return state;
       return {
-        ...atStep(state, 4),
+        ...atStep(state, 3),
         job: null,
         progress: null,
         error: null,
@@ -251,25 +256,29 @@ export function converterReducer(
       return { ...state, settings: bumped };
     }
 
-    case "CONTINUE_TO_PRINT":
+    case "CONTINUE_TO_PREVIEW":
       if (state.status !== "completed") return state;
+      return atStep(state, 5);
+
+    case "CONTINUE_TO_PRINT":
+      if (state.status !== "previewing") return state;
       return atStep(state, 6);
 
-    case "BACK_TO_ADJUSTMENTS":
+    case "BACK_TO_SETTINGS":
       if (state.status === "processing") return state;
-      return { ...atStep(state, 4), error: null };
+      return { ...atStep(state, 3), error: null, progress: null };
 
     case "START_OVER":
       return { ...INITIAL_CONVERTER_STATE, engine: state.engine };
 
     case "SESSION_RESTORED":
       // Never restore into a mid-flight job — the work is gone after a
-      // refresh; land on the nearest safe step with everything else intact.
+      // refresh; land back at the settings home with everything intact.
       if (
         event.state.status === "processing" ||
         event.state.status === "error"
       ) {
-        return { ...atStep(event.state, 4), job: null, progress: null, error: null };
+        return { ...atStep(event.state, 3), job: null, progress: null, error: null };
       }
       return event.state;
 

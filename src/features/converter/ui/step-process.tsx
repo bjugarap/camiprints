@@ -10,9 +10,9 @@ import type {
 import { CONVERTER_ERROR_COPY } from "@/types/converter";
 
 /**
- * Step 5 · Preview: the working state while the provider runs, the calm
- * failure shell if it doesn't (settings always intact, per the handoff:
- * "never a restart"), and the finished preview for review.
+ * The working state while a page is generated (step 4), the calm failure
+ * shell if it fails (settings always intact, per the handoff: "never a
+ * restart"), and the step-5 full-size preview.
  */
 export function StepWorking({
   progress,
@@ -25,7 +25,7 @@ export function StepWorking({
   const completed = progress?.completedStages ?? 0;
   return (
     <div className="mx-auto max-w-[560px]">
-      <p className="text-eyebrow text-ink-40">Step 5 · working</p>
+      <p className="text-eyebrow text-ink-40">Step 4 · working</p>
       <h2 className="text-subsection mt-2 text-ink">Making your page…</h2>
       <div
         role="progressbar"
@@ -73,7 +73,7 @@ export function StepFailed({
     quickOutlineAvailable && error.code !== "ai-daily-limit";
   return (
     <div className="mx-auto max-w-[560px]">
-      <p className="text-eyebrow text-ink-40">Step 5 · it didn’t work</p>
+      <p className="text-eyebrow text-ink-40">Step 4 · it didn’t work</p>
       <div
         role="alert"
         className="mt-3 rounded-xl border-[1.5px] border-error bg-card p-[16px_18px]"
@@ -97,7 +97,7 @@ export function StepFailed({
             Pick a different photo
           </Button>
           <Button variant="quiet" size="md" onClick={onBackToAdjustments}>
-            Back to adjustments
+            Back to style &amp; settings
           </Button>
         </div>
       </div>
@@ -141,7 +141,7 @@ export function StepPreviewResult({
           Use this page
         </Button>
         <Button variant="secondary" size="xl" onClick={onBackToAdjustments}>
-          Back to adjustments
+          Adjust it
         </Button>
       </div>
     </div>

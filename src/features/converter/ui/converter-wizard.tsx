@@ -33,7 +33,6 @@ import {
   getConversionProvider,
   getEngineConfig,
 } from "../providers/provider";
-import { encodeRasterBlob, rasterizeCrop } from "../providers/local/rasterize";
 import {
   clearConverterSession,
   loadConverterState,
@@ -123,8 +122,6 @@ export function ConverterWizard() {
   const abortRef = useRef<AbortController | null>(null);
   const [photoUrl, setPhotoBlobUrl] = useObjectUrl();
   const [resultUrl, setResultBlobUrl] = useObjectUrl();
-  const [previewUrl, setPreviewBlobUrl] = useObjectUrl();
-  const [previewPending, setPreviewPending] = useState(false);
   const [intakeError, setIntakeError] = useState(
     INITIAL_CONVERTER_STATE.error,
   );
@@ -213,46 +210,6 @@ export function ConverterWizard() {
   useEffect(() => {
     if (booted) saveConverterState(state);
   }, [state, booted]);
-
-  /*
-   * Adjust-step preview, debounced. AI engine: always the ORIGINAL
-   * cropped photo — the AI result first appears on step 5, never a local
-   * edge map. Local engine: the provider's fast line-art preview.
-   */
-  useEffect(() => {
-    if (state.step !== 4 || !photoBlobRef.current) return;
-    let live = true;
-    setPreviewPending(true);
-    const timer = setTimeout(async () => {
-      const photo = photoBlobRef.current;
-      if (!photo) return;
-      let blob: Blob | null = null;
-      if (state.engine === "ai") {
-        try {
-          const raster = await rasterizeCrop(photo, state.crop, 480);
-          blob = await encodeRasterBlob(raster, "image/jpeg", 0.85);
-        } catch {
-          blob = null;
-        }
-      } else {
-        const provider = await getConversionProvider("local");
-        blob = provider.preview
-          ? await provider.preview({
-              photo,
-              crop: state.crop,
-              settings: state.settings,
-            })
-          : null;
-      }
-      if (!live) return;
-      if (blob) setPreviewBlobUrl(blob);
-      setPreviewPending(false);
-    }, 300);
-    return () => {
-      live = false;
-      clearTimeout(timer);
-    };
-  }, [state.step, state.engine, state.crop, state.settings, setPreviewBlobUrl]);
 
   /* The conversion itself — engine/provider-agnostic, poll-ready,
      cancellable. */
@@ -359,12 +316,11 @@ export function ConverterWizard() {
     resultBlobRef.current = null;
     setPhotoBlobUrl(null);
     setResultBlobUrl(null);
-    setPreviewBlobUrl(null);
     setIntakeError(null);
     attemptRef.current = 0;
     void clearConverterSession();
     dispatch({ type: "START_OVER" });
-  }, [setPhotoBlobUrl, setResultBlobUrl, setPreviewBlobUrl]);
+  }, [setPhotoBlobUrl, setResultBlobUrl]);
 
   const landscape = state.crop.orientation === "landscape";
 
@@ -427,27 +383,14 @@ export function ConverterWizard() {
             {state.step === 3 ? (
               <StepStyle
                 style={state.settings.style}
-                onStyleSelect={(style) =>
-                  dispatch({ type: "STYLE_SELECTED", style })
-                }
-                onBack={() => dispatch({ type: "BACK" })}
-                onNext={() => dispatch({ type: "NEXT" })}
-              />
-            ) : null}
-
-            {state.step === 4 ? (
-              <StepAdjust
                 engine={state.engine}
                 canSwitchEngine={
                   state.engine === "ai"
                     ? engineConfig.localEnabled
                     : engineConfig.aiEnabled
                 }
-                settings={state.settings}
-                previewUrl={previewUrl}
-                previewPending={previewPending}
-                onSettingsChange={(settings) =>
-                  dispatch({ type: "SETTINGS_CHANGED", settings })
+                onStyleSelect={(style) =>
+                  dispatch({ type: "STYLE_SELECTED", style })
                 }
                 onEngineChange={(engine) =>
                   dispatch({ type: "ENGINE_SELECTED", engine })
@@ -457,14 +400,32 @@ export function ConverterWizard() {
               />
             ) : null}
 
-            {state.step === 5 && state.status === "processing" ? (
+            {state.step === 4 && state.status === "completed" ? (
+              <StepAdjust
+                engine={state.engine}
+                resultUrl={resultUrl}
+                settings={state.settings}
+                dirty={
+                  JSON.stringify(state.settings) !==
+                  JSON.stringify(state.job?.settings)
+                }
+                onSettingsChange={(settings) =>
+                  dispatch({ type: "SETTINGS_CHANGED", settings })
+                }
+                onRedraw={() => void startConversion()}
+                onContinue={() => dispatch({ type: "CONTINUE_TO_PREVIEW" })}
+                onBack={() => dispatch({ type: "BACK" })}
+              />
+            ) : null}
+
+            {state.step === 4 && state.status === "processing" ? (
               <StepWorking
                 progress={state.progress}
                 onCancel={() => abortRef.current?.abort()}
               />
             ) : null}
 
-            {state.step === 5 && state.status === "error" && state.error ? (
+            {state.step === 4 && state.status === "error" && state.error ? (
               <StepFailed
                 error={state.error}
                 quickOutlineAvailable={
@@ -503,19 +464,17 @@ export function ConverterWizard() {
                   dispatch({ type: "PHOTO_REPLACED" });
                 }}
                 onBackToAdjustments={() =>
-                  dispatch({ type: "BACK_TO_ADJUSTMENTS" })
+                  dispatch({ type: "BACK_TO_SETTINGS" })
                 }
               />
             ) : null}
 
-            {state.step === 5 && state.status === "completed" ? (
+            {state.step === 5 ? (
               <StepPreviewResult
                 resultUrl={resultUrl}
                 landscape={landscape}
                 onContinue={() => dispatch({ type: "CONTINUE_TO_PRINT" })}
-                onBackToAdjustments={() =>
-                  dispatch({ type: "BACK_TO_ADJUSTMENTS" })
-                }
+                onBackToAdjustments={() => dispatch({ type: "BACK" })}
               />
             ) : null}
 

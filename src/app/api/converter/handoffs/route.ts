@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import {
+  HANDOFF_LIMITS,
   HANDOFF_VERSION,
   type HandoffCreateResponse,
   type HandoffError,
@@ -86,6 +87,12 @@ export async function POST(request: NextRequest) {
   const image = form.get("image");
   if (!(image instanceof File)) {
     return errorResponse(request, "missing-image", 400);
+  }
+  // Reject on the declared size BEFORE buffering the body — reading an
+  // oversized upload just to refuse it wastes memory and can fail under
+  // load. The service re-checks the real byte length.
+  if (image.size > HANDOFF_LIMITS.maxBytes) {
+    return errorResponse(request, "file-too-large", 413);
   }
 
   try {

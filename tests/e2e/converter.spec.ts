@@ -44,10 +44,7 @@ async function completeWizardFromCrop(
 ): Promise<void> {
   await page.getByRole("button", { name: "Next: pick a style" }).click();
   await page.getByRole("radio", { name: /Bold & simple/ }).click();
-  await page.getByRole("button", { name: "Next: adjust it" }).click();
-  await expect(
-    page.getByRole("heading", { name: "Make it look right" }),
-  ).toBeVisible();
+  // Generation fires from the Style step; Adjust operates on the result.
   if (engine === "local") {
     await page
       .getByRole("button", { name: /Use Quick Outline instead/ })
@@ -59,8 +56,12 @@ async function completeWizardFromCrop(
       .click();
   }
   await expect(
-    page.getByRole("heading", { name: "Here’s your page" }),
+    page.getByRole("heading", { name: "Make it look right" }),
   ).toBeVisible({ timeout: 45_000 });
+  await page.getByRole("button", { name: "Looks right — continue" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Here’s your page" }),
+  ).toBeVisible();
   await page.getByRole("button", { name: "Use this page" }).click();
   await expect(
     page.getByRole("heading", { name: "Your page is ready" }),
@@ -97,6 +98,33 @@ test.describe("photo converter — upload flow", () => {
     expect((await pdfDownload).suggestedFilename()).toBe("coloring-page.pdf");
 
     await expect(page.getByRole("button", { name: "Print it" })).toBeVisible();
+  });
+
+  test("adjusting after the result enables an explicit redraw", async ({
+    page,
+  }) => {
+    await page.goto("/create/photo");
+    await uploadPhoto(page);
+    await confirmRightsAndAdvance(page);
+    await page.getByRole("button", { name: "Next: pick a style" }).click();
+    await page.getByRole("button", { name: "Create AI Coloring Page" }).click();
+    await expect(
+      page.getByRole("heading", { name: "Make it look right" }),
+    ).toBeVisible({ timeout: 45_000 });
+
+    // Nothing changed yet — redraw must be disabled (a redraw costs money).
+    const redraw = page.getByRole("button", { name: "Redraw with these changes" });
+    await expect(redraw).toBeDisabled();
+
+    // Move the detail slider one notch: redraw arms, and pressing it
+    // regenerates and returns to the result.
+    await page.getByLabel("How much detail").focus();
+    await page.keyboard.press("ArrowRight");
+    await expect(redraw).toBeEnabled();
+    await redraw.click();
+    await expect(
+      page.getByRole("heading", { name: "Make it look right" }),
+    ).toBeVisible({ timeout: 45_000 });
   });
 
   test("Quick Outline mode still completes on-device", async ({ page }) => {
@@ -220,7 +248,7 @@ test.describe("converter accessibility", () => {
     expect(results.violations).toEqual([]);
   });
 
-  test("the wizard (photo step and adjust step) has no axe violations", async ({
+  test("the wizard (photo, style, and adjust-result steps) has no axe violations", async ({
     page,
   }) => {
     await page.goto("/create/photo");
@@ -229,10 +257,15 @@ test.describe("converter accessibility", () => {
     await uploadPhoto(page);
     await confirmRightsAndAdvance(page);
     await page.getByRole("button", { name: "Next: pick a style" }).click();
-    await page.getByRole("button", { name: "Next: adjust it" }).click();
+    await expect(
+      page.getByRole("heading", { name: "Pick a style" }),
+    ).toBeVisible();
+    expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+
+    await page.getByRole("button", { name: "Create AI Coloring Page" }).click();
     await expect(
       page.getByRole("heading", { name: "Make it look right" }),
-    ).toBeVisible();
+    ).toBeVisible({ timeout: 45_000 });
     expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   });
 });
