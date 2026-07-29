@@ -2,17 +2,18 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
 test.describe("home", () => {
-  test("renders the hero and site chrome", async ({ page }) => {
+  test("renders the child-first home: compact hero, category grid", async ({
+    page,
+  }) => {
     await page.goto("/");
     await expect(
       page.getByRole("heading", { name: "Free coloring pages, made simple." }),
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Browse coloring pages" }),
+      page.getByRole("heading", { name: "Pick a picture" }),
     ).toBeVisible();
-    await expect(
-      page.getByRole("link", { name: "Turn a photo into a page" }),
-    ).toBeVisible();
+    // Every category is on the page — no "See all" detour.
+    await expect(page.getByRole("link", { name: "Dinosaurs" })).toBeVisible();
     await expect(page.getByRole("contentinfo")).toContainText("CamiPrints");
   });
 
@@ -48,7 +49,7 @@ test.describe("calm mode", () => {
 test.describe("focus", () => {
   test("interactive elements carry the amber focus ring", async ({ page }) => {
     await page.goto("/");
-    const cta = page.getByRole("link", { name: "Browse coloring pages" });
+    const cta = page.getByRole("link", { name: "Dinosaurs" });
     await cta.focus();
     const outline = await cta.evaluate((el) => {
       const style = getComputedStyle(el);

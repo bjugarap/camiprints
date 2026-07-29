@@ -92,7 +92,7 @@ export default async function HomePage() {
                   label={label}
                   placeholder="bg-card"
                   className="size-[92px] rounded-xl border border-accent-tint-line"
-                  labelClassName="whitespace-pre-line text-[11px] text-[#8FA79F]"
+                  labelClassName="whitespace-pre-line text-[11px]"
                 />
               </div>
             ),

@@ -1,44 +1,76 @@
 # Photo converter
 
 Six steps at `/create/photo`: **1 Photo · 2 Crop · 3 Style · 4 Adjust ·
-5 Preview · 6 Print**. The shell (title, stepper, Back/Continue) is fixed;
-only the middle region changes. Full state inventory is in the design
-handoff (hi-fi 5d, wireframes 3a–3f).
+5 Preview · 6 Print**, one route, one guided wizard (hi-fi 5d). `/create`
+is the hub: one live tool, inert "coming later" cards.
 
-## Flow state
+## Code map
 
-One client-side object drives the flow:
-
-```ts
-{
-  step, file, crop, style, detail,
-  advanced: { lineWeight, contrast, removeBackground, invert },
-  jobId, status, // idle → uploading → queued → processing → ready | failed
-  error, resultUrl,
-}
+```
+src/features/converter/
+  machine/    converter-machine.ts — pure reducer state machine (ADR 010)
+  intake/     PhotoInputAdapter — file-upload, drag-and-drop,
+              chrome-extension; one shared validator (ADR 009)
+  providers/  PhotoConversionProvider seam + LocalProvider + AI stubs
+              (ADR 003, 011)
+  session/    sessionStorage state + IndexedDB blobs — refresh-proof
+  export/     PNG download, pdf-lib US Letter PDF
+  ui/         wizard orchestrator + one component per step
 ```
 
-Rules the implementation must keep (product constraints):
+## State machine
 
-- Every failure sets `error` and leaves `step` at **5** with everything else
-  untouched. There is no failure that restarts the flow.
-- Cancel during generation aborts the request and returns to step 4 with
-  settings intact.
-- Back is always available and lossless.
-- Upload progress is real byte progress — never an invented percentage.
-- Print on step 6 opens the system dialog directly. No interstitial.
+Explicit statuses: `idle → uploaded → cropping → style-selected →
+adjusting → processing → completed → printing`, plus `error`. Every UI
+action and provider callback is a typed event through
+`converterReducer(state, event)`; illegal transitions are no-ops. The
+product constraints are encoded as transitions and unit-tested:
+
+- **Every failure lands in `error` at step 5 with settings untouched.**
+  There is no failure that restarts the flow.
+- Cancel aborts the job and returns to step 4 with settings intact.
+- Back is always available and lossless; the stepper revisits completed
+  steps only.
+- Progress is real stage progress reported by the provider — never an
+  invented percentage.
+- Print on step 6 calls `window.print()` directly against the print
+  stylesheet (nav, footer and controls hidden; artwork centred in the
+  0.5in safe margin). No interstitial.
+
+## Session persistence
+
+State (serializable) → sessionStorage; photo/result blobs → IndexedDB.
+A refresh restores the wizard at the same step; a mid-flight or failed job
+is restored to step 4 (the work is gone, the settings are not). Start
+Over / Make another wipes both stores. All best-effort: blocked storage
+degrades to an in-memory session, never an error.
 
 ## Local pipeline (LocalProvider)
 
-Sharp: decode, EXIF-rotate, crop, resize, grayscale, normalize, contrast →
-OpenCV.js (WASM): Gaussian blur, Canny/adaptive threshold, contour cleanup
-(minimum-area scaled by the detail setting), morphological line smoothing,
-optional background simplification → PNG at print resolution plus a low-res
-preview. Style presets are parameter bundles over the same pipeline.
+Runs **in the browser** — the photo never leaves the device (ADR 011).
+Canvas rasterizes the crop (letter aspect, 1400px long edge working
+resolution); pure typed-array stages then run with progress reported
+between them:
+
+contrast → box blur → Sobel edges → threshold (+ background
+simplification) → connected-component contour cleanup → morphological
+line smoothing + line weight → render → PNG.
+
+Style presets and the word sliders resolve to numeric parameters in
+`resolveParams()`; thresholds are clamped below the blur-attenuated edge
+ceiling so no combination can be blind. Real failure modes are detected
+(`photo-too-dark` via mean luminance, `not-enough-detail` via mask
+density) and map to the hi-fi failure shell with a remedy that fixes the
+likely cause ("Try again with more contrast").
+
+The Adjust step's live preview is an optional provider capability
+(`preview()`, 420px pass); providers without it fall back to showing the
+cropped photo.
 
 ## Privacy
 
-Photos upload to a **private** bucket keyed by session, with `expiresAt`;
-expired uploads are deleted by scheduled cleanup. Results are anonymous and
-expire too unless the user opts in to save to their account. Admin access to
-any user photo is audit-logged (`AdminAuditLog`).
+Normal uploads are processed on-device and stored only in the browser's
+own sessionStorage/IndexedDB. Extension handoffs transit a private,
+single-use, expiring server store (see `docs/privacy-and-retention.md`).
+Nothing is published, nothing joins the library, no photo bytes are
+logged.

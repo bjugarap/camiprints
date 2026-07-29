@@ -55,7 +55,9 @@ export function Artwork({
       <span
         aria-hidden
         className={cn(
-          "font-mono text-[11.5px] leading-[1.7] text-ink-25",
+          // ink-40, not the mock's ink-25 — the label must clear WCAG AA
+          // contrast on the flat tint placeholders (footer precedent).
+          "font-mono text-[11.5px] leading-[1.7] text-ink-40",
           labelClassName,
         )}
       >

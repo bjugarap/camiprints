@@ -1,6 +1,9 @@
 # ADR 006 — Photo converter pipeline
 
-**Status**: Accepted · 2026-07-26
+**Status**: Superseded by ADR 011 (pipeline runs client-side) · was
+Accepted 2026-07-26. The step flow, style-preset model, upload limits and
+error-message requirements below still stand; only the execution location
+changed.
 
 ## Context
 

@@ -84,7 +84,7 @@ export function Header() {
             className="hidden not-calm:md:flex"
           >
             <div className="flex h-11 w-[220px] items-center gap-2 rounded-full border-[1.5px] border-line bg-paper px-4 focus-within:border-accent">
-              <span aria-hidden className="text-sm text-ink-25">
+              <span aria-hidden className="text-sm text-ink-40">
                 ⌕
               </span>
               <input
@@ -92,7 +92,7 @@ export function Header() {
                 name="q"
                 aria-label="Search pages"
                 placeholder="Search pages"
-                className="w-full bg-transparent text-[15px] text-ink outline-none placeholder:text-ink-25"
+                className="w-full bg-transparent text-[15px] text-ink outline-none placeholder:text-ink-40"
               />
             </div>
           </form>

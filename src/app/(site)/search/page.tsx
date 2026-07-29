@@ -35,7 +35,7 @@ function SearchField({ query }: { query: string }) {
   return (
     <form action="/search" role="search" className="mt-4">
       <div className="flex h-12 items-center gap-2 rounded-full border-[1.5px] border-line-strong bg-card py-1 pl-4 pr-1 focus-within:border-accent">
-        <span aria-hidden className="text-[15px] text-ink-25">
+        <span aria-hidden className="text-[15px] text-ink-40">
           ⌕
         </span>
         <input
@@ -44,7 +44,7 @@ function SearchField({ query }: { query: string }) {
           defaultValue={query}
           aria-label="Search coloring pages"
           placeholder="What would you like to colour?"
-          className="w-full bg-transparent text-base text-ink outline-none placeholder:text-ink-25"
+          className="w-full bg-transparent text-base text-ink outline-none placeholder:text-ink-40"
         />
         {query ? (
           <Link

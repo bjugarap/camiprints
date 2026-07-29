@@ -48,7 +48,7 @@ export function Field({
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? errorId : undefined}
         className={cn(
-          "h-12 rounded-field border-[1.5px] border-line-strong bg-card px-3.5 text-base text-ink placeholder:text-ink-25 focus:border-accent focus:outline-3",
+          "h-12 rounded-field border-[1.5px] border-line-strong bg-card px-3.5 text-base text-ink placeholder:text-ink-40 focus:border-accent focus:outline-3",
           error && "border-error",
           className,
         )}

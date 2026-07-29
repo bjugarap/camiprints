@@ -14,7 +14,13 @@
   --color-card: #ffffff;
   --color-ink: #191713;
   --color-ink-60: #57514a;
-  --color-ink-40: #8a8177;
+  /*
+   * ink-40 is darkened from the handoff's #8A8177: that value measures
+   * ~3.4:1 on paper, under the WCAG AA 4.5:1 minimum for the metadata
+   * sizes it is used at. #6E675E keeps the warm muted tone and clears
+   * 4.5:1 on paper, card and every category tint.
+   */
+  --color-ink-40: #6e675e;
   --color-ink-25: #a39a8d;
 
   /* Lines & borders */
@@ -198,6 +204,43 @@
     font: 600 11px/1 var(--font-sans);
     letter-spacing: 0.09em;
     text-transform: uppercase;
+  }
+
+  /*
+   * The converter's slider (handoff §Slider): 10px track, 30px white thumb
+   * with a 2.5px accent border. The accent fill is painted by an inline
+   * gradient on the element; these rules style the native control itself.
+   */
+  .converter-range {
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--color-line);
+    cursor: pointer;
+    display: block;
+  }
+  .converter-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: #fff;
+    border: 2.5px solid var(--color-accent);
+    box-shadow: 0 1px 3px rgba(25, 23, 19, 0.2);
+  }
+  .converter-range::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: #fff;
+    border: 2.5px solid var(--color-accent);
+    box-shadow: 0 1px 3px rgba(25, 23, 19, 0.2);
+  }
+  .converter-range::-moz-range-track {
+    height: 10px;
+    border-radius: 999px;
+    background: transparent;
   }
 
   /* The artwork placeholder: 45° cross-hatch standing in for line art. */

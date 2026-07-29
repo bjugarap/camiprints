@@ -312,7 +312,7 @@ export function FilterBar({
           <input type="hidden" name="sort" value={filters.sort} />
         ) : null}
         <div className="flex h-12 items-center gap-[9px] rounded-field border-[1.5px] border-line-strong bg-card px-4 focus-within:border-accent">
-          <span aria-hidden className="text-[15px] text-ink-25">
+          <span aria-hidden className="text-[15px] text-ink-40">
             ⌕
           </span>
           <input
@@ -321,7 +321,7 @@ export function FilterBar({
             defaultValue={filters.q ?? ""}
             aria-label={searchPlaceholder}
             placeholder={searchPlaceholder}
-            className="w-full bg-transparent text-base text-ink outline-none placeholder:text-ink-25"
+            className="w-full bg-transparent text-base text-ink outline-none placeholder:text-ink-40"
           />
         </div>
       </form>
