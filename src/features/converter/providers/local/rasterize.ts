@@ -23,6 +23,39 @@ export function cropCanvasSize(
     : { width: longEdge, height: Math.round(longEdge * LETTER_ASPECT) };
 }
 
+export const MAX_CROP_ZOOM = 3;
+
+/**
+ * The zoom floor: contain-fit relative to cover-fit. 1 when the photo and
+ * page share an aspect ratio; below 1 otherwise, allowing the user to zoom
+ * OUT until the whole photo is visible with white paper filling the rest.
+ * Depends only on the two aspect ratios, so the crop editor (CSS pixels)
+ * and the rasterizer (working pixels) always agree.
+ */
+export function minZoomFor(
+  photoW: number,
+  photoH: number,
+  frameW: number,
+  frameH: number,
+): number {
+  const cover = Math.max(frameW / photoW, frameH / photoH);
+  const contain = Math.min(frameW / photoW, frameH / photoH);
+  return cover > 0 ? contain / cover : 1;
+}
+
+export function clampCropZoom(
+  zoom: number,
+  photoW: number,
+  photoH: number,
+  frameW: number,
+  frameH: number,
+): number {
+  return Math.min(
+    MAX_CROP_ZOOM,
+    Math.max(minZoomFor(photoW, photoH, frameW, frameH), zoom),
+  );
+}
+
 function makeCanvas(width: number, height: number): OffscreenCanvas | HTMLCanvasElement {
   if (typeof OffscreenCanvas !== "undefined") {
     return new OffscreenCanvas(width, height);
@@ -60,11 +93,15 @@ export async function rasterizeCrop(
     const photoW = rotated ? bitmap.height : bitmap.width;
     const photoH = rotated ? bitmap.width : bitmap.height;
     const cover = Math.max(width / photoW, height / photoH);
-    const scale = cover * Math.max(1, crop.zoom);
+    // Zoom floor is contain-fit: the whole photo on the page, white
+    // margins where the aspect ratios differ.
+    const scale =
+      cover * clampCropZoom(crop.zoom, photoW, photoH, width, height);
 
     // Pan range: how far the scaled photo overhangs the frame per axis.
-    const overX = (photoW * scale - width) / 2;
-    const overY = (photoH * scale - height) / 2;
+    // No overhang (letterboxed axis) = no pan on that axis.
+    const overX = Math.max(0, (photoW * scale - width) / 2);
+    const overY = Math.max(0, (photoH * scale - height) / 2);
 
     ctx.save();
     ctx.translate(

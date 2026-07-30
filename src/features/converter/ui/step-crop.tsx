@@ -6,11 +6,20 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/shared/button";
 import type { CropState, ResolvedPhotoMeta } from "@/types/converter";
 
+import {
+  clampCropZoom,
+  MAX_CROP_ZOOM,
+  minZoomFor,
+} from "../providers/local/rasterize";
+
 /**
  * Step 2 · Crop. A fixed letter-aspect frame with the photo behind it:
  * drag (or arrow keys) to move, a slider to zoom, one button to rotate,
- * two pills for orientation. The transform math mirrors rasterizeCrop()
- * exactly, so what the frame shows is what the pipeline traces.
+ * two pills for orientation. The zoom floor is contain-fit — a photo whose
+ * shape differs from the page can always be zoomed out until ALL of it is
+ * visible, with white paper filling the rest ("Fit whole photo" jumps
+ * there). The transform math mirrors rasterizeCrop() exactly, so what the
+ * frame shows is what gets converted.
  */
 const LETTER_ASPECT = 8.5 / 11;
 
@@ -57,9 +66,25 @@ export function StepCrop({
     frameSize.width > 0
       ? Math.max(frameSize.width / photoW, frameSize.height / photoH)
       : 0;
-  const scale = cover * Math.max(1, crop.zoom);
+  // The floor depends only on aspect ratios, so photo dimensions work as
+  // frame stand-ins before the frame is measured.
+  const minZoom = minZoomFor(
+    photoW,
+    photoH,
+    frameSize.width || photoW,
+    frameSize.height || photoH,
+  );
+  const zoom = clampCropZoom(
+    crop.zoom,
+    photoW,
+    photoH,
+    frameSize.width || photoW,
+    frameSize.height || photoH,
+  );
+  const scale = cover * zoom;
   const overX = Math.max(0, (photoW * scale - frameSize.width) / 2);
   const overY = Math.max(0, (photoH * scale - frameSize.height) / 2);
+  const wholePhotoVisible = zoom <= minZoom + 0.001;
 
   const clamp = (value: number) => Math.min(1, Math.max(-1, value));
 
@@ -77,7 +102,8 @@ export function StepCrop({
     <div className="mx-auto max-w-[640px]">
       <h2 className="text-subsection text-ink">Frame the picture</h2>
       <p className="mt-1.5 text-base/[1.5] text-ink-60">
-        Move the photo until the part you want fills the page.
+        Move the photo until the part you want fills the page — or zoom out
+        to fit all of it.
       </p>
 
       {/* Orientation + rotate. */}
@@ -108,18 +134,33 @@ export function StepCrop({
             );
           })}
         </div>
-        <Button
-          variant="secondary"
-          size="md"
-          className="ml-auto border-line"
-          onClick={() =>
-            onCropChange({
-              rotation: ((crop.rotation + 90) % 360) as CropState["rotation"],
-            })
-          }
-        >
-          Rotate ↻
-        </Button>
+        <div className="ml-auto flex gap-2">
+          {minZoom < 0.999 ? (
+            <Button
+              variant="secondary"
+              size="md"
+              className="border-line"
+              disabled={wholePhotoVisible}
+              onClick={() =>
+                onCropChange({ zoom: minZoom, offsetX: 0, offsetY: 0 })
+              }
+            >
+              Fit whole photo
+            </Button>
+          ) : null}
+          <Button
+            variant="secondary"
+            size="md"
+            className="border-line"
+            onClick={() =>
+              onCropChange({
+                rotation: ((crop.rotation + 90) % 360) as CropState["rotation"],
+              })
+            }
+          >
+            Rotate ↻
+          </Button>
+        </div>
       </div>
 
       {/* The frame. */}
@@ -200,24 +241,36 @@ export function StepCrop({
         >
           Zoom
         </label>
-        <input
-          id="crop-zoom"
-          type="range"
-          min={1}
-          max={3}
-          step={0.05}
-          value={crop.zoom}
-          aria-valuetext={`${Math.round(crop.zoom * 100)}%`}
-          onChange={(event) =>
-            onCropChange({ zoom: Number(event.target.value) })
-          }
-          className="converter-range mt-2"
-          style={{
-            background: `linear-gradient(to right, var(--color-accent) 0% ${
-              ((crop.zoom - 1) / 2) * 100
-            }%, var(--color-line) ${((crop.zoom - 1) / 2) * 100}% 100%)`,
-          }}
-        />
+        {(() => {
+          const fillPercent =
+            ((zoom - minZoom) / (MAX_CROP_ZOOM - minZoom)) * 100;
+          return (
+            <input
+              id="crop-zoom"
+              type="range"
+              min={minZoom}
+              max={MAX_CROP_ZOOM}
+              step={0.01}
+              value={zoom}
+              aria-valuetext={
+                wholePhotoVisible
+                  ? "Whole photo visible"
+                  : `${Math.round(zoom * 100)}% of page fill`
+              }
+              onChange={(event) =>
+                onCropChange({ zoom: Number(event.target.value) })
+              }
+              className="converter-range mt-2"
+              style={{
+                background: `linear-gradient(to right, var(--color-accent) 0% ${fillPercent}%, var(--color-line) ${fillPercent}% 100%)`,
+              }}
+            />
+          );
+        })()}
+        <div className="mt-2 flex justify-between text-[13.5px] font-medium text-ink-40">
+          <span>{minZoom < 0.999 ? "Whole photo" : "Fill the page"}</span>
+          <span>Closer</span>
+        </div>
       </div>
 
       <div className="mt-5 flex gap-3">
