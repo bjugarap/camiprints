@@ -147,19 +147,19 @@
     "title": "Dinosaurs",
     "slug": "dinosaurs",
     "image": "/categories/dinosaurs.webp",
-    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Friendly smiling green dinosaur. Prehistoric landscape. Flowers. Trees. Volcano. Bright sunshine. Not scary. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Three happy friendly dinosaurs together: a green long-necked dinosaur, an orange dinosaur with short arms clearly visible, and a small blue spiky-backed dinosaur. Every dinosaur has a complete body with all arms and legs showing. Prehistoric landscape. Flowers. Trees. Volcano. Bright sunshine. Not scary. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
     "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
-    "seed": 778105010,
+    "seed": 328986189,
     "model": "flux-2-klein-9b",
     "dominantColors": [
-      "#F9F9EA",
-      "#AAC685",
-      "#D5EDF7",
-      "#CCEAF9"
+      "#E9F5E8",
+      "#F7F8E6",
+      "#C8ECF3",
+      "#F9F7DC"
     ],
-    "accentColor": "#F9D8A8",
-    "backgroundColor": "#FEF8EF",
-    "generatedAt": "2026-07-30T06:36:52.387Z"
+    "accentColor": "#F8E9A6",
+    "backgroundColor": "#FEFBEF",
+    "generatedAt": "2026-07-30T06:51:40.947Z"
   },
   {
     "title": "Kids Movies",
@@ -255,19 +255,19 @@
     "title": "Ocean",
     "slug": "ocean",
     "image": "/categories/ocean.webp",
-    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Cheerful smiling whale swimming with little fish above a colorful coral reef. Gentle bubbles. Sunbeams through clear blue water. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Cheerful smiling whale, a playful jumping dolphin and a friendly green sea turtle swimming together with little fish above a colorful coral reef. Gentle bubbles. Sunbeams through clear blue water. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
     "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
-    "seed": 706309704,
+    "seed": 260446175,
     "model": "flux-2-klein-9b",
     "dominantColors": [
-      "#B8E4EA",
-      "#A8D7E2",
-      "#C8E9E9",
-      "#E7F4E8"
+      "#B7EAED",
+      "#D7F4EC",
+      "#E8F8EB",
+      "#85CAE2"
     ],
-    "accentColor": "#B8E4EA",
-    "backgroundColor": "#F2FAFB",
-    "generatedAt": "2026-07-30T06:36:57.877Z"
+    "accentColor": "#B7EAED",
+    "backgroundColor": "#F2FBFC",
+    "generatedAt": "2026-07-30T06:56:07.323Z"
   },
   {
     "title": "Fantasy",
