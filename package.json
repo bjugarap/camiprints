@@ -13,7 +13,13 @@
     "e2e": "playwright test",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
-    "db:seed": "tsx prisma/seed.ts"
+    "db:seed": "tsx prisma/seed.ts",
+    "coloring:plan": "tsx scripts/coloring/plan.ts",
+    "coloring:generate": "tsx scripts/coloring/generate.ts",
+    "coloring:regenerate": "tsx scripts/coloring/regenerate.ts",
+    "coloring:validate": "tsx scripts/coloring/validate.ts",
+    "coloring:report": "tsx scripts/coloring/report.ts",
+    "coloring:publish": "tsx scripts/coloring/publish.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.5.7",

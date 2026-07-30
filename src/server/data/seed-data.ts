@@ -8,6 +8,14 @@ import type {
 } from "@/types/catalog";
 
 import categoryArt from "../../../art-generator/category-art.json";
+import publishedColoringPages from "../../../content/coloring-pages/published.json";
+import {
+  LAUNCH_CATEGORIES,
+} from "../../../content/coloring-pages/categories";
+import {
+  COMPLEXITY_CATALOG_MAPPING,
+  type PublishedPage,
+} from "../../../content/coloring-pages/publish-transform";
 
 /**
  * Launch catalog. Every page named in the design mocks is here with the
@@ -197,3 +205,48 @@ export const seedPages: ColoringPage[] = [
   page("shapes", "pattern-snail", "Pattern Snail", "A snail shell built from rings of simple patterns.", "easy", "3-5", "large-spaces", "2026-07-07"),
   page("shapes", "mosaic-star", "Mosaic Star", "A big star filled with a mosaic of small shapes.", "detailed", "9-plus", "fine-detail", "2026-07-07"),
 ];
+
+/**
+ * Published AI-generated pages (content/coloring-pages/published.json —
+ * approved via the review pipeline, see ADR 014) merge into the catalog
+ * here. Launch categories that aren't in the hand-written list above are
+ * appended the first time one of their pages publishes; their card art
+ * comes from the same artwork manifest.
+ */
+const published = publishedColoringPages as PublishedPage[];
+{
+  const knownCategories = new Set(seedCategories.map((c) => c.slug));
+  let nextOrder = seedCategories.length + 1;
+  for (const launch of LAUNCH_CATEGORIES) {
+    if (knownCategories.has(launch.slug)) continue;
+    if (!published.some((p) => p.categorySlug === launch.slug)) continue;
+    seedCategories.push({
+      slug: launch.slug,
+      name: launch.title,
+      description: launch.description,
+      tint: null,
+      thumbnailUrl: artBySlug.get(launch.slug) ?? null,
+      featured: false,
+      order: nextOrder++,
+    });
+  }
+  for (const p of published) {
+    const mapping = COMPLEXITY_CATALOG_MAPPING[p.complexity];
+    seedPages.push({
+      slug: p.slug,
+      title: p.title,
+      description: p.seoDescription,
+      categorySlug: p.categorySlug,
+      difficulty: mapping.difficulty,
+      ageRange: mapping.ageRange,
+      detailLevel: mapping.detailLevel,
+      orientation: "portrait",
+      thumbnailUrl: p.thumbnailPath,
+      previewUrl: p.previewPath,
+      pngUrl: p.printPath,
+      pdfUrl: null,
+      isEasyPick: false,
+      publishedAt: p.publishedAt.slice(0, 10),
+    });
+  }
+}
