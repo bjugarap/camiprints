@@ -54,6 +54,9 @@ export function CategoryTile({
         alt=""
         label={category.tint ?? category.slug}
         placeholder={selected ? "bg-card" : tint}
+        sizes={
+          isStrip ? "160px" : "(min-width: 1280px) 244px, (min-width: 768px) 33vw, 50vw"
+        }
         className={cn(
           isStrip ? "h-16 rounded-lg" : "rounded-thumb",
           // Home tiles shrink to the 120px Calm Mode treatment via CSS so

@@ -1,0 +1,632 @@
+[
+  {
+    "title": "Video Games",
+    "slug": "video-games",
+    "image": "/categories/video-games.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Happy child holding a colorful game controller. Fantasy gaming world. Floating stars. Coins. Magic energy. Original game-inspired environment. No recognizable game characters. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1708526837,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FAF8E6",
+      "#CBE9E9",
+      "#F7D6D8",
+      "#E7F3E6"
+    ],
+    "accentColor": "#FCCAB6",
+    "backgroundColor": "#FEF5F2",
+    "generatedAt": "2026-07-30T06:36:41.130Z"
+  },
+  {
+    "title": "Girls",
+    "slug": "girls",
+    "image": "/categories/girls.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Three happy girls playing outside with balloons, flowers, butterflies, sunshine and friendship. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 365052460,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#EAF6F4",
+      "#CEECF6",
+      "#D4EDF5",
+      "#F4F9F2"
+    ],
+    "accentColor": "#FDB9C8",
+    "backgroundColor": "#FFF2F5",
+    "generatedAt": "2026-07-30T06:36:41.241Z"
+  },
+  {
+    "title": "Kids TV Shows",
+    "slug": "kids-tv",
+    "image": "/categories/kids-tv.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Happy original cartoon animal friends laughing together in a colorful playful world. No recognizable TV characters. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1719146308,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#F8F8E9",
+      "#DCF1F6",
+      "#FAE9D5",
+      "#E3F2F2"
+    ],
+    "accentColor": "#F6D7B8",
+    "backgroundColor": "#FDF8F2",
+    "generatedAt": "2026-07-30T06:36:41.506Z"
+  },
+  {
+    "title": "Adults",
+    "slug": "adults",
+    "image": "/categories/adults.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Peaceful reading nook. Books. Coffee. Warm blanket. Large windows. Relaxing afternoon sunlight. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 288221253,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#E4CBBA",
+      "#EAD7C8",
+      "#E4CEC3",
+      "#FBF3DA"
+    ],
+    "accentColor": "#F7D9B7",
+    "backgroundColor": "#FEF8F2",
+    "generatedAt": "2026-07-30T06:36:45.235Z"
+  },
+  {
+    "title": "Toddlers",
+    "slug": "toddlers",
+    "image": "/categories/toddlers.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Toddlers coloring together with crayons, books, stuffed animals, blocks and educational toys. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 775023922,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#F9D7B9",
+      "#FBE7C8",
+      "#ECF7F2",
+      "#F7D9C4"
+    ],
+    "accentColor": "#F9D7B9",
+    "backgroundColor": "#FEF8F2",
+    "generatedAt": "2026-07-30T06:36:45.554Z"
+  },
+  {
+    "title": "Summer",
+    "slug": "summer",
+    "image": "/categories/summer.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Child walking toward a tropical beach with sunshine, palm trees, waves and colorful flowers. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 644583083,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FBF5D8",
+      "#F9F7E6",
+      "#FBEAC7",
+      "#E8F4E8"
+    ],
+    "accentColor": "#C9ECF4",
+    "backgroundColor": "#F5FCFD",
+    "generatedAt": "2026-07-30T06:36:48.293Z"
+  },
+  {
+    "title": "Fairy Tales",
+    "slug": "fairy-tales",
+    "image": "/categories/fairy-tales.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Beautiful magical castle. Rainbow. Fireworks. Magic forest. Sparkles. Storybook fantasy. Original fantasy world. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1809045161,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#B8D2E6",
+      "#F8F6E8",
+      "#C8D9E7",
+      "#E6EAE7"
+    ],
+    "accentColor": "#B8D2E6",
+    "backgroundColor": "#F2F7FA",
+    "generatedAt": "2026-07-30T06:36:48.864Z"
+  },
+  {
+    "title": "Kawaii",
+    "slug": "kawaii",
+    "image": "/categories/kawaii.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Cute smiling cupcake. Strawberries. Hearts. Whipped cream. Pastel desserts. Friendly smiling fruit. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 373646247,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FCF7E3",
+      "#FEFCF4",
+      "#FBF2DE",
+      "#F9E6DB"
+    ],
+    "accentColor": "#FAC898",
+    "backgroundColor": "#FEF5EC",
+    "generatedAt": "2026-07-30T06:36:49.280Z"
+  },
+  {
+    "title": "Dinosaurs",
+    "slug": "dinosaurs",
+    "image": "/categories/dinosaurs.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Friendly smiling green dinosaur. Prehistoric landscape. Flowers. Trees. Volcano. Bright sunshine. Not scary. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 778105010,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#F9F9EA",
+      "#AAC685",
+      "#D5EDF7",
+      "#CCEAF9"
+    ],
+    "accentColor": "#F9D8A8",
+    "backgroundColor": "#FEF8EF",
+    "generatedAt": "2026-07-30T06:36:52.387Z"
+  },
+  {
+    "title": "Kids Movies",
+    "slug": "kids-movies",
+    "image": "/categories/kids-movies.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Child enjoying popcorn inside a magical movie theater. Colorful lights. Exciting atmosphere. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1631961401,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FFFFFF",
+      "#DB6674",
+      "#F9C6AB",
+      "#CB5567"
+    ],
+    "accentColor": "#F9C6AB",
+    "backgroundColor": "#FEF5F0",
+    "generatedAt": "2026-07-30T06:36:52.703Z"
+  },
+  {
+    "title": "Educational",
+    "slug": "educational",
+    "image": "/categories/educational.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Child reading books. Science. Planets. Globe. Pencils. Letters. Curiosity. Learning. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 626446292,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#F8FDFC",
+      "#FCE9C8",
+      "#FAD9B8",
+      "#FBF8E8"
+    ],
+    "accentColor": "#FAD9B8",
+    "backgroundColor": "#FEF8F2",
+    "generatedAt": "2026-07-30T06:36:54.381Z"
+  },
+  {
+    "title": "Superheroes",
+    "slug": "superheroes",
+    "image": "/categories/superheroes.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Original young superheroes. Original costumes. Flowing capes. Bright city skyline. Dynamic heroic pose. Hope. Courage. Absolutely no resemblance to Marvel or DC. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1705862028,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FAF8E6",
+      "#FEFEFE",
+      "#CDEDF3",
+      "#FCF7DA"
+    ],
+    "accentColor": "#CDEDF3",
+    "backgroundColor": "#F6FCFD",
+    "generatedAt": "2026-07-30T06:38:47.164Z"
+  },
+  {
+    "title": "Animals",
+    "slug": "animals",
+    "image": "/categories/animals.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. A friendly fox, a bunny and a small owl sitting together in a sunny meadow. Warm friendship. Soft grass and a few flowers. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 916576086,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#F9FDF8",
+      "#E7FBFB",
+      "#C8D891",
+      "#FCE4C9"
+    ],
+    "accentColor": "#FC9654",
+    "backgroundColor": "#FEECE0",
+    "generatedAt": "2026-07-30T06:36:57.275Z"
+  },
+  {
+    "title": "Space",
+    "slug": "space",
+    "image": "/categories/space.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Child astronaut waving happily beside a friendly rocket. Smiling planets. Twinkling stars. Cheerful deep-blue cosmic sky. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1718182133,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#334B86",
+      "#FFFFFF",
+      "#F8E9DA",
+      "#B3E1E3"
+    ],
+    "accentColor": "#334B86",
+    "backgroundColor": "#DADFE9",
+    "generatedAt": "2026-07-30T06:36:57.831Z"
+  },
+  {
+    "title": "Ocean",
+    "slug": "ocean",
+    "image": "/categories/ocean.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Cheerful smiling whale swimming with little fish above a colorful coral reef. Gentle bubbles. Sunbeams through clear blue water. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 706309704,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#B8E4EA",
+      "#A8D7E2",
+      "#C8E9E9",
+      "#E7F4E8"
+    ],
+    "accentColor": "#B8E4EA",
+    "backgroundColor": "#F2FAFB",
+    "generatedAt": "2026-07-30T06:36:57.877Z"
+  },
+  {
+    "title": "Fantasy",
+    "slug": "fantasy",
+    "image": "/categories/fantasy.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Friendly baby dragon and a gentle unicorn together near a magical castle on a hill. Sparkles. A soft rainbow. Storybook wonder. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1781916748,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#C4E2F4",
+      "#D9DA9A",
+      "#D7EAF4",
+      "#E6F5F1"
+    ],
+    "accentColor": "#C4E2F4",
+    "backgroundColor": "#F4FAFD",
+    "generatedAt": "2026-07-30T06:37:00.760Z"
+  },
+  {
+    "title": "Vehicles",
+    "slug": "vehicles",
+    "image": "/categories/vehicles.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Happy little digger and a cheerful dump truck working together. Sunny construction site. Big rounded wheels. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 68503056,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#C5E7ED",
+      "#E7F4EC",
+      "#D6EEEC",
+      "#BEE4EC"
+    ],
+    "accentColor": "#F6D9A8",
+    "backgroundColor": "#FDF8EF",
+    "generatedAt": "2026-07-30T06:37:03.565Z"
+  },
+  {
+    "title": "Nature",
+    "slug": "nature",
+    "image": "/categories/nature.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Sunny meadow with bright flowers, one big friendly tree and butterflies. Rolling green hills. Gentle clouds. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 633841303,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#A6D8EA",
+      "#FAF7E8",
+      "#C6CB84",
+      "#D7D486"
+    ],
+    "accentColor": "#A6D8EA",
+    "backgroundColor": "#EFF8FB",
+    "generatedAt": "2026-07-30T06:37:04.992Z"
+  },
+  {
+    "title": "Holidays",
+    "slug": "holidays",
+    "image": "/categories/holidays.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Joyful birthday party scene. Balloons. Wrapped presents. A celebration cake. Falling confetti. Warm festive light. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 846563879,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FAF5E5",
+      "#DCE9E9",
+      "#EAD8D9",
+      "#E5ECE6"
+    ],
+    "accentColor": "#FCD7B9",
+    "backgroundColor": "#FEF8F2",
+    "generatedAt": "2026-07-30T06:37:05.104Z"
+  },
+  {
+    "title": "Birds",
+    "slug": "birds",
+    "image": "/categories/birds.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Cheerful colorful songbirds singing together on a blossom branch. Floating music notes. Bright spring morning. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1808279288,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#F9F8EA",
+      "#CCE5EE",
+      "#E8F3E9",
+      "#D9EBEC"
+    ],
+    "accentColor": "#CCE5EE",
+    "backgroundColor": "#F6FAFC",
+    "generatedAt": "2026-07-30T06:37:07.100Z"
+  },
+  {
+    "title": "Insects",
+    "slug": "insects",
+    "image": "/categories/insects.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Smiling bee and butterfly flying together over bright garden flowers. A little ladybug on a leaf. Sunny garden. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 605592059,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#B6E5F3",
+      "#F7F9E7",
+      "#C8EBF3",
+      "#E9F6EC"
+    ],
+    "accentColor": "#B6E5F3",
+    "backgroundColor": "#F2FAFD",
+    "generatedAt": "2026-07-30T06:37:08.491Z"
+  },
+  {
+    "title": "Farm",
+    "slug": "farm",
+    "image": "/categories/farm.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Red barn with a happy cow, a pink pig and fluffy chicks in a sunny farmyard. A little tractor. Rolling fields. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1091480349,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FAFAF4",
+      "#D7F2FB",
+      "#D3EEFB",
+      "#E8F7F7"
+    ],
+    "accentColor": "#FBECA7",
+    "backgroundColor": "#FEFCEF",
+    "generatedAt": "2026-07-30T06:37:08.951Z"
+  },
+  {
+    "title": "Food",
+    "slug": "food",
+    "image": "/categories/food.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Cheerful picnic of smiling fruit friends. A happy strawberry, an orange and a watermelon slice. Sunshine and a checkered blanket. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1399472236,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#F7F9EB",
+      "#EAF6EB",
+      "#D2EDF4",
+      "#FBF9F0"
+    ],
+    "accentColor": "#FA867A",
+    "backgroundColor": "#FEE9E7",
+    "generatedAt": "2026-07-30T06:37:10.838Z"
+  },
+  {
+    "title": "Sports",
+    "slug": "sports",
+    "image": "/categories/sports.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Happy children playing with a soccer ball in a sunny park. Movement and laughter. Simple green field. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 901114959,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#F9F9E9",
+      "#D6F2F3",
+      "#B6C689",
+      "#D7DA93"
+    ],
+    "accentColor": "#F7ECAA",
+    "backgroundColor": "#FEFCF0",
+    "generatedAt": "2026-07-30T06:37:11.996Z"
+  },
+  {
+    "title": "Music",
+    "slug": "music",
+    "image": "/categories/music.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Cheerful child playing a colorful xylophone. Floating musical notes. Friendly instruments gathered around. Joyful sound. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 961641663,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FEFEFE",
+      "#FDD6BB",
+      "#C4C99B",
+      "#B77657"
+    ],
+    "accentColor": "#FDD6BB",
+    "backgroundColor": "#FFF8F3",
+    "generatedAt": "2026-07-30T06:37:12.450Z"
+  },
+  {
+    "title": "Weather",
+    "slug": "weather",
+    "image": "/categories/weather.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Smiling sun peeking from behind a fluffy cloud. A soft rainbow. A few gentle sparkling raindrops. Bright sky. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1711871957,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#AADBFA",
+      "#FBFBFA",
+      "#C8E9FA",
+      "#C5DAA6"
+    ],
+    "accentColor": "#AADBFA",
+    "backgroundColor": "#F0F9FE",
+    "generatedAt": "2026-07-30T06:37:14.919Z"
+  },
+  {
+    "title": "Seasons",
+    "slug": "seasons",
+    "image": "/categories/seasons.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. One friendly tree shown through four seasons at once. Pink blossoms, green summer leaves, orange autumn leaves and soft snow. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1923371867,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FAFEFE",
+      "#DBF6FC",
+      "#E9FBFC",
+      "#945D42"
+    ],
+    "accentColor": "#FAC8C6",
+    "backgroundColor": "#FEF5F5",
+    "generatedAt": "2026-07-30T06:37:15.555Z"
+  },
+  {
+    "title": "Flowers",
+    "slug": "flowers",
+    "image": "/categories/flowers.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Bright bouquet of smiling flowers in a watering can. A butterfly landing on a petal. Warm garden sunshine. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 677217145,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#E9F9F6",
+      "#FBFBED",
+      "#DAF3F7",
+      "#F5FBF2"
+    ],
+    "accentColor": "#E9E69A",
+    "backgroundColor": "#FBFAED",
+    "generatedAt": "2026-07-30T06:37:16.008Z"
+  },
+  {
+    "title": "Trucks",
+    "slug": "trucks",
+    "image": "/categories/trucks.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Happy big dump truck with a friendly face carrying a small load of dirt. Orange traffic cones. Sunny work day. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1169752638,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#CEEDF9",
+      "#E7F6F4",
+      "#FBE8C9",
+      "#FAFBF7"
+    ],
+    "accentColor": "#EAA858",
+    "backgroundColor": "#FBEFE1",
+    "generatedAt": "2026-07-30T06:37:18.475Z"
+  },
+  {
+    "title": "Planes",
+    "slug": "planes",
+    "image": "/categories/planes.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Friendly little airplane flying through fluffy clouds beside a colorful hot air balloon. Bright blue sky. Gentle sunshine. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1364420819,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FFFFFF",
+      "#C6E7EC",
+      "#8CC8E8",
+      "#A6D7E9"
+    ],
+    "accentColor": "#8CC8E8",
+    "backgroundColor": "#EAF5FB",
+    "generatedAt": "2026-07-30T06:37:19.542Z"
+  },
+  {
+    "title": "Trains",
+    "slug": "trains",
+    "image": "/categories/trains.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Cheerful little steam train puffing through rolling green hills. Curved track. Soft puffy steam clouds. Bright morning. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 2101742625,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#F8F6E5",
+      "#E9F5E7",
+      "#D8CBC9",
+      "#C9E6E9"
+    ],
+    "accentColor": "#B5DEED",
+    "backgroundColor": "#F2F9FC",
+    "generatedAt": "2026-07-30T06:37:19.831Z"
+  },
+  {
+    "title": "Pirates",
+    "slug": "pirates",
+    "image": "/categories/pirates.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Happy child pirate with a friendly parrot on a colorful little ship. An open treasure chest of gold. Gentle rolling waves. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 54926111,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FCFAEB",
+      "#CBE9F5",
+      "#94C8DC",
+      "#E9F5EA"
+    ],
+    "accentColor": "#CBE9F5",
+    "backgroundColor": "#F6FBFD",
+    "generatedAt": "2026-07-30T06:37:21.487Z"
+  },
+  {
+    "title": "Castles",
+    "slug": "castles",
+    "image": "/categories/castles.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Storybook castle with round towers and fluttering flags on a green hill. A little drawbridge. Soft morning light. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1576469987,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FAF9EC",
+      "#E7F4EC",
+      "#DAF1EC",
+      "#BAC886"
+    ],
+    "accentColor": "#F6D8B8",
+    "backgroundColor": "#FDF8F2",
+    "generatedAt": "2026-07-30T06:37:21.975Z"
+  },
+  {
+    "title": "Robots",
+    "slug": "robots",
+    "image": "/categories/robots.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Friendly round robot waving hello. Colorful buttons and soft glowing lights. Cheerful bright workshop. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 114343088,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#E3E6C9",
+      "#F4E8DC",
+      "#FAD8A9",
+      "#EAEAD9"
+    ],
+    "accentColor": "#FAD8A9",
+    "backgroundColor": "#FEF8F0",
+    "generatedAt": "2026-07-30T06:37:24.233Z"
+  },
+  {
+    "title": "Shapes & Patterns",
+    "slug": "shapes",
+    "image": "/categories/shapes.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Playful floating shapes with smiling faces. Circles, stars and triangles dancing in a bright cheerful pattern. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 2131474165,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FCFBF0",
+      "#FAF8EC",
+      "#E6F4F2",
+      "#D9EEF4"
+    ],
+    "accentColor": "#FCC4C6",
+    "backgroundColor": "#FFF4F5",
+    "generatedAt": "2026-07-30T06:37:25.023Z"
+  }
+]

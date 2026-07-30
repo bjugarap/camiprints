@@ -1,0 +1,177 @@
+[
+  {
+    "title": "Video Games",
+    "slug": "video-games",
+    "prompt": "Happy child holding a colorful game controller. Fantasy gaming world. Floating stars. Coins. Magic energy. Original game-inspired environment. No recognizable game characters."
+  },
+  {
+    "title": "Kids TV Shows",
+    "slug": "kids-tv",
+    "prompt": "Happy original cartoon animal friends laughing together in a colorful playful world. No recognizable TV characters."
+  },
+  {
+    "title": "Girls",
+    "slug": "girls",
+    "prompt": "Three happy girls playing outside with balloons, flowers, butterflies, sunshine and friendship."
+  },
+  {
+    "title": "Summer",
+    "slug": "summer",
+    "prompt": "Child walking toward a tropical beach with sunshine, palm trees, waves and colorful flowers."
+  },
+  {
+    "title": "Adults",
+    "slug": "adults",
+    "prompt": "Peaceful reading nook. Books. Coffee. Warm blanket. Large windows. Relaxing afternoon sunlight."
+  },
+  {
+    "title": "Toddlers",
+    "slug": "toddlers",
+    "prompt": "Toddlers coloring together with crayons, books, stuffed animals, blocks and educational toys."
+  },
+  {
+    "title": "Fairy Tales",
+    "slug": "fairy-tales",
+    "prompt": "Beautiful magical castle. Rainbow. Fireworks. Magic forest. Sparkles. Storybook fantasy. Original fantasy world."
+  },
+  {
+    "title": "Kawaii",
+    "slug": "kawaii",
+    "prompt": "Cute smiling cupcake. Strawberries. Hearts. Whipped cream. Pastel desserts. Friendly smiling fruit."
+  },
+  {
+    "title": "Kids Movies",
+    "slug": "kids-movies",
+    "prompt": "Child enjoying popcorn inside a magical movie theater. Colorful lights. Exciting atmosphere."
+  },
+  {
+    "title": "Dinosaurs",
+    "slug": "dinosaurs",
+    "prompt": "Friendly smiling green dinosaur. Prehistoric landscape. Flowers. Trees. Volcano. Bright sunshine. Not scary."
+  },
+  {
+    "title": "Educational",
+    "slug": "educational",
+    "prompt": "Child reading books. Science. Planets. Globe. Pencils. Letters. Curiosity. Learning."
+  },
+  {
+    "title": "Superheroes",
+    "slug": "superheroes",
+    "prompt": "Original young superheroes. Original costumes. Flowing capes. Bright city skyline. Dynamic heroic pose. Hope. Courage. Absolutely no resemblance to Marvel or DC."
+  },
+  {
+    "title": "Animals",
+    "slug": "animals",
+    "prompt": "A friendly fox, a bunny and a small owl sitting together in a sunny meadow. Warm friendship. Soft grass and a few flowers."
+  },
+  {
+    "title": "Ocean",
+    "slug": "ocean",
+    "prompt": "Cheerful smiling whale swimming with little fish above a colorful coral reef. Gentle bubbles. Sunbeams through clear blue water."
+  },
+  {
+    "title": "Space",
+    "slug": "space",
+    "prompt": "Child astronaut waving happily beside a friendly rocket. Smiling planets. Twinkling stars. Cheerful deep-blue cosmic sky."
+  },
+  {
+    "title": "Fantasy",
+    "slug": "fantasy",
+    "prompt": "Friendly baby dragon and a gentle unicorn together near a magical castle on a hill. Sparkles. A soft rainbow. Storybook wonder."
+  },
+  {
+    "title": "Vehicles",
+    "slug": "vehicles",
+    "prompt": "Happy little digger and a cheerful dump truck working together. Sunny construction site. Big rounded wheels."
+  },
+  {
+    "title": "Nature",
+    "slug": "nature",
+    "prompt": "Sunny meadow with bright flowers, one big friendly tree and butterflies. Rolling green hills. Gentle clouds."
+  },
+  {
+    "title": "Holidays",
+    "slug": "holidays",
+    "prompt": "Joyful birthday party scene. Balloons. Wrapped presents. A celebration cake. Falling confetti. Warm festive light."
+  },
+  {
+    "title": "Birds",
+    "slug": "birds",
+    "prompt": "Cheerful colorful songbirds singing together on a blossom branch. Floating music notes. Bright spring morning."
+  },
+  {
+    "title": "Insects",
+    "slug": "insects",
+    "prompt": "Smiling bee and butterfly flying together over bright garden flowers. A little ladybug on a leaf. Sunny garden."
+  },
+  {
+    "title": "Farm",
+    "slug": "farm",
+    "prompt": "Red barn with a happy cow, a pink pig and fluffy chicks in a sunny farmyard. A little tractor. Rolling fields."
+  },
+  {
+    "title": "Food",
+    "slug": "food",
+    "prompt": "Cheerful picnic of smiling fruit friends. A happy strawberry, an orange and a watermelon slice. Sunshine and a checkered blanket."
+  },
+  {
+    "title": "Sports",
+    "slug": "sports",
+    "prompt": "Happy children playing with a soccer ball in a sunny park. Movement and laughter. Simple green field."
+  },
+  {
+    "title": "Music",
+    "slug": "music",
+    "prompt": "Cheerful child playing a colorful xylophone. Floating musical notes. Friendly instruments gathered around. Joyful sound."
+  },
+  {
+    "title": "Weather",
+    "slug": "weather",
+    "prompt": "Smiling sun peeking from behind a fluffy cloud. A soft rainbow. A few gentle sparkling raindrops. Bright sky."
+  },
+  {
+    "title": "Seasons",
+    "slug": "seasons",
+    "prompt": "One friendly tree shown through four seasons at once. Pink blossoms, green summer leaves, orange autumn leaves and soft snow."
+  },
+  {
+    "title": "Flowers",
+    "slug": "flowers",
+    "prompt": "Bright bouquet of smiling flowers in a watering can. A butterfly landing on a petal. Warm garden sunshine."
+  },
+  {
+    "title": "Trucks",
+    "slug": "trucks",
+    "prompt": "Happy big dump truck with a friendly face carrying a small load of dirt. Orange traffic cones. Sunny work day."
+  },
+  {
+    "title": "Trains",
+    "slug": "trains",
+    "prompt": "Cheerful little steam train puffing through rolling green hills. Curved track. Soft puffy steam clouds. Bright morning."
+  },
+  {
+    "title": "Planes",
+    "slug": "planes",
+    "prompt": "Friendly little airplane flying through fluffy clouds beside a colorful hot air balloon. Bright blue sky. Gentle sunshine."
+  },
+  {
+    "title": "Castles",
+    "slug": "castles",
+    "prompt": "Storybook castle with round towers and fluttering flags on a green hill. A little drawbridge. Soft morning light."
+  },
+  {
+    "title": "Pirates",
+    "slug": "pirates",
+    "prompt": "Happy child pirate with a friendly parrot on a colorful little ship. An open treasure chest of gold. Gentle rolling waves."
+  },
+  {
+    "title": "Robots",
+    "slug": "robots",
+    "prompt": "Friendly round robot waving hello. Colorful buttons and soft glowing lights. Cheerful bright workshop."
+  },
+  {
+    "title": "Shapes & Patterns",
+    "slug": "shapes",
+    "prompt": "Playful floating shapes with smiling faces. Circles, stars and triangles dancing in a bright cheerful pattern."
+  }
+]

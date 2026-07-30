@@ -7,12 +7,21 @@ import type {
   Orientation,
 } from "@/types/catalog";
 
+import categoryArt from "../../../art-generator/category-art.json";
+
 /**
  * Launch catalog. Every page named in the design mocks is here with the
- * metadata the mocks show. All asset URLs are null until real artwork
- * arrives — the UI renders clearly-marked placeholders and no layout will
- * change when the URLs are filled in.
+ * metadata the mocks show. Category thumbnails come from the artwork
+ * manifest (art-generator/category-art.json) by slug; page asset URLs are
+ * null until real artwork arrives — the UI renders clearly-marked
+ * placeholders and no layout will change when the URLs are filled in.
  */
+const artBySlug = new Map<string, string>(
+  (categoryArt as { slug: string; image: string }[]).map((art) => [
+    art.slug,
+    art.image,
+  ]),
+);
 const featured = (
   slug: string,
   name: string,
@@ -23,7 +32,7 @@ const featured = (
   name,
   description,
   tint: slug,
-  thumbnailUrl: null,
+  thumbnailUrl: artBySlug.get(slug) ?? null,
   featured: true,
   order,
 });
@@ -38,7 +47,7 @@ const extra = (
   name,
   description,
   tint: null,
-  thumbnailUrl: null,
+  thumbnailUrl: artBySlug.get(slug) ?? null,
   featured: false,
   order,
 });
