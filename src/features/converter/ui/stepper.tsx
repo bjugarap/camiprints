@@ -7,18 +7,17 @@ import type { ConverterStep } from "../machine/converter-machine";
  * accent fill with ✓, current = ink fill with the numeral, upcoming =
  * bordered. Connectors are 22×1.5 line, except the one entering the
  * current step, which is accent. Completed steps are buttons (revisiting
- * is lossless); mobile collapses to a plain "Step n of 6" line.
+ * is lossless); mobile collapses to a plain "Step n of 5" line.
  */
 export const STEP_LABELS: Record<ConverterStep, string> = {
   1: "Photo",
   2: "Crop",
   3: "Style",
-  4: "Adjust",
-  5: "Preview",
-  6: "Print",
+  4: "Preview",
+  5: "Print",
 };
 
-const STEPS: ConverterStep[] = [1, 2, 3, 4, 5, 6];
+const STEPS: ConverterStep[] = [1, 2, 3, 4, 5];
 
 export function Stepper({
   current,
@@ -34,7 +33,7 @@ export function Stepper({
   return (
     <>
       <p className="text-sm font-semibold text-ink md:hidden">
-        Step {current} of 6 · {STEP_LABELS[current]}
+        Step {current} of 5 · {STEP_LABELS[current]}
       </p>
       <ol
         aria-label="Steps"

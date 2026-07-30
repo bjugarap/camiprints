@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Button } from "@/shared/button";
 
 /**
- * Step 6 · Done (hi-fi 5d): the finished sheet and the same print-first
+ * Step 5 · Done (hi-fi 5d): the finished sheet and the same print-first
  * hierarchy a child learned in the library. Print goes straight to the
  * system dialog — nothing between the child and paper. Download failures
  * are a polite live region that never auto-hides.
@@ -30,7 +30,7 @@ export function StepPrint({
 
   return (
     <div className="mx-auto max-w-[560px]">
-      <p className="text-eyebrow text-ink-40">Step 6 · done</p>
+      <p className="text-eyebrow text-ink-40">Step 5 · done</p>
       <h2 className="text-subsection mt-2 text-ink">Your page is ready</h2>
 
       <div

@@ -36,10 +36,15 @@ export function resolveParams(settings: ConversionSettings): PipelineParams {
   // over a radius-r box has Sobel response ≈ 510 / (2r + 1). Thresholds
   // are therefore chosen per style *below* that ceiling — and clamped to
   // it — or a style could never detect anything at all.
+  // Classical edges cannot mimic AI styles; each style maps to the
+  // nearest parameter bundle. "subject-only" implies background removal.
   const style = {
     bold: { blurRadius: 3, threshold: 45, minComponent: 90 },
     classic: { blurRadius: 2, threshold: 50, minComponent: 48 },
     detailed: { blurRadius: 1, threshold: 58, minComponent: 20 },
+    cartoon: { blurRadius: 3, threshold: 42, minComponent: 70 },
+    portrait: { blurRadius: 2, threshold: 48, minComponent: 40 },
+    "subject-only": { blurRadius: 2, threshold: 50, minComponent: 48 },
   }[settings.style];
   const maxResponse = 510 / (2 * style.blurRadius + 1);
 
@@ -61,7 +66,9 @@ export function resolveParams(settings: ConversionSettings): PipelineParams {
 
   // Background simplification = demand stronger edges and larger shapes,
   // so soft texture and gradients drop out before cleanup.
-  const backgroundBoost = settings.advanced.removeBackground ? 1.45 : 1;
+  const removeBackground =
+    settings.advanced.removeBackground || settings.style === "subject-only";
+  const backgroundBoost = removeBackground ? 1.45 : 1;
 
   return {
     contrastFactor,
@@ -71,9 +78,7 @@ export function resolveParams(settings: ConversionSettings): PipelineParams {
       Math.max(12, (style.threshold + detailShift.threshold) * backgroundBoost),
     ),
     minComponentSize: Math.round(
-      style.minComponent *
-        detailShift.minComponent *
-        (settings.advanced.removeBackground ? 2 : 1),
+      style.minComponent * detailShift.minComponent * (removeBackground ? 2 : 1),
     ),
     lineWeightPasses,
     invert: settings.advanced.invert,

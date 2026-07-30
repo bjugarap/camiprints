@@ -6,7 +6,21 @@
  */
 
 /* ---------------------------------------------------------------- styles */
-export const CONVERTER_STYLES = ["bold", "classic", "detailed"] as const;
+/**
+ * The style is the converter's one creative control (the Adjust step was
+ * removed — one generation per page, no redraw traffic). Six styles cover
+ * the ground the old sliders did; each ships with a Flux-generated sample
+ * image in /public/styles/<slug>.webp showing the same subject drawn that
+ * way.
+ */
+export const CONVERTER_STYLES = [
+  "bold",
+  "classic",
+  "detailed",
+  "cartoon",
+  "portrait",
+  "subject-only",
+] as const;
 export type ConverterStyle = (typeof CONVERTER_STYLES)[number];
 export const CONVERTER_STYLE_LABELS: Record<
   ConverterStyle,
@@ -15,6 +29,9 @@ export const CONVERTER_STYLE_LABELS: Record<
   bold: { name: "Bold & simple", hint: "Thick lines, big spaces — good for young children" },
   classic: { name: "Classic outline", hint: "Balanced lines, like a storybook page" },
   detailed: { name: "Fine detail", hint: "More lines to color, for patient hands" },
+  cartoon: { name: "Cute cartoon", hint: "Rounded and friendly, like an animated film" },
+  portrait: { name: "Portrait", hint: "Face first — clean, flattering features" },
+  "subject-only": { name: "Just the subject", hint: "No background — the subject on plain white" },
 };
 
 /* --------------------------------------------------------------- sliders */

@@ -23,22 +23,22 @@ import {
  * The whole state (minus blobs) is serializable so a browser refresh can
  * restore the session.
  */
-export type ConverterStep = 1 | 2 | 3 | 4 | 5 | 6;
+export type ConverterStep = 1 | 2 | 3 | 4 | 5;
 
 /**
- * Generation fires from the Style step; the Adjust step operates on the
- * finished result (see the page → tweak → redraw). Sliders are never
- * shown before there is a picture for them to change.
+ * Five steps: Photo · Crop · Style · Preview · Print. The style is the
+ * one creative control — generation fires from the Style step and each
+ * page is exactly one generation (there is no adjust/redraw loop, by
+ * design: simple, predictable, and no multiplying AI traffic).
  */
 export type ConverterStatus =
   | "idle" // step 1, no photo yet
   | "uploaded" // step 1, photo resolved, rights pending/confirmed
   | "cropping" // step 2
-  | "style-selected" // step 3 — settings home; generation starts here
+  | "style-selected" // step 3 — style home; generation starts here
   | "processing" // step 4, job running
-  | "completed" // step 4, result shown WITH the adjustment controls
-  | "previewing" // step 5, full-size paper preview
-  | "printing" // step 6
+  | "completed" // step 4, the finished page under review
+  | "printing" // step 5
   | "error"; // step 4, job failed — settings intact
 
 export interface ConverterState {
@@ -80,14 +80,13 @@ export type ConverterEvent =
   | { type: "ENGINE_SELECTED"; engine: ConversionEngine }
   | { type: "STYLE_SELECTED"; style: ConversionSettings["style"] }
   | { type: "SETTINGS_CHANGED"; settings: Partial<ConversionSettings> }
-  | { type: "CONVERT_REQUESTED"; job: ConversionJob } // 3→4, or a redraw/retry on 4
+  | { type: "CONVERT_REQUESTED"; job: ConversionJob } // 3→4, or a retry on 4
   | { type: "JOB_PROGRESS"; progress: ConversionProgress }
   | { type: "JOB_COMPLETED"; job: ConversionJob }
   | { type: "JOB_FAILED"; job: ConversionJob | null; error: ConversionErrorInfo }
   | { type: "JOB_CANCELLED" } // returns to step 3, settings intact
   | { type: "RETRY_WITH_MORE_CONTRAST" } // remedy: bump contrast, stay on 4
-  | { type: "CONTINUE_TO_PREVIEW" } // 4 (completed) → 5
-  | { type: "CONTINUE_TO_PRINT" } // 5 → 6
+  | { type: "CONTINUE_TO_PRINT" } // 4 (completed) → 5
   | { type: "BACK_TO_SETTINGS" } // failure remedy → step 3, error cleared
   | { type: "START_OVER" }
   | { type: "SESSION_RESTORED"; state: ConverterState };
@@ -97,8 +96,7 @@ const STEP_STATUS: Record<ConverterStep, ConverterStatus> = {
   2: "cropping",
   3: "style-selected",
   4: "completed",
-  5: "previewing",
-  6: "printing",
+  5: "printing",
 };
 
 function atStep(state: ConverterState, step: ConverterStep): ConverterState {
@@ -167,7 +165,7 @@ export function converterReducer(
     case "GO_TO_STEP": {
       if (state.status === "processing") return state;
       if (event.step >= state.step) return state; // stepper only goes back
-      if (event.step === 5 || event.step === 6) return state;
+      if (event.step === 5) return state;
       // Step 4 only exists once a result does.
       if (event.step === 4 && state.job?.status !== "completed") return state;
       return { ...atStep(state, event.step), error: null };
@@ -256,13 +254,9 @@ export function converterReducer(
       return { ...state, settings: bumped };
     }
 
-    case "CONTINUE_TO_PREVIEW":
+    case "CONTINUE_TO_PRINT":
       if (state.status !== "completed") return state;
       return atStep(state, 5);
-
-    case "CONTINUE_TO_PRINT":
-      if (state.status !== "previewing") return state;
-      return atStep(state, 6);
 
     case "BACK_TO_SETTINGS":
       if (state.status === "processing") return state;

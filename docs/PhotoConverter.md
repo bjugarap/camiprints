@@ -1,8 +1,8 @@
 # Photo converter
 
-Six steps at `/create/photo`: **1 Photo · 2 Crop · 3 Style · 4 Adjust ·
-5 Preview · 6 Print**, one route, one guided wizard (hi-fi 5d). `/create`
-is the hub: one live tool, inert "coming later" cards.
+Five steps at `/create/photo`: **1 Photo · 2 Crop · 3 Style · 4 Preview ·
+5 Print**, one route, one guided wizard. `/create` is the hub: one live
+tool, inert "coming later" cards.
 
 Two engines answer the same wizard (ADR 012):
 
@@ -13,14 +13,20 @@ Two engines answer the same wizard (ADR 012):
   ADR-011 pipeline. Also the fallback remedy when AI fails or the daily
   AI budget is spent.
 
-**Generation fires from the Style step (3), and the Adjust step (4)
-operates on the finished result**: the page sits beside the sliders, and
-"Redraw with these changes" is an explicit button that arms only when a
-setting differs from the ones the page was drawn with — sliders are never
-shown without a picture they can visibly change, and a paid AI redraw
-can never fire from a slider drag. Step 5 is the full-size paper preview,
-step 6 print. The engine switch and the engine-aware privacy line live on
-step 3; the choice survives replace-photo, start-over and refresh.
+**The style is the one creative control, and each page is exactly one
+generation.** The Adjust step was removed deliberately: its sliders
+multiplied AI traffic without adding proportional value. Six styles (bold
+/ classic / detailed / cartoon / portrait / subject-only) cover that
+ground instead, and every style card carries a real Flux-generated sample
+— the same puppy drawn each way — so the choice reads visually
+(`public/styles/<style>.webp`; regenerate with
+`npx tsx --conditions=react-server scripts/generate-style-swatches.ts`).
+Generation fires from the Style step; step 4 is the finished page on
+paper ("Use this page" / "Try another style"); step 5 prints. The engine
+switch and engine-aware privacy line live on step 3. The legacy detail /
+line-weight / contrast / background settings remain in `ConversionSettings`
+with defaults (the prompt builder and Quick Outline still consume them)
+but have no UI.
 
 ## Code map
 

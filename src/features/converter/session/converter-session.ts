@@ -12,14 +12,15 @@ import type { ConverterState } from "../machine/converter-machine";
  * next session and removed by clearConverterSession() on Start Over. The
  * photo is never sent to a server by this module.
  */
-const STATE_KEY = "camiprints:converter:v1";
+// v2: the 5-step flow — v1 (six-step) snapshots are simply not restored.
+const STATE_KEY = "camiprints:converter:v2";
 const DB_NAME = "camiprints-converter";
 const STORE = "blobs";
 export const PHOTO_BLOB_KEY = "photo";
 export const RESULT_BLOB_KEY = "result";
 
 interface SessionSnapshot {
-  version: 1;
+  version: 2;
   savedAt: string;
   state: ConverterState;
 }
@@ -29,7 +30,7 @@ interface SessionSnapshot {
 export function saveConverterState(state: ConverterState): void {
   try {
     const snapshot: SessionSnapshot = {
-      version: 1,
+      version: 2,
       savedAt: new Date().toISOString(),
       state,
     };
@@ -44,7 +45,7 @@ export function loadConverterState(): ConverterState | null {
     const raw = window.sessionStorage.getItem(STATE_KEY);
     if (!raw) return null;
     const snapshot = JSON.parse(raw) as SessionSnapshot;
-    if (snapshot.version !== 1 || !snapshot.state?.status) return null;
+    if (snapshot.version !== 2 || !snapshot.state?.status) return null;
     // Pre-engine (Sprint 3) snapshots are discarded rather than guessed at.
     if (snapshot.state.engine !== "ai" && snapshot.state.engine !== "local") {
       return null;

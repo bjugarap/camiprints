@@ -118,7 +118,7 @@ export function StepPreviewResult({
 }) {
   return (
     <div className="mx-auto max-w-[560px]">
-      <p className="text-eyebrow text-ink-40">Step 5 · preview</p>
+      <p className="text-eyebrow text-ink-40">Step 4 · preview</p>
       <h2 className="text-subsection mt-2 text-ink">Here’s your page</h2>
       <div
         className="relative mx-auto mt-4 w-full max-w-[380px] bg-white p-[14px] shadow-paper"
@@ -141,7 +141,7 @@ export function StepPreviewResult({
           Use this page
         </Button>
         <Button variant="secondary" size="xl" onClick={onBackToAdjustments}>
-          Adjust it
+          Try another style
         </Button>
       </div>
     </div>

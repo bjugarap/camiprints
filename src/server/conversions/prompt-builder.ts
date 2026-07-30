@@ -23,15 +23,26 @@ const BASE_PROMPT = [
   "Center the subject with generous white margins on all sides.",
 ].join(" ");
 
-const STYLE_WORDING: Record<ConversionSettings["style"], string> = {
+export const STYLE_WORDING: Record<ConversionSettings["style"], string> = {
   bold:
     "Style: bold and simple, like a coloring book for young children — " +
-    "big shapes and generous open regions.",
+    "very thick outlines and big, generous open regions.",
   classic:
     "Style: a classic storybook coloring page with balanced, friendly detail.",
   detailed:
     "Style: a finely detailed coloring page for patient hands, with " +
     "more intricate regions to color.",
+  cartoon:
+    "Style: a cute cartoon interpretation — rounded, friendly, slightly " +
+    "exaggerated proportions like a family animated film, with clean " +
+    "medium-weight outlines.",
+  portrait:
+    "Style: a portrait-first coloring page — the face is the focus, drawn " +
+    "with clean, flattering, well-proportioned features and simple " +
+    "surroundings.",
+  "subject-only":
+    "Style: the main subject only, on a completely empty white page — " +
+    "remove the background and scenery entirely.",
 };
 
 const DETAIL_WORDING: Record<ConversionSettings["detail"], string> = {
@@ -60,7 +71,7 @@ export function buildConversionPrompt(settings: ConversionSettings): string {
     DETAIL_WORDING[settings.detail],
     LINE_WEIGHT_WORDING[settings.advanced.lineWeight],
   ];
-  if (settings.advanced.removeBackground) {
+  if (settings.advanced.removeBackground || settings.style === "subject-only") {
     parts.push(
       "Remove the background entirely: the subject alone on plain white, " +
         "no scenery.",

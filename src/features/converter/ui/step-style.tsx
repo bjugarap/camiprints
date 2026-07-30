@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/shared/button";
 import {
@@ -10,17 +12,13 @@ import {
 } from "@/types/converter";
 
 /**
- * Step 3 · Style — the settings home and the launch pad: generation fires
- * from here, so the very next thing the user sees is their picture.
- * Selection mirrors the category tile pattern: accent border + tint + a
- * trailing ✓, never colour alone.
+ * Step 3 · Style — the one creative control, and the launch pad:
+ * generation fires from here and each page is exactly one generation.
+ * Every style card carries a real sample (the same subject drawn in that
+ * style, generated once with Flux and shipped as a static asset) so the
+ * differences read visually — a pre-reader can pick by picture.
+ * Selection mirrors the category tile pattern: accent border + tint + ✓.
  */
-const SWATCH_SPACING: Record<ConverterStyle, number> = {
-  bold: 12,
-  classic: 8,
-  detailed: 5,
-};
-
 export function StepStyle({
   style,
   engine,
@@ -40,23 +38,21 @@ export function StepStyle({
 }) {
   const ai = engine === "ai";
   return (
-    <div className="mx-auto max-w-[640px]">
+    <div className="mx-auto max-w-[720px]">
       <h2 className="text-subsection text-ink">Pick a style</h2>
       <p className="mt-1.5 text-base/[1.5] text-ink-60">
-        {ai
-          ? "The AI draws your page in this style. You can fine-tune it after."
-          : "You can fine-tune the result after."}
+        Every example shows the same dog drawn that way. Your page comes out
+        in the style you pick.
       </p>
 
       <div
         role="radiogroup"
         aria-label="Line-art style"
-        className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3"
+        className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3"
       >
         {CONVERTER_STYLES.map((option) => {
           const selected = style === option;
           const { name, hint } = CONVERTER_STYLE_LABELS[option];
-          const gap = SWATCH_SPACING[option];
           return (
             <button
               key={option}
@@ -71,25 +67,25 @@ export function StepStyle({
                   : "border border-line shadow-card",
               )}
             >
-              <div
-                aria-hidden
-                className="h-20 rounded-thumb border border-thumb-line bg-card"
-                style={{
-                  backgroundImage: `repeating-linear-gradient(45deg, #F6F1E8, #F6F1E8 ${
-                    option === "bold" ? 3 : 1.5
-                  }px, #FBF8F2 ${option === "bold" ? 3 : 1.5}px, #FBF8F2 ${gap}px)`,
-                }}
-              />
+              <div className="relative aspect-square overflow-hidden rounded-thumb border border-thumb-line bg-white">
+                <Image
+                  src={`/styles/${option}.webp`}
+                  alt={`Sample page in the ${name} style`}
+                  fill
+                  sizes="(max-width: 640px) 45vw, 220px"
+                  className="object-cover"
+                />
+              </div>
               <p
                 className={cn(
-                  "mt-2.5 text-[17px] font-semibold",
+                  "mt-2.5 text-[16px] font-semibold",
                   selected ? "text-accent" : "text-ink",
                 )}
               >
                 {name}
                 {selected ? " ✓" : ""}
               </p>
-              <p className="mt-0.5 text-sm/[1.45] text-ink-60">{hint}</p>
+              <p className="mt-0.5 text-[13.5px]/[1.4] text-ink-60">{hint}</p>
             </button>
           );
         })}

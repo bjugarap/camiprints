@@ -43,7 +43,6 @@ import {
   saveSessionBlob,
 } from "../session/converter-session";
 import { downloadBlob, pngToLetterPdf } from "../export/exports";
-import { StepAdjust } from "./step-adjust";
 import { StepCrop } from "./step-crop";
 import { StepPhoto } from "./step-photo";
 import { StepPrint } from "./step-print";
@@ -401,20 +400,11 @@ export function ConverterWizard() {
             ) : null}
 
             {state.step === 4 && state.status === "completed" ? (
-              <StepAdjust
-                engine={state.engine}
+              <StepPreviewResult
                 resultUrl={resultUrl}
-                settings={state.settings}
-                dirty={
-                  JSON.stringify(state.settings) !==
-                  JSON.stringify(state.job?.settings)
-                }
-                onSettingsChange={(settings) =>
-                  dispatch({ type: "SETTINGS_CHANGED", settings })
-                }
-                onRedraw={() => void startConversion()}
-                onContinue={() => dispatch({ type: "CONTINUE_TO_PREVIEW" })}
-                onBack={() => dispatch({ type: "BACK" })}
+                landscape={landscape}
+                onContinue={() => dispatch({ type: "CONTINUE_TO_PRINT" })}
+                onBackToAdjustments={() => dispatch({ type: "BACK" })}
               />
             ) : null}
 
@@ -470,15 +460,6 @@ export function ConverterWizard() {
             ) : null}
 
             {state.step === 5 ? (
-              <StepPreviewResult
-                resultUrl={resultUrl}
-                landscape={landscape}
-                onContinue={() => dispatch({ type: "CONTINUE_TO_PRINT" })}
-                onBackToAdjustments={() => dispatch({ type: "BACK" })}
-              />
-            ) : null}
-
-            {state.step === 6 ? (
               <StepPrint
                 resultUrl={resultUrl}
                 landscape={landscape}

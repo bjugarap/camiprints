@@ -50,7 +50,7 @@ const styling: ConverterState = run([
   { type: "NEXT" },
 ]);
 
-/** A finished result under review on the Adjust step. */
+/** A finished result under review on the Preview step. */
 const reviewing: ConverterState = run(
   [
     { type: "CONVERT_REQUESTED", job: job("processing") },
@@ -60,7 +60,7 @@ const reviewing: ConverterState = run(
 );
 
 describe("converter machine — forward path", () => {
-  it("walks 1 → 3; generation is the only door to Adjust", () => {
+  it("walks 1 → 3; generation is the only door to the preview", () => {
     expect(styling.step).toBe(3);
     expect(styling.status).toBe("style-selected");
     expect(converterReducer(styling, { type: "NEXT" }).step).toBe(3);
@@ -72,34 +72,20 @@ describe("converter machine — forward path", () => {
     expect(noRights.step).toBe(1);
   });
 
-  it("generation lands the result on Adjust, then preview, then print", () => {
+  it("generation lands the result on the preview, then print", () => {
     expect(reviewing.step).toBe(4);
     expect(reviewing.status).toBe("completed");
-    const previewing = converterReducer(reviewing, {
-      type: "CONTINUE_TO_PREVIEW",
-    });
-    expect(previewing.step).toBe(5);
-    expect(previewing.status).toBe("previewing");
-    const printing = converterReducer(previewing, {
+    const printing = converterReducer(reviewing, {
       type: "CONTINUE_TO_PRINT",
     });
-    expect(printing.step).toBe(6);
+    expect(printing.step).toBe(5);
     expect(printing.status).toBe("printing");
   });
 
-  it("CONTINUE_TO_PRINT only works from the preview", () => {
+  it("CONTINUE_TO_PRINT only works from a completed result", () => {
     expect(
-      converterReducer(reviewing, { type: "CONTINUE_TO_PRINT" }).step,
-    ).toBe(4);
-  });
-
-  it("a redraw from Adjust is a normal CONVERT_REQUESTED", () => {
-    const redrawing = converterReducer(reviewing, {
-      type: "CONVERT_REQUESTED",
-      job: job("processing"),
-    });
-    expect(redrawing.status).toBe("processing");
-    expect(redrawing.step).toBe(4);
+      converterReducer(styling, { type: "CONTINUE_TO_PRINT" }).step,
+    ).toBe(3);
   });
 });
 
@@ -191,19 +177,17 @@ describe("converter machine — guards", () => {
     ).toEqual(styling);
   });
 
-  it("stepper revisits earlier steps; Adjust only exists with a result", () => {
+  it("stepper revisits earlier steps; the preview only exists with a result", () => {
     expect(converterReducer(reviewing, { type: "GO_TO_STEP", step: 2 }).step).toBe(2);
-    const printingNoJob = { ...reviewing, step: 6 as const, job: null };
+    const printingNoJob = { ...reviewing, step: 5 as const, job: null };
     expect(
       converterReducer(printingNoJob, { type: "GO_TO_STEP", step: 4 }).step,
-    ).toBe(6);
+    ).toBe(5);
   });
 
-  it("back from the preview returns to the result, not the settings", () => {
-    const previewing = converterReducer(reviewing, {
-      type: "CONTINUE_TO_PREVIEW",
-    });
-    const back = converterReducer(previewing, { type: "BACK" });
+  it("back from print returns to the result, not the settings", () => {
+    const printing = converterReducer(reviewing, { type: "CONTINUE_TO_PRINT" });
+    const back = converterReducer(printing, { type: "BACK" });
     expect(back.step).toBe(4);
     expect(back.status).toBe("completed");
     expect(back.job?.status).toBe("completed");
