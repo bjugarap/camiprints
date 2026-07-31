@@ -31,6 +31,9 @@ export const NEGATIVE_PROMPT_TERMS = [
   "oversaturated colors",
   "noise",
   "compression artifacts",
+  "borders",
+  "frames",
+  "rounded card corners",
 ] as const;
 
 export const NEGATIVE_PROMPT = `Do not include: ${NEGATIVE_PROMPT_TERMS.join(

@@ -38,7 +38,11 @@ export const MASTER_STYLE_PROMPT = [
   "No vector art.",
   "Portrait composition.",
   "3:4 aspect ratio.",
-  "Safe margins for rounded cards.",
+  // "Safe margins for rounded cards" made FLUX.2 pro paint a literal
+  // rounded-corner frame; say what we mean instead.
+  "Full-bleed artwork that reaches every edge of the image.",
+  "No border, no frame, no rounded corners, no card edge.",
+  "Keep the main subject comfortably away from the edges.",
   "Warm white balance.",
   "Consistent lighting.",
   "Consistent artistic style.",
