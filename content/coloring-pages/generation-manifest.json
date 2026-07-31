@@ -6,28 +6,37 @@
     "categorySlug": "video-games",
     "complexity": "toddler",
     "subjectPrompt": "A big smiling video game controller character with large round buttons, a happy face and little arms waving hello.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "bde452dc-c24f-43ca-b2a2-ae76f4426f27",
-    "seed": 512787688,
+    "model": "flux-2-pro",
+    "providerRequestId": "a62aaf86-377c-48da-bc55-4cc78c67cd66",
+    "seed": 1692641168,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/video-games/game-controller-buddy.png",
     "previewPath": "/coloring-pages/video-games/game-controller-buddy.webp",
     "thumbnailPath": "/coloring-pages/video-games/game-controller-buddy-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:29:49.172Z",
+    "generatedAt": "2026-07-31T06:24:52.178Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 512787688,
+        "providerRequestId": "bde452dc-c24f-43ca-b2a2-ae76f4426f27",
+        "generatedAt": "2026-07-30T07:29:49.172Z",
+        "imagePath": "content\\coloring-pages\\attempts\\video-games-game-controller-buddy-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 488707,
-      "checkedAt": "2026-07-30T07:32:31.890Z"
+      "fileBytes": 607216,
+      "checkedAt": "2026-07-31T06:36:15.969Z"
     },
     "lastError": null
   },
@@ -38,20 +47,20 @@
     "categorySlug": "video-games",
     "complexity": "kids",
     "subjectPrompt": "A family of four on a cozy couch playing a cooperative video game together, holding controllers, with a simple TV showing an original mountain-and-flag game scene.",
-    "status": "rejected",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "282b7a68-ad14-41b0-ba64-d11554b21b39",
-    "seed": 1188450803,
+    "model": "flux-2-pro",
+    "providerRequestId": "037a3265-ac81-412c-a979-ef3571a18f4e",
+    "seed": 1295523541,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/video-games/family-game-night.png",
     "previewPath": "/coloring-pages/video-games/family-game-night.webp",
     "thumbnailPath": "/coloring-pages/video-games/family-game-night-thumb.webp",
-    "reviewStatus": "rejected",
-    "rejectionReason": "malformed anatomy",
-    "generatedAt": "2026-07-31T05:19:47.507Z",
+    "reviewStatus": "pending",
+    "rejectionReason": null,
+    "generatedAt": "2026-07-31T06:24:51.278Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -60,6 +69,14 @@
         "generatedAt": "2026-07-30T07:29:49.270Z",
         "imagePath": "content\\coloring-pages\\attempts\\video-games-family-game-night-02-attempt-1.png",
         "rejectionReason": "weak composition"
+      },
+      {
+        "attempt": 2,
+        "seed": 1188450803,
+        "providerRequestId": "282b7a68-ad14-41b0-ba64-d11554b21b39",
+        "generatedAt": "2026-07-31T05:19:47.507Z",
+        "imagePath": "content\\coloring-pages\\attempts\\video-games-family-game-night-02-attempt-2.png",
+        "rejectionReason": "malformed anatomy"
       }
     ],
     "validation": {
@@ -67,8 +84,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 888331,
-      "checkedAt": "2026-07-31T05:19:47.507Z"
+      "fileBytes": 1184417,
+      "checkedAt": "2026-07-31T06:36:15.998Z"
     },
     "lastError": null
   },
@@ -79,28 +96,37 @@
     "categorySlug": "video-games",
     "complexity": "detailed",
     "subjectPrompt": "An original side-scrolling platform game world with floating grassy islands, rope bridges, floating coins, a small waterfall and a flag at the end of the path.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "6bb73c16-3eaa-473b-aa73-7010cba2d3bd",
-    "seed": 1589737683,
+    "model": "flux-2-pro",
+    "providerRequestId": "3cc4096d-0334-49a4-bec2-5a13f177257b",
+    "seed": 595341589,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/video-games/fantasy-platform-world.png",
     "previewPath": "/coloring-pages/video-games/fantasy-platform-world.webp",
     "thumbnailPath": "/coloring-pages/video-games/fantasy-platform-world-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:29:49.554Z",
+    "generatedAt": "2026-07-31T06:24:51.177Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1589737683,
+        "providerRequestId": "6bb73c16-3eaa-473b-aa73-7010cba2d3bd",
+        "generatedAt": "2026-07-30T07:29:49.554Z",
+        "imagePath": "content\\coloring-pages\\attempts\\video-games-fantasy-platform-world-03-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1074105,
-      "checkedAt": "2026-07-30T07:32:31.933Z"
+      "fileBytes": 1106916,
+      "checkedAt": "2026-07-31T06:36:16.025Z"
     },
     "lastError": null
   },
@@ -536,28 +562,37 @@
     "categorySlug": "kids-tv",
     "complexity": "toddler",
     "subjectPrompt": "A big friendly retro television with rounded corners, two antennas, dials and a happy smiling face on the screen.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "70b75dbe-3c82-4426-a5a5-6febd8bcb970",
-    "seed": 1827223095,
+    "model": "flux-2-pro",
+    "providerRequestId": "70e942db-7eac-4467-9bb4-b31a4536bf4f",
+    "seed": 87885526,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/kids-tv/smiling-tv-set.png",
     "previewPath": "/coloring-pages/kids-tv/smiling-tv-set.webp",
     "thumbnailPath": "/coloring-pages/kids-tv/smiling-tv-set-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:29:52.929Z",
+    "generatedAt": "2026-07-31T06:25:04.792Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1827223095,
+        "providerRequestId": "70b75dbe-3c82-4426-a5a5-6febd8bcb970",
+        "generatedAt": "2026-07-30T07:29:52.929Z",
+        "imagePath": "content\\coloring-pages\\attempts\\kids-tv-smiling-tv-set-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 571039,
-      "checkedAt": "2026-07-30T07:32:31.952Z"
+      "fileBytes": 718932,
+      "checkedAt": "2026-07-31T06:36:16.050Z"
     },
     "lastError": null
   },
@@ -568,28 +603,37 @@
     "categorySlug": "kids-tv",
     "complexity": "kids",
     "subjectPrompt": "A bear and a rabbit hosting a pretend cooking show at a counter, with a big mixing bowl, a whisk and a cake on a stand.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "bc84521b-3999-4499-b043-5700048b7831",
-    "seed": 763566399,
+    "model": "flux-2-pro",
+    "providerRequestId": "a0b5d465-3d67-4f1f-929d-313e58f00b2c",
+    "seed": 1064222258,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/kids-tv/cooking-show-friends.png",
     "previewPath": "/coloring-pages/kids-tv/cooking-show-friends.webp",
     "thumbnailPath": "/coloring-pages/kids-tv/cooking-show-friends-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:29:53.009Z",
+    "generatedAt": "2026-07-31T06:25:07.391Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 763566399,
+        "providerRequestId": "bc84521b-3999-4499-b043-5700048b7831",
+        "generatedAt": "2026-07-30T07:29:53.009Z",
+        "imagePath": "content\\coloring-pages\\attempts\\kids-tv-cooking-show-friends-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 583130,
-      "checkedAt": "2026-07-30T07:32:31.971Z"
+      "fileBytes": 990124,
+      "checkedAt": "2026-07-31T06:36:16.076Z"
     },
     "lastError": null
   },
@@ -600,20 +644,20 @@
     "categorySlug": "kids-tv",
     "complexity": "detailed",
     "subjectPrompt": "A detailed puppet theater stage with drawn-back curtains, two original hand puppets taking a bow and a small audience of children clapping.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "68ddbfe5-d1a7-4086-993b-1616b96eff84",
-    "seed": 1375105713,
+    "model": "flux-2-pro",
+    "providerRequestId": "a9de987d-7f52-4f6a-8557-d1b531fa7eeb",
+    "seed": 452462145,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/kids-tv/puppet-theater-show.png",
     "previewPath": "/coloring-pages/kids-tv/puppet-theater-show.webp",
     "thumbnailPath": "/coloring-pages/kids-tv/puppet-theater-show-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:19:47.582Z",
+    "generatedAt": "2026-07-31T06:25:09.334Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -622,6 +666,14 @@
         "generatedAt": "2026-07-30T07:29:54.711Z",
         "imagePath": "content\\coloring-pages\\attempts\\kids-tv-puppet-theater-show-03-attempt-1.png",
         "rejectionReason": "malformed anatomy"
+      },
+      {
+        "attempt": 2,
+        "seed": 1375105713,
+        "providerRequestId": "68ddbfe5-d1a7-4086-993b-1616b96eff84",
+        "generatedAt": "2026-07-31T05:19:47.582Z",
+        "imagePath": "content\\coloring-pages\\attempts\\kids-tv-puppet-theater-show-03-attempt-2.png",
+        "rejectionReason": null
       }
     ],
     "validation": {
@@ -629,8 +681,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1085271,
-      "checkedAt": "2026-07-31T05:19:47.582Z"
+      "fileBytes": 1587457,
+      "checkedAt": "2026-07-31T06:36:16.104Z"
     },
     "lastError": null
   },
@@ -1066,20 +1118,20 @@
     "categorySlug": "girls",
     "complexity": "toddler",
     "subjectPrompt": "A pair of ballet slippers with long curly ribbons and a small bow, next to one big star.",
-    "status": "rejected",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "f2a5a069-703b-472e-b230-25422167a38e",
-    "seed": 1004533337,
+    "model": "flux-2-pro",
+    "providerRequestId": "730386ae-f7fd-4676-b4cc-0a61fc5de2c4",
+    "seed": 1802624157,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/girls/ballet-slippers.png",
     "previewPath": "/coloring-pages/girls/ballet-slippers.webp",
     "thumbnailPath": "/coloring-pages/girls/ballet-slippers-thumb.webp",
-    "reviewStatus": "rejected",
-    "rejectionReason": "weak composition",
-    "generatedAt": "2026-07-31T05:19:47.388Z",
+    "reviewStatus": "pending",
+    "rejectionReason": null,
+    "generatedAt": "2026-07-31T06:25:18.926Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -1088,6 +1140,14 @@
         "generatedAt": "2026-07-30T07:29:56.442Z",
         "imagePath": "content\\coloring-pages\\attempts\\girls-ballet-slippers-01-attempt-1.png",
         "rejectionReason": "weak composition"
+      },
+      {
+        "attempt": 2,
+        "seed": 1004533337,
+        "providerRequestId": "f2a5a069-703b-472e-b230-25422167a38e",
+        "generatedAt": "2026-07-31T05:19:47.388Z",
+        "imagePath": "content\\coloring-pages\\attempts\\girls-ballet-slippers-01-attempt-2.png",
+        "rejectionReason": "weak composition"
       }
     ],
     "validation": {
@@ -1095,8 +1155,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 560496,
-      "checkedAt": "2026-07-31T05:19:47.389Z"
+      "fileBytes": 875896,
+      "checkedAt": "2026-07-31T06:36:16.126Z"
     },
     "lastError": null
   },
@@ -1107,28 +1167,37 @@
     "categorySlug": "girls",
     "complexity": "kids",
     "subjectPrompt": "A girl in a jersey kicking a soccer ball toward a goal, hair flying, with a simple field and one cloud.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "92c97fc0-632f-43a8-8951-c50fde68ab45",
-    "seed": 745020231,
+    "model": "flux-2-pro",
+    "providerRequestId": "b052604b-dbaf-4a00-846b-0efd930ba2f5",
+    "seed": 1073458332,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/girls/soccer-star.png",
     "previewPath": "/coloring-pages/girls/soccer-star.webp",
     "thumbnailPath": "/coloring-pages/girls/soccer-star-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:29:58.492Z",
+    "generatedAt": "2026-07-31T06:25:21.423Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 745020231,
+        "providerRequestId": "92c97fc0-632f-43a8-8951-c50fde68ab45",
+        "generatedAt": "2026-07-30T07:29:58.492Z",
+        "imagePath": "content\\coloring-pages\\attempts\\girls-soccer-star-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 636574,
-      "checkedAt": "2026-07-30T07:32:32.029Z"
+      "fileBytes": 948361,
+      "checkedAt": "2026-07-31T06:36:16.149Z"
     },
     "lastError": null
   },
@@ -1139,30 +1208,37 @@
     "categorySlug": "girls",
     "complexity": "detailed",
     "subjectPrompt": "A detailed tea party in a fairy garden: a girl with fairy wings pouring tea for a hedgehog and a bird at a toadstool table with tiny cups and flowers.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "8d2c13cd-e82c-4f38-806e-a41d766629d7",
-    "seed": 532176906,
+    "model": "flux-2-pro",
+    "providerRequestId": "07f15c75-66cb-418e-9de4-6983197362c5",
+    "seed": 422700443,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/girls/fairy-garden-tea-party.png",
     "previewPath": "/coloring-pages/girls/fairy-garden-tea-party.webp",
     "thumbnailPath": "/coloring-pages/girls/fairy-garden-tea-party-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:29:58.336Z",
+    "generatedAt": "2026-07-31T06:25:24.482Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 532176906,
+        "providerRequestId": "8d2c13cd-e82c-4f38-806e-a41d766629d7",
+        "generatedAt": "2026-07-30T07:29:58.336Z",
+        "imagePath": "content\\coloring-pages\\attempts\\girls-fairy-garden-tea-party-03-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
-      "flags": [
-        "edge-clipping"
-      ],
+      "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1597526,
-      "checkedAt": "2026-07-30T07:32:32.051Z"
+      "fileBytes": 2057617,
+      "checkedAt": "2026-07-31T06:36:16.179Z"
     },
     "lastError": null
   },
@@ -1598,28 +1674,37 @@
     "categorySlug": "summer",
     "complexity": "toddler",
     "subjectPrompt": "One giant happy ice cream cone with three round scoops, a cherry on top and a waffle pattern.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "8ff98bd8-e832-407c-9257-607e88a129a8",
-    "seed": 334202944,
+    "model": "flux-2-pro",
+    "providerRequestId": "aaf6e32c-2aef-407d-b124-974862442c48",
+    "seed": 1950224037,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/summer/ice-cream-cone.png",
     "previewPath": "/coloring-pages/summer/ice-cream-cone.webp",
     "thumbnailPath": "/coloring-pages/summer/ice-cream-cone-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:29:59.943Z",
+    "generatedAt": "2026-07-31T06:25:31.666Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 334202944,
+        "providerRequestId": "8ff98bd8-e832-407c-9257-607e88a129a8",
+        "generatedAt": "2026-07-30T07:29:59.943Z",
+        "imagePath": "content\\coloring-pages\\attempts\\summer-ice-cream-cone-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 530617,
-      "checkedAt": "2026-07-30T07:32:32.068Z"
+      "fileBytes": 562959,
+      "checkedAt": "2026-07-31T06:36:16.199Z"
     },
     "lastError": null
   },
@@ -1630,28 +1715,37 @@
     "categorySlug": "summer",
     "complexity": "kids",
     "subjectPrompt": "Two kids building a big sandcastle with towers and a flag, with a bucket, a shovel and a starfish nearby.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "3e0ca3ac-822a-4765-aa23-558e8a5989a7",
-    "seed": 177599757,
+    "model": "flux-2-pro",
+    "providerRequestId": "c30ef7ed-2e6f-4b11-90de-116cbfe35893",
+    "seed": 1383374462,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/summer/sandcastle-day.png",
     "previewPath": "/coloring-pages/summer/sandcastle-day.webp",
     "thumbnailPath": "/coloring-pages/summer/sandcastle-day-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:02.856Z",
+    "generatedAt": "2026-07-31T06:25:34.703Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 177599757,
+        "providerRequestId": "3e0ca3ac-822a-4765-aa23-558e8a5989a7",
+        "generatedAt": "2026-07-30T07:30:02.856Z",
+        "imagePath": "content\\coloring-pages\\attempts\\summer-sandcastle-day-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 662402,
-      "checkedAt": "2026-07-30T07:32:32.087Z"
+      "fileBytes": 1236523,
+      "checkedAt": "2026-07-31T06:36:16.229Z"
     },
     "lastError": null
   },
@@ -1662,20 +1756,20 @@
     "categorySlug": "summer",
     "complexity": "detailed",
     "subjectPrompt": "A detailed tropical beach with palm trees, a hammock, scattered seashells, gentle waves, a sailboat on the horizon and two seabirds.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "0b2670af-3a2c-40d9-81e6-16fe6eda0cac",
-    "seed": 1162570078,
+    "model": "flux-2-pro",
+    "providerRequestId": "816a2a10-61b3-4098-8521-5332802a8453",
+    "seed": 1632771470,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/summer/tropical-lagoon.png",
     "previewPath": "/coloring-pages/summer/tropical-lagoon.webp",
     "thumbnailPath": "/coloring-pages/summer/tropical-lagoon-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:19:51.329Z",
+    "generatedAt": "2026-07-31T06:25:40.362Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -1684,6 +1778,14 @@
         "generatedAt": "2026-07-30T07:30:02.505Z",
         "imagePath": "content\\coloring-pages\\attempts\\summer-tropical-lagoon-03-attempt-1.png",
         "rejectionReason": "weak composition"
+      },
+      {
+        "attempt": 2,
+        "seed": 1162570078,
+        "providerRequestId": "0b2670af-3a2c-40d9-81e6-16fe6eda0cac",
+        "generatedAt": "2026-07-31T05:19:51.329Z",
+        "imagePath": "content\\coloring-pages\\attempts\\summer-tropical-lagoon-03-attempt-2.png",
+        "rejectionReason": null
       }
     ],
     "validation": {
@@ -1691,8 +1793,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1081874,
-      "checkedAt": "2026-07-31T05:19:51.329Z"
+      "fileBytes": 1615567,
+      "checkedAt": "2026-07-31T06:36:16.258Z"
     },
     "lastError": null
   },
@@ -2128,20 +2230,20 @@
     "categorySlug": "adults",
     "complexity": "kids",
     "subjectPrompt": "A cheerful bouquet of three big sunflowers in a simple vase with broad petals and large leaves.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "3a2a7c9a-c37a-412b-9d68-21a66f0e1c67",
-    "seed": 1540037706,
+    "model": "flux-2-pro",
+    "providerRequestId": "db2bc9ed-f650-40b6-9401-bcd5ed6dcc0d",
+    "seed": 1926716035,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/adults/friendly-sunflowers.png",
     "previewPath": "/coloring-pages/adults/friendly-sunflowers.webp",
     "thumbnailPath": "/coloring-pages/adults/friendly-sunflowers-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:19:51.489Z",
+    "generatedAt": "2026-07-31T06:25:43.568Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -2150,6 +2252,14 @@
         "generatedAt": "2026-07-30T07:30:03.840Z",
         "imagePath": "content\\coloring-pages\\attempts\\adults-friendly-sunflowers-01-attempt-1.png",
         "rejectionReason": "weak composition"
+      },
+      {
+        "attempt": 2,
+        "seed": 1540037706,
+        "providerRequestId": "3a2a7c9a-c37a-412b-9d68-21a66f0e1c67",
+        "generatedAt": "2026-07-31T05:19:51.489Z",
+        "imagePath": "content\\coloring-pages\\attempts\\adults-friendly-sunflowers-01-attempt-2.png",
+        "rejectionReason": null
       }
     ],
     "validation": {
@@ -2157,8 +2267,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 621954,
-      "checkedAt": "2026-07-31T05:19:51.489Z"
+      "fileBytes": 994922,
+      "checkedAt": "2026-07-31T06:36:16.282Z"
     },
     "lastError": null
   },
@@ -2169,28 +2279,37 @@
     "categorySlug": "adults",
     "complexity": "detailed",
     "subjectPrompt": "A circular floral mandala radiating from a center rosette through rings of petals, leaves, teardrops and lace-like scallops, with generous enclosed spaces.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "25c017a4-fea5-4c22-b4a8-78ad918bb58f",
-    "seed": 958762435,
+    "model": "flux-2-pro",
+    "providerRequestId": "40557d3d-e3f7-43f2-a5b5-ac718d8e5098",
+    "seed": 1681657839,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/adults/intricate-floral-mandala.png",
     "previewPath": "/coloring-pages/adults/intricate-floral-mandala.webp",
     "thumbnailPath": "/coloring-pages/adults/intricate-floral-mandala-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:06.153Z",
+    "generatedAt": "2026-07-31T06:25:47.186Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 958762435,
+        "providerRequestId": "25c017a4-fea5-4c22-b4a8-78ad918bb58f",
+        "generatedAt": "2026-07-30T07:30:06.153Z",
+        "imagePath": "content\\coloring-pages\\attempts\\adults-intricate-floral-mandala-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1240987,
-      "checkedAt": "2026-07-30T07:32:32.148Z"
+      "fileBytes": 1438678,
+      "checkedAt": "2026-07-31T06:36:16.308Z"
     },
     "lastError": null
   },
@@ -2201,20 +2320,20 @@
     "categorySlug": "adults",
     "complexity": "detailed",
     "subjectPrompt": "A detailed reading corner with a wingback armchair, a knitted blanket, a side table with a steaming mug, stacked books, a floor lamp and a sleeping cat.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "f7a0cdeb-4fae-4c75-bf7a-1b65796c75db",
-    "seed": 1889963484,
+    "model": "flux-2-pro",
+    "providerRequestId": "e3040dfb-71c1-4e26-89fa-6c68403a61ce",
+    "seed": 207846965,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/adults/cozy-reading-nook.png",
     "previewPath": "/coloring-pages/adults/cozy-reading-nook.webp",
     "thumbnailPath": "/coloring-pages/adults/cozy-reading-nook-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:19:52.968Z",
+    "generatedAt": "2026-07-31T06:26:00.171Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -2223,6 +2342,14 @@
         "generatedAt": "2026-07-30T07:30:06.382Z",
         "imagePath": "content\\coloring-pages\\attempts\\adults-cozy-reading-nook-03-attempt-1.png",
         "rejectionReason": "weak composition"
+      },
+      {
+        "attempt": 2,
+        "seed": 1889963484,
+        "providerRequestId": "f7a0cdeb-4fae-4c75-bf7a-1b65796c75db",
+        "generatedAt": "2026-07-31T05:19:52.968Z",
+        "imagePath": "content\\coloring-pages\\attempts\\adults-cozy-reading-nook-03-attempt-2.png",
+        "rejectionReason": null
       }
     ],
     "validation": {
@@ -2230,8 +2357,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1136913,
-      "checkedAt": "2026-07-31T05:19:52.968Z"
+      "fileBytes": 1173922,
+      "checkedAt": "2026-07-31T06:36:16.335Z"
     },
     "lastError": null
   },
@@ -2667,28 +2794,37 @@
     "categorySlug": "toddlers",
     "complexity": "toddler",
     "subjectPrompt": "One big happy puppy sitting with floppy ears, a wagging tail and a round nose. No background.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "33c9a05e-fca3-40f1-a128-dcf36c2810e7",
-    "seed": 67697140,
+    "model": "flux-2-pro",
+    "providerRequestId": "4211bf5b-5d62-4f34-bf42-461ee85323ce",
+    "seed": 800528015,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/toddlers/happy-puppy.png",
     "previewPath": "/coloring-pages/toddlers/happy-puppy.webp",
     "thumbnailPath": "/coloring-pages/toddlers/happy-puppy-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:07.883Z",
+    "generatedAt": "2026-07-31T06:25:55.918Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 67697140,
+        "providerRequestId": "33c9a05e-fca3-40f1-a128-dcf36c2810e7",
+        "generatedAt": "2026-07-30T07:30:07.883Z",
+        "imagePath": "content\\coloring-pages\\attempts\\toddlers-happy-puppy-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 636323,
-      "checkedAt": "2026-07-30T07:32:32.186Z"
+      "fileBytes": 635007,
+      "checkedAt": "2026-07-31T06:36:16.356Z"
     },
     "lastError": null
   },
@@ -2699,28 +2835,37 @@
     "categorySlug": "toddlers",
     "complexity": "toddler",
     "subjectPrompt": "One big smiling cat sitting upright with a curled tail and whiskers. No background.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "72b56158-bbff-48ab-96d6-6561dc910481",
-    "seed": 184337811,
+    "model": "flux-2-pro",
+    "providerRequestId": "a971bbfe-42d6-48ed-a381-768889935ebe",
+    "seed": 579141122,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/toddlers/smiling-cat.png",
     "previewPath": "/coloring-pages/toddlers/smiling-cat.webp",
     "thumbnailPath": "/coloring-pages/toddlers/smiling-cat-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:09.651Z",
+    "generatedAt": "2026-07-31T06:25:59.267Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 184337811,
+        "providerRequestId": "72b56158-bbff-48ab-96d6-6561dc910481",
+        "generatedAt": "2026-07-30T07:30:09.651Z",
+        "imagePath": "content\\coloring-pages\\attempts\\toddlers-smiling-cat-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 538575,
-      "checkedAt": "2026-07-30T07:32:32.202Z"
+      "fileBytes": 808988,
+      "checkedAt": "2026-07-31T06:36:16.378Z"
     },
     "lastError": null
   },
@@ -2731,20 +2876,20 @@
     "categorySlug": "toddlers",
     "complexity": "kids",
     "subjectPrompt": "A friendly fire truck with a ladder, big round wheels and a smiling driver dog, with one small hydrant beside it.",
-    "status": "rejected",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "fd2f58eb-cfe3-48c9-a54a-4e8a3809fd1f",
-    "seed": 801059081,
+    "model": "flux-2-pro",
+    "providerRequestId": "2412d262-39bb-42f3-9a36-211771ba5e0d",
+    "seed": 2007327477,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/toddlers/little-fire-truck.png",
     "previewPath": "/coloring-pages/toddlers/little-fire-truck.webp",
     "thumbnailPath": "/coloring-pages/toddlers/little-fire-truck-thumb.webp",
-    "reviewStatus": "rejected",
-    "rejectionReason": "weak composition",
-    "generatedAt": "2026-07-31T05:19:55.187Z",
+    "reviewStatus": "pending",
+    "rejectionReason": null,
+    "generatedAt": "2026-07-31T06:26:08.414Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -2753,6 +2898,14 @@
         "generatedAt": "2026-07-30T07:30:09.847Z",
         "imagePath": "content\\coloring-pages\\attempts\\toddlers-little-fire-truck-03-attempt-1.png",
         "rejectionReason": "weak composition"
+      },
+      {
+        "attempt": 2,
+        "seed": 801059081,
+        "providerRequestId": "fd2f58eb-cfe3-48c9-a54a-4e8a3809fd1f",
+        "generatedAt": "2026-07-31T05:19:55.187Z",
+        "imagePath": "content\\coloring-pages\\attempts\\toddlers-little-fire-truck-03-attempt-2.png",
+        "rejectionReason": "weak composition"
       }
     ],
     "validation": {
@@ -2760,8 +2913,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 803776,
-      "checkedAt": "2026-07-31T05:19:55.187Z"
+      "fileBytes": 951544,
+      "checkedAt": "2026-07-31T06:36:16.402Z"
     },
     "lastError": null
   },
@@ -3197,20 +3350,20 @@
     "categorySlug": "fairy-tales",
     "complexity": "toddler",
     "subjectPrompt": "One chubby smiling baby dragon with tiny wings, sitting and hugging its tail. No background.",
-    "status": "rejected",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "737cbf63-f24c-41b0-a3a7-56575fae6fc1",
-    "seed": 1788535659,
+    "model": "flux-2-pro",
+    "providerRequestId": "76bb4229-5a6a-46ba-8133-34ecac41da6f",
+    "seed": 1220480827,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/fairy-tales/baby-dragon.png",
     "previewPath": "/coloring-pages/fairy-tales/baby-dragon.webp",
     "thumbnailPath": "/coloring-pages/fairy-tales/baby-dragon-thumb.webp",
-    "reviewStatus": "rejected",
-    "rejectionReason": "malformed anatomy",
-    "generatedAt": "2026-07-31T05:19:55.860Z",
+    "reviewStatus": "pending",
+    "rejectionReason": null,
+    "generatedAt": "2026-07-31T06:26:10.878Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -3219,6 +3372,14 @@
         "generatedAt": "2026-07-30T07:30:12.149Z",
         "imagePath": "content\\coloring-pages\\attempts\\fairy-tales-baby-dragon-01-attempt-1.png",
         "rejectionReason": "weak composition"
+      },
+      {
+        "attempt": 2,
+        "seed": 1788535659,
+        "providerRequestId": "737cbf63-f24c-41b0-a3a7-56575fae6fc1",
+        "generatedAt": "2026-07-31T05:19:55.860Z",
+        "imagePath": "content\\coloring-pages\\attempts\\fairy-tales-baby-dragon-01-attempt-2.png",
+        "rejectionReason": "malformed anatomy"
       }
     ],
     "validation": {
@@ -3226,8 +3387,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 580054,
-      "checkedAt": "2026-07-31T05:19:55.860Z"
+      "fileBytes": 903031,
+      "checkedAt": "2026-07-31T06:36:16.425Z"
     },
     "lastError": null
   },
@@ -3238,28 +3399,37 @@
     "categorySlug": "fairy-tales",
     "complexity": "kids",
     "subjectPrompt": "A unicorn with a flowing mane standing in a flower meadow under a rainbow, with butterflies around its horn.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "a95039bb-690c-4d3e-9f33-1e6369496023",
-    "seed": 878574446,
+    "model": "flux-2-pro",
+    "providerRequestId": "2d72c7e5-043b-4b08-afa5-fd9d775913a5",
+    "seed": 280900191,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/fairy-tales/unicorn-meadow.png",
     "previewPath": "/coloring-pages/fairy-tales/unicorn-meadow.webp",
     "thumbnailPath": "/coloring-pages/fairy-tales/unicorn-meadow-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:13.291Z",
+    "generatedAt": "2026-07-31T06:26:13.308Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 878574446,
+        "providerRequestId": "a95039bb-690c-4d3e-9f33-1e6369496023",
+        "generatedAt": "2026-07-30T07:30:13.291Z",
+        "imagePath": "content\\coloring-pages\\attempts\\fairy-tales-unicorn-meadow-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1137484,
-      "checkedAt": "2026-07-30T07:32:32.260Z"
+      "fileBytes": 1215812,
+      "checkedAt": "2026-07-31T06:36:16.456Z"
     },
     "lastError": null
   },
@@ -3270,28 +3440,37 @@
     "categorySlug": "fairy-tales",
     "complexity": "detailed",
     "subjectPrompt": "A detailed original enchanted castle with round towers, pennant flags, a drawbridge over a moat with lily pads, and swirling clouds behind.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "11bb95ee-c71d-45aa-ba8a-77ce5441efaf",
-    "seed": 859005610,
+    "model": "flux-2-pro",
+    "providerRequestId": "67487e93-301c-4b0d-84c3-529edf8d0cff",
+    "seed": 1881388624,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/fairy-tales/enchanted-castle.png",
     "previewPath": "/coloring-pages/fairy-tales/enchanted-castle.webp",
     "thumbnailPath": "/coloring-pages/fairy-tales/enchanted-castle-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:14.078Z",
+    "generatedAt": "2026-07-31T06:26:22.765Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 859005610,
+        "providerRequestId": "11bb95ee-c71d-45aa-ba8a-77ce5441efaf",
+        "generatedAt": "2026-07-30T07:30:14.078Z",
+        "imagePath": "content\\coloring-pages\\attempts\\fairy-tales-enchanted-castle-03-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1127211,
-      "checkedAt": "2026-07-30T07:32:32.282Z"
+      "fileBytes": 1600532,
+      "checkedAt": "2026-07-31T06:36:16.487Z"
     },
     "lastError": null
   },
@@ -3727,28 +3906,37 @@
     "categorySlug": "kawaii",
     "complexity": "toddler",
     "subjectPrompt": "One giant smiling cupcake with a tall frosting swirl, a cherry and small hearts floating around.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "fa038614-84bf-428e-aa57-5fbc6a62f358",
-    "seed": 1072622449,
+    "model": "flux-2-pro",
+    "providerRequestId": "c6503b74-0440-417c-948d-cf6f51596c42",
+    "seed": 268112606,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/kawaii/happy-cupcake.png",
     "previewPath": "/coloring-pages/kawaii/happy-cupcake.webp",
     "thumbnailPath": "/coloring-pages/kawaii/happy-cupcake-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:15.637Z",
+    "generatedAt": "2026-07-31T06:26:24.021Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1072622449,
+        "providerRequestId": "fa038614-84bf-428e-aa57-5fbc6a62f358",
+        "generatedAt": "2026-07-30T07:30:15.637Z",
+        "imagePath": "content\\coloring-pages\\attempts\\kawaii-happy-cupcake-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 604631,
-      "checkedAt": "2026-07-30T07:32:32.299Z"
+      "fileBytes": 622951,
+      "checkedAt": "2026-07-31T06:36:16.509Z"
     },
     "lastError": null
   },
@@ -3759,28 +3947,37 @@
     "categorySlug": "kawaii",
     "complexity": "kids",
     "subjectPrompt": "A big smiling boba tea cup with a wide straw, round pearls at the bottom and a little bow on the lid.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "29f93f14-102c-4ae7-a7aa-2e1dad10cb89",
-    "seed": 1204630934,
+    "model": "flux-2-pro",
+    "providerRequestId": "d56b0a8d-1016-4a5b-ae22-61bd336e80ae",
+    "seed": 470147271,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/kawaii/boba-tea-buddy.png",
     "previewPath": "/coloring-pages/kawaii/boba-tea-buddy.webp",
     "thumbnailPath": "/coloring-pages/kawaii/boba-tea-buddy-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:17.573Z",
+    "generatedAt": "2026-07-31T06:26:30.312Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1204630934,
+        "providerRequestId": "29f93f14-102c-4ae7-a7aa-2e1dad10cb89",
+        "generatedAt": "2026-07-30T07:30:17.573Z",
+        "imagePath": "content\\coloring-pages\\attempts\\kawaii-boba-tea-buddy-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 426085,
-      "checkedAt": "2026-07-30T07:32:32.316Z"
+      "fileBytes": 881394,
+      "checkedAt": "2026-07-31T06:36:16.531Z"
     },
     "lastError": null
   },
@@ -3791,28 +3988,39 @@
     "categorySlug": "kawaii",
     "complexity": "detailed",
     "subjectPrompt": "A detailed cute bakery storefront with an awning, a display window of smiling breads and cakes, a hanging pretzel sign and flower boxes.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "e5285dc4-e47b-427b-b07d-d142e4cb5f26",
-    "seed": 665622207,
+    "model": "flux-2-pro",
+    "providerRequestId": "717f9b73-f606-49d3-8613-0125deaf2804",
+    "seed": 1554997918,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/kawaii/tiny-bakery.png",
     "previewPath": "/coloring-pages/kawaii/tiny-bakery.webp",
     "thumbnailPath": "/coloring-pages/kawaii/tiny-bakery-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:18.385Z",
+    "generatedAt": "2026-07-31T06:26:43.509Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 665622207,
+        "providerRequestId": "e5285dc4-e47b-427b-b07d-d142e4cb5f26",
+        "generatedAt": "2026-07-30T07:30:18.385Z",
+        "imagePath": "content\\coloring-pages\\attempts\\kawaii-tiny-bakery-03-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
-      "flags": [],
+      "flags": [
+        "edge-clipping"
+      ],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 764031,
-      "checkedAt": "2026-07-30T07:32:32.335Z"
+      "fileBytes": 1427191,
+      "checkedAt": "2026-07-31T06:36:16.559Z"
     },
     "lastError": null
   },
@@ -4248,28 +4456,37 @@
     "categorySlug": "kids-movies",
     "complexity": "toddler",
     "subjectPrompt": "One giant smiling popcorn bucket with big fluffy popcorn pieces jumping out happily.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "edc1eadf-2c08-4231-a9d3-d5ee7e426397",
-    "seed": 978553780,
+    "model": "flux-2-pro",
+    "providerRequestId": "0ce9fb55-8526-4eec-84d0-34674e6a0333",
+    "seed": 1678232137,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/kids-movies/popcorn-pal.png",
     "previewPath": "/coloring-pages/kids-movies/popcorn-pal.webp",
     "thumbnailPath": "/coloring-pages/kids-movies/popcorn-pal-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:19.124Z",
+    "generatedAt": "2026-07-31T06:26:38.218Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 978553780,
+        "providerRequestId": "edc1eadf-2c08-4231-a9d3-d5ee7e426397",
+        "generatedAt": "2026-07-30T07:30:19.124Z",
+        "imagePath": "content\\coloring-pages\\attempts\\kids-movies-popcorn-pal-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 529495,
-      "checkedAt": "2026-07-30T07:32:32.353Z"
+      "fileBytes": 932605,
+      "checkedAt": "2026-07-31T06:36:16.583Z"
     },
     "lastError": null
   },
@@ -4282,18 +4499,18 @@
     "subjectPrompt": "Kids inside a blanket fort with fairy lights and pillows watching a small screen showing a simple rocket scene, sharing popcorn.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "3f981f51-1095-4c93-b934-05edf6252935",
-    "seed": 1601827636,
+    "model": "flux-2-pro",
+    "providerRequestId": "3c1874ac-1d6b-44db-ae91-be5ee83b1362",
+    "seed": 334461526,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/kids-movies/movie-night-fort.png",
     "previewPath": "/coloring-pages/kids-movies/movie-night-fort.webp",
     "thumbnailPath": "/coloring-pages/kids-movies/movie-night-fort-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:19:57.125Z",
+    "generatedAt": "2026-07-31T06:26:45.720Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -4302,6 +4519,14 @@
         "generatedAt": "2026-07-30T07:30:21.427Z",
         "imagePath": "content\\coloring-pages\\attempts\\kids-movies-movie-night-fort-02-attempt-1.png",
         "rejectionReason": "malformed anatomy"
+      },
+      {
+        "attempt": 2,
+        "seed": 1601827636,
+        "providerRequestId": "3f981f51-1095-4c93-b934-05edf6252935",
+        "generatedAt": "2026-07-31T05:19:57.125Z",
+        "imagePath": "content\\coloring-pages\\attempts\\kids-movies-movie-night-fort-02-attempt-2.png",
+        "rejectionReason": null
       }
     ],
     "validation": {
@@ -4309,8 +4534,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 892202,
-      "checkedAt": "2026-07-31T05:19:57.125Z"
+      "fileBytes": 1104148,
+      "checkedAt": "2026-07-31T06:36:16.608Z"
     },
     "lastError": null
   },
@@ -4321,28 +4546,37 @@
     "categorySlug": "kids-movies",
     "complexity": "detailed",
     "subjectPrompt": "A detailed movie theater interior with tied curtains, rows of seats, a big blank screen with a star border, wall lamps and an usher with a flashlight.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "4277ea0e-70eb-46bc-9e21-c6b7b90628d0",
-    "seed": 931517129,
+    "model": "flux-2-pro",
+    "providerRequestId": "1ef42036-680c-46d9-bb63-429dd5ce0788",
+    "seed": 122903009,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/kids-movies/grand-movie-theater.png",
     "previewPath": "/coloring-pages/kids-movies/grand-movie-theater.webp",
     "thumbnailPath": "/coloring-pages/kids-movies/grand-movie-theater-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:21.948Z",
+    "generatedAt": "2026-07-31T06:27:01.481Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 931517129,
+        "providerRequestId": "4277ea0e-70eb-46bc-9e21-c6b7b90628d0",
+        "generatedAt": "2026-07-30T07:30:21.948Z",
+        "imagePath": "content\\coloring-pages\\attempts\\kids-movies-grand-movie-theater-03-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 995791,
-      "checkedAt": "2026-07-30T07:32:32.394Z"
+      "fileBytes": 1750169,
+      "checkedAt": "2026-07-31T06:36:16.637Z"
     },
     "lastError": null
   },
@@ -4780,18 +5014,18 @@
     "subjectPrompt": "One big happy T-Rex with tiny arms and a huge friendly smile, standing beside one round bush.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "b581c3fb-46bc-49fa-b071-27a8c325b79f",
-    "seed": 354691393,
+    "model": "flux-2-pro",
+    "providerRequestId": "5020d3a3-6f69-46f6-9da4-2069edc6db95",
+    "seed": 413967384,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/dinosaurs/happy-t-rex.png",
     "previewPath": "/coloring-pages/dinosaurs/happy-t-rex.webp",
     "thumbnailPath": "/coloring-pages/dinosaurs/happy-t-rex-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:19:58.692Z",
+    "generatedAt": "2026-07-31T06:26:56.087Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -4800,6 +5034,14 @@
         "generatedAt": "2026-07-30T07:30:22.673Z",
         "imagePath": "content\\coloring-pages\\attempts\\dinosaurs-happy-t-rex-01-attempt-1.png",
         "rejectionReason": "malformed anatomy"
+      },
+      {
+        "attempt": 2,
+        "seed": 354691393,
+        "providerRequestId": "b581c3fb-46bc-49fa-b071-27a8c325b79f",
+        "generatedAt": "2026-07-31T05:19:58.692Z",
+        "imagePath": "content\\coloring-pages\\attempts\\dinosaurs-happy-t-rex-01-attempt-2.png",
+        "rejectionReason": null
       }
     ],
     "validation": {
@@ -4807,8 +5049,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 504998,
-      "checkedAt": "2026-07-31T05:19:58.692Z"
+      "fileBytes": 657873,
+      "checkedAt": "2026-07-31T06:36:16.659Z"
     },
     "lastError": null
   },
@@ -4821,18 +5063,18 @@
     "subjectPrompt": "A triceratops parent and baby walking together through ferns, with three-horned frills and a butterfly leading the way.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "14b1721e-8642-4550-83d0-487043367396",
-    "seed": 839822832,
+    "model": "flux-2-pro",
+    "providerRequestId": "ddae3f2d-a3ae-432c-acbf-18e6a4ac8e56",
+    "seed": 833591644,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/dinosaurs/triceratops-family.png",
     "previewPath": "/coloring-pages/dinosaurs/triceratops-family.webp",
     "thumbnailPath": "/coloring-pages/dinosaurs/triceratops-family-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:19:59.473Z",
+    "generatedAt": "2026-07-31T06:26:59.816Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -4841,6 +5083,14 @@
         "generatedAt": "2026-07-30T07:30:25.039Z",
         "imagePath": "content\\coloring-pages\\attempts\\dinosaurs-triceratops-family-02-attempt-1.png",
         "rejectionReason": "malformed anatomy"
+      },
+      {
+        "attempt": 2,
+        "seed": 839822832,
+        "providerRequestId": "14b1721e-8642-4550-83d0-487043367396",
+        "generatedAt": "2026-07-31T05:19:59.473Z",
+        "imagePath": "content\\coloring-pages\\attempts\\dinosaurs-triceratops-family-02-attempt-2.png",
+        "rejectionReason": null
       }
     ],
     "validation": {
@@ -4848,8 +5098,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1034830,
-      "checkedAt": "2026-07-31T05:19:59.473Z"
+      "fileBytes": 837953,
+      "checkedAt": "2026-07-31T06:36:16.681Z"
     },
     "lastError": null
   },
@@ -4862,18 +5112,18 @@
     "subjectPrompt": "A detailed museum hall with a mounted dinosaur skeleton on a platform, information stands with simple pictures, hanging banners and visiting children.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "d67ed831-7069-4a0b-ba24-c1d74c0b8566",
-    "seed": 1533925880,
+    "model": "flux-2-pro",
+    "providerRequestId": "94f1d2e3-254f-427e-85a3-f29d5ab8f57a",
+    "seed": 565251601,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/dinosaurs/fossil-museum-hall.png",
     "previewPath": "/coloring-pages/dinosaurs/fossil-museum-hall.webp",
     "thumbnailPath": "/coloring-pages/dinosaurs/fossil-museum-hall-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:20:00.978Z",
+    "generatedAt": "2026-07-31T06:27:11.718Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -4882,17 +5132,23 @@
         "generatedAt": "2026-07-30T07:30:27.430Z",
         "imagePath": "content\\coloring-pages\\attempts\\dinosaurs-fossil-museum-hall-03-attempt-1.png",
         "rejectionReason": "malformed anatomy"
+      },
+      {
+        "attempt": 2,
+        "seed": 1533925880,
+        "providerRequestId": "d67ed831-7069-4a0b-ba24-c1d74c0b8566",
+        "generatedAt": "2026-07-31T05:20:00.978Z",
+        "imagePath": "content\\coloring-pages\\attempts\\dinosaurs-fossil-museum-hall-03-attempt-2.png",
+        "rejectionReason": null
       }
     ],
     "validation": {
       "ok": true,
-      "flags": [
-        "grayscale-wash"
-      ],
+      "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1591937,
-      "checkedAt": "2026-07-31T05:20:00.978Z"
+      "fileBytes": 1704507,
+      "checkedAt": "2026-07-31T06:36:16.716Z"
     },
     "lastError": null
   },
@@ -5328,28 +5584,37 @@
     "categorySlug": "superheroes",
     "complexity": "toddler",
     "subjectPrompt": "One cheerful cartoon hero character in a simple costume with a flowing cape and a big star on the chest, soaring happily between three puffy clouds with arms spread wide.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "4fe4c1f9-0efe-451a-b6e7-bcce9b54479e",
-    "seed": 1843475332,
+    "model": "flux-2-pro",
+    "providerRequestId": "c36a2a4f-6dc1-4641-a33b-5136f2195ae7",
+    "seed": 1250681013,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/superheroes/little-flying-hero.png",
     "previewPath": "/coloring-pages/superheroes/little-flying-hero.webp",
     "thumbnailPath": "/coloring-pages/superheroes/little-flying-hero-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:31:52.721Z",
+    "generatedAt": "2026-07-31T06:27:12.331Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1843475332,
+        "providerRequestId": "4fe4c1f9-0efe-451a-b6e7-bcce9b54479e",
+        "generatedAt": "2026-07-30T07:31:52.721Z",
+        "imagePath": "content\\coloring-pages\\attempts\\superheroes-little-flying-hero-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 601723,
-      "checkedAt": "2026-07-30T07:32:32.531Z"
+      "fileBytes": 644101,
+      "checkedAt": "2026-07-31T06:36:16.739Z"
     },
     "lastError": null
   },
@@ -5360,20 +5625,20 @@
     "categorySlug": "superheroes",
     "complexity": "kids",
     "subjectPrompt": "An original young hero holding a big umbrella shield over a basket of kittens during friendly rain, with a rainbow starting behind.",
-    "status": "rejected",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "747f5673-aa55-4bf7-91d9-05a1d5927651",
-    "seed": 1634237610,
+    "model": "flux-2-pro",
+    "providerRequestId": "4bc91733-4fac-4217-a5b3-54f63af67037",
+    "seed": 377009658,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/superheroes/storm-rescue-hero.png",
     "previewPath": "/coloring-pages/superheroes/storm-rescue-hero.webp",
     "thumbnailPath": "/coloring-pages/superheroes/storm-rescue-hero-thumb.webp",
-    "reviewStatus": "rejected",
-    "rejectionReason": "weak composition",
-    "generatedAt": "2026-07-31T05:20:05.802Z",
+    "reviewStatus": "pending",
+    "rejectionReason": null,
+    "generatedAt": "2026-07-31T06:27:16.360Z",
     "publishedAt": null,
-    "attempt": 2,
+    "attempt": 3,
     "history": [
       {
         "attempt": 1,
@@ -5382,6 +5647,14 @@
         "generatedAt": "2026-07-30T07:30:32.097Z",
         "imagePath": "content\\coloring-pages\\attempts\\superheroes-storm-rescue-hero-02-attempt-1.png",
         "rejectionReason": "weak composition"
+      },
+      {
+        "attempt": 2,
+        "seed": 1634237610,
+        "providerRequestId": "747f5673-aa55-4bf7-91d9-05a1d5927651",
+        "generatedAt": "2026-07-31T05:20:05.802Z",
+        "imagePath": "content\\coloring-pages\\attempts\\superheroes-storm-rescue-hero-02-attempt-2.png",
+        "rejectionReason": "weak composition"
       }
     ],
     "validation": {
@@ -5389,8 +5662,8 @@
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1040652,
-      "checkedAt": "2026-07-31T05:20:05.802Z"
+      "fileBytes": 1303282,
+      "checkedAt": "2026-07-31T06:36:16.765Z"
     },
     "lastError": null
   },
@@ -5401,30 +5674,37 @@
     "categorySlug": "superheroes",
     "complexity": "detailed",
     "subjectPrompt": "A detailed original hero headquarters inside a treehouse with a rope elevator, a map table, a gadget wall, a telescope and a sliding pole.",
-    "status": "approved",
+    "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "7e7b6f88-a31f-4fca-9e0d-35d761f76ac1",
-    "seed": 2146253023,
+    "model": "flux-2-pro",
+    "providerRequestId": "ecdc7462-31a8-4ba9-917d-25bb5b7ea159",
+    "seed": 2085318721,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/superheroes/secret-headquarters.png",
     "previewPath": "/coloring-pages/superheroes/secret-headquarters.webp",
     "thumbnailPath": "/coloring-pages/superheroes/secret-headquarters-thumb.webp",
-    "reviewStatus": "approved",
+    "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-30T07:30:34.197Z",
+    "generatedAt": "2026-07-31T06:27:26.793Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 2146253023,
+        "providerRequestId": "7e7b6f88-a31f-4fca-9e0d-35d761f76ac1",
+        "generatedAt": "2026-07-30T07:30:34.197Z",
+        "imagePath": "content\\coloring-pages\\attempts\\superheroes-secret-headquarters-03-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
-      "flags": [
-        "grayscale-wash"
-      ],
+      "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1673362,
-      "checkedAt": "2026-07-30T07:32:32.575Z"
+      "fileBytes": 2249312,
+      "checkedAt": "2026-07-31T06:36:16.798Z"
     },
     "lastError": null
   },
@@ -5862,26 +6142,35 @@
     "subjectPrompt": "One big happy lion cub sitting with oversized paws, a fluffy tail tuft and a tiny starter mane. No background.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "b56efea0-5e9c-4544-8003-4f9fbedbc004",
-    "seed": 302552323,
+    "model": "flux-2-pro",
+    "providerRequestId": "43a6340c-faea-4fcf-b7ac-2ab62b2584b8",
+    "seed": 1117697105,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/lion/happy-lion-cub.png",
     "previewPath": "/coloring-pages/lion/happy-lion-cub.webp",
     "thumbnailPath": "/coloring-pages/lion/happy-lion-cub-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:29.172Z",
+    "generatedAt": "2026-07-31T06:27:26.253Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 302552323,
+        "providerRequestId": "b56efea0-5e9c-4544-8003-4f9fbedbc004",
+        "generatedAt": "2026-07-31T05:56:29.172Z",
+        "imagePath": "content\\coloring-pages\\attempts\\lion-happy-lion-cub-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 616329,
-      "checkedAt": "2026-07-31T05:56:29.172Z"
+      "fileBytes": 931397,
+      "checkedAt": "2026-07-31T06:36:16.821Z"
     },
     "lastError": null
   },
@@ -5894,26 +6183,35 @@
     "subjectPrompt": "A proud lion with a full flowing mane standing on a rounded rock ledge, chest out, with two birds flying past.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "fe6c8c6d-f48c-4f61-aa4d-4068348c88e2",
-    "seed": 604959831,
+    "model": "flux-2-pro",
+    "providerRequestId": "b5e0df96-1c72-4fa4-808b-c4e04ce2a100",
+    "seed": 1304197350,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/lion/proud-lion-on-the-rock.png",
     "previewPath": "/coloring-pages/lion/proud-lion-on-the-rock.webp",
     "thumbnailPath": "/coloring-pages/lion/proud-lion-on-the-rock-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:29.121Z",
+    "generatedAt": "2026-07-31T06:27:30.203Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 604959831,
+        "providerRequestId": "fe6c8c6d-f48c-4f61-aa4d-4068348c88e2",
+        "generatedAt": "2026-07-31T05:56:29.121Z",
+        "imagePath": "content\\coloring-pages\\attempts\\lion-proud-lion-on-the-rock-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 647209,
-      "checkedAt": "2026-07-31T05:56:29.122Z"
+      "fileBytes": 959586,
+      "checkedAt": "2026-07-31T06:36:16.844Z"
     },
     "lastError": null
   },
@@ -5954,7 +6252,7 @@
       "width": 1088,
       "height": 1408,
       "fileBytes": 1957910,
-      "checkedAt": "2026-07-31T06:08:25.654Z"
+      "checkedAt": "2026-07-31T06:36:16.873Z"
     },
     "lastError": null
   },
@@ -5967,26 +6265,35 @@
     "subjectPrompt": "One big lion napping curled up under a small tree, with its mane like a fluffy pillow and one 'z' of sleep as a curly line.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "7041f92a-6f34-4cb8-80be-c20261b6a3e0",
-    "seed": 915602009,
+    "model": "flux-2-pro",
+    "providerRequestId": "5c0a6a4a-73a4-4eaf-8d88-b46108e939ad",
+    "seed": 312667881,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/lion/sleepy-lion.png",
     "previewPath": "/coloring-pages/lion/sleepy-lion.webp",
     "thumbnailPath": "/coloring-pages/lion/sleepy-lion-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:32.951Z",
+    "generatedAt": "2026-07-31T06:27:55.383Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 915602009,
+        "providerRequestId": "7041f92a-6f34-4cb8-80be-c20261b6a3e0",
+        "generatedAt": "2026-07-31T05:56:32.951Z",
+        "imagePath": "content\\coloring-pages\\attempts\\lion-sleepy-lion-04-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 550720,
-      "checkedAt": "2026-07-31T05:56:32.951Z"
+      "fileBytes": 662756,
+      "checkedAt": "2026-07-31T06:36:16.896Z"
     },
     "lastError": null
   },
@@ -5999,26 +6306,35 @@
     "subjectPrompt": "A curious lion sitting nose-to-nose with a butterfly perched on its snout, tail curled, in short savanna grass.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "58ec4845-9267-495f-943b-fd8464c30d96",
-    "seed": 580694868,
+    "model": "flux-2-pro",
+    "providerRequestId": "722e6c29-6c46-40eb-ab99-6e53f66befa8",
+    "seed": 535780112,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/lion/lion-and-the-butterfly.png",
     "previewPath": "/coloring-pages/lion/lion-and-the-butterfly.webp",
     "thumbnailPath": "/coloring-pages/lion/lion-and-the-butterfly-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:33.054Z",
+    "generatedAt": "2026-07-31T06:27:53.763Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 580694868,
+        "providerRequestId": "58ec4845-9267-495f-943b-fd8464c30d96",
+        "generatedAt": "2026-07-31T05:56:33.054Z",
+        "imagePath": "content\\coloring-pages\\attempts\\lion-lion-and-the-butterfly-05-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 750067,
-      "checkedAt": "2026-07-31T05:56:33.054Z"
+      "fileBytes": 864308,
+      "checkedAt": "2026-07-31T06:36:16.918Z"
     },
     "lastError": null
   },
@@ -6031,26 +6347,35 @@
     "subjectPrompt": "Two lion cubs playing together, one pouncing after a rolling ball of leaves while the other crouches to leap.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "8efbc5cb-6eb6-4d60-8763-7f785fef082a",
-    "seed": 1408498575,
+    "model": "flux-2-pro",
+    "providerRequestId": "31321ec9-2c01-4b63-af24-4ed4d0d518f3",
+    "seed": 1897571832,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/lion/lion-cub-playtime.png",
     "previewPath": "/coloring-pages/lion/lion-cub-playtime.webp",
     "thumbnailPath": "/coloring-pages/lion/lion-cub-playtime-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:33.699Z",
+    "generatedAt": "2026-07-31T06:27:55.101Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1408498575,
+        "providerRequestId": "8efbc5cb-6eb6-4d60-8763-7f785fef082a",
+        "generatedAt": "2026-07-31T05:56:33.699Z",
+        "imagePath": "content\\coloring-pages\\attempts\\lion-lion-cub-playtime-06-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 561504,
-      "checkedAt": "2026-07-31T05:56:33.699Z"
+      "fileBytes": 1006885,
+      "checkedAt": "2026-07-31T06:36:16.942Z"
     },
     "lastError": null
   },
@@ -6063,26 +6388,35 @@
     "subjectPrompt": "A lion drinking calmly at a watering hole with its reflection in the water and a little bird perched on its back.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "6eafe6c1-bf38-4fe2-aed8-810d34f10c95",
-    "seed": 200355061,
+    "model": "flux-2-pro",
+    "providerRequestId": "84003d6c-de9b-4ed6-9a50-0f306331fd85",
+    "seed": 1523888232,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/lion/lion-at-the-watering-hole.png",
     "previewPath": "/coloring-pages/lion/lion-at-the-watering-hole.webp",
     "thumbnailPath": "/coloring-pages/lion/lion-at-the-watering-hole-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:36.616Z",
+    "generatedAt": "2026-07-31T06:28:07.446Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 200355061,
+        "providerRequestId": "6eafe6c1-bf38-4fe2-aed8-810d34f10c95",
+        "generatedAt": "2026-07-31T05:56:36.616Z",
+        "imagePath": "content\\coloring-pages\\attempts\\lion-lion-at-the-watering-hole-07-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 765193,
-      "checkedAt": "2026-07-31T05:56:36.616Z"
+      "fileBytes": 1097444,
+      "checkedAt": "2026-07-31T06:36:16.973Z"
     },
     "lastError": null
   },
@@ -6095,26 +6429,35 @@
     "subjectPrompt": "A lion walking across the savanna at sunset with two acacia trees, distant hills and a few tall grass tufts.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "4c91aec2-ca40-43a9-8ac5-8dafb873423d",
-    "seed": 56042678,
+    "model": "flux-2-pro",
+    "providerRequestId": "f3b5b430-bb83-453c-9fed-bc13cb0b1b46",
+    "seed": 361701756,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/lion/savanna-walk.png",
     "previewPath": "/coloring-pages/lion/savanna-walk.webp",
     "thumbnailPath": "/coloring-pages/lion/savanna-walk-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:36.761Z",
+    "generatedAt": "2026-07-31T06:28:09.920Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 56042678,
+        "providerRequestId": "4c91aec2-ca40-43a9-8ac5-8dafb873423d",
+        "generatedAt": "2026-07-31T05:56:36.761Z",
+        "imagePath": "content\\coloring-pages\\attempts\\lion-savanna-walk-08-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 869579,
-      "checkedAt": "2026-07-31T05:56:36.761Z"
+      "fileBytes": 962158,
+      "checkedAt": "2026-07-31T06:36:16.996Z"
     },
     "lastError": null
   },
@@ -6127,26 +6470,35 @@
     "subjectPrompt": "One big smiling tiger cub sitting upright with bold simple stripes and rounded ears. No background.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "e88c25f3-9ecb-4a16-8666-43e4c7c53f49",
-    "seed": 649326679,
+    "model": "flux-2-pro",
+    "providerRequestId": "e353b53d-0b1f-4b0b-82b7-8a757fa45f75",
+    "seed": 463244841,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/tiger/baby-tiger.png",
     "previewPath": "/coloring-pages/tiger/baby-tiger.webp",
     "thumbnailPath": "/coloring-pages/tiger/baby-tiger-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:42.236Z",
+    "generatedAt": "2026-07-31T06:27:40.333Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 649326679,
+        "providerRequestId": "e88c25f3-9ecb-4a16-8666-43e4c7c53f49",
+        "generatedAt": "2026-07-31T05:56:42.236Z",
+        "imagePath": "content\\coloring-pages\\attempts\\tiger-baby-tiger-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 613354,
-      "checkedAt": "2026-07-31T05:56:42.236Z"
+      "fileBytes": 838515,
+      "checkedAt": "2026-07-31T06:36:17.021Z"
     },
     "lastError": null
   },
@@ -6159,26 +6511,37 @@
     "subjectPrompt": "A tiger walking through big jungle leaves, stripes clear and bold, with a parrot watching from a branch.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "cf3d0184-487f-4d8f-bf1e-5ae751f10a2c",
-    "seed": 124735923,
+    "model": "flux-2-pro",
+    "providerRequestId": "4200a32c-d594-46bd-86a9-a99ad4dd8303",
+    "seed": 580678397,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/tiger/jungle-tiger.png",
     "previewPath": "/coloring-pages/tiger/jungle-tiger.webp",
     "thumbnailPath": "/coloring-pages/tiger/jungle-tiger-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:42.342Z",
+    "generatedAt": "2026-07-31T06:28:26.682Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 124735923,
+        "providerRequestId": "cf3d0184-487f-4d8f-bf1e-5ae751f10a2c",
+        "generatedAt": "2026-07-31T05:56:42.342Z",
+        "imagePath": "content\\coloring-pages\\attempts\\tiger-jungle-tiger-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
-      "flags": [],
+      "flags": [
+        "edge-clipping"
+      ],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1344201,
-      "checkedAt": "2026-07-31T05:56:42.342Z"
+      "fileBytes": 1434951,
+      "checkedAt": "2026-07-31T06:36:17.048Z"
     },
     "lastError": null
   },
@@ -6191,26 +6554,35 @@
     "subjectPrompt": "A detailed tiger resting in tall patterned grass with layered blades, ferns and butterflies, its stripes weaving through the scene.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "9c7e7a00-2fff-4967-aa96-74cb38cc81a6",
-    "seed": 1500909297,
+    "model": "flux-2-pro",
+    "providerRequestId": "332dfdad-19f6-4e89-969e-017a08133a82",
+    "seed": 82421432,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/tiger/tiger-in-the-tall-grass.png",
     "previewPath": "/coloring-pages/tiger/tiger-in-the-tall-grass.webp",
     "thumbnailPath": "/coloring-pages/tiger/tiger-in-the-tall-grass-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:42.459Z",
+    "generatedAt": "2026-07-31T06:28:24.513Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1500909297,
+        "providerRequestId": "9c7e7a00-2fff-4967-aa96-74cb38cc81a6",
+        "generatedAt": "2026-07-31T05:56:42.459Z",
+        "imagePath": "content\\coloring-pages\\attempts\\tiger-tiger-in-the-tall-grass-03-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1592839,
-      "checkedAt": "2026-07-31T05:56:42.459Z"
+      "fileBytes": 1933773,
+      "checkedAt": "2026-07-31T06:36:17.078Z"
     },
     "lastError": null
   },
@@ -6223,26 +6595,35 @@
     "subjectPrompt": "One happy tiger cub batting a big striped ball, tail up, on plain ground with one flower.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "6bc99db8-0c23-47af-b7f4-ec28690f7afa",
-    "seed": 1287216677,
+    "model": "flux-2-pro",
+    "providerRequestId": "55366465-f7e0-4751-8c90-18ffa2b1e59d",
+    "seed": 18513998,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/tiger/playful-tiger-cub.png",
     "previewPath": "/coloring-pages/tiger/playful-tiger-cub.webp",
     "thumbnailPath": "/coloring-pages/tiger/playful-tiger-cub-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:46.030Z",
+    "generatedAt": "2026-07-31T06:28:23.277Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1287216677,
+        "providerRequestId": "6bc99db8-0c23-47af-b7f4-ec28690f7afa",
+        "generatedAt": "2026-07-31T05:56:46.030Z",
+        "imagePath": "content\\coloring-pages\\attempts\\tiger-playful-tiger-cub-04-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 632147,
-      "checkedAt": "2026-07-31T05:56:46.030Z"
+      "fileBytes": 829939,
+      "checkedAt": "2026-07-31T06:36:17.102Z"
     },
     "lastError": null
   },
@@ -6255,26 +6636,37 @@
     "subjectPrompt": "A tiger happily swimming across a calm river with ripples around it and lily pads at the bank.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "74c41070-d447-4bb7-9fd9-7e85fd271f1f",
-    "seed": 921888838,
+    "model": "flux-2-pro",
+    "providerRequestId": "ca9d0662-1d5b-4324-847f-0e34d6d65f31",
+    "seed": 1061015157,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/tiger/swimming-tiger.png",
     "previewPath": "/coloring-pages/tiger/swimming-tiger.webp",
     "thumbnailPath": "/coloring-pages/tiger/swimming-tiger-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:47.007Z",
+    "generatedAt": "2026-07-31T06:28:37.554Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 921888838,
+        "providerRequestId": "74c41070-d447-4bb7-9fd9-7e85fd271f1f",
+        "generatedAt": "2026-07-31T05:56:47.007Z",
+        "imagePath": "content\\coloring-pages\\attempts\\tiger-swimming-tiger-05-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
-      "flags": [],
+      "flags": [
+        "edge-clipping"
+      ],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 848309,
-      "checkedAt": "2026-07-31T05:56:47.007Z"
+      "fileBytes": 1368542,
+      "checkedAt": "2026-07-31T06:36:17.127Z"
     },
     "lastError": null
   },
@@ -6287,26 +6679,37 @@
     "subjectPrompt": "A mother tiger leading two cubs in a line along a jungle path with stepping stones.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "b8fe20d9-cceb-42fe-bea1-24ee4c56847b",
-    "seed": 1048443016,
+    "model": "flux-2-pro",
+    "providerRequestId": "da6cce61-02b9-47f5-9e9e-cfd0c8c45db5",
+    "seed": 190352490,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/tiger/tiger-family-walk.png",
     "previewPath": "/coloring-pages/tiger/tiger-family-walk.webp",
     "thumbnailPath": "/coloring-pages/tiger/tiger-family-walk-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:46.260Z",
+    "generatedAt": "2026-07-31T06:28:48.058Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1048443016,
+        "providerRequestId": "b8fe20d9-cceb-42fe-bea1-24ee4c56847b",
+        "generatedAt": "2026-07-31T05:56:46.260Z",
+        "imagePath": "content\\coloring-pages\\attempts\\tiger-tiger-family-walk-06-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
-      "flags": [],
+      "flags": [
+        "edge-clipping"
+      ],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1320900,
-      "checkedAt": "2026-07-31T05:56:46.260Z"
+      "fileBytes": 1550520,
+      "checkedAt": "2026-07-31T06:36:17.152Z"
     },
     "lastError": null
   },
@@ -6319,26 +6722,37 @@
     "subjectPrompt": "A tiger lounging along a wide tree branch with one paw hanging down, leaves around it.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "1f57ccf9-bac9-4b5e-b192-f0bd1cd75f60",
-    "seed": 1371450290,
+    "model": "flux-2-pro",
+    "providerRequestId": "e3f28ea7-f4ae-4788-a603-57701d88138b",
+    "seed": 503141715,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/tiger/tiger-on-the-branch.png",
     "previewPath": "/coloring-pages/tiger/tiger-on-the-branch.webp",
     "thumbnailPath": "/coloring-pages/tiger/tiger-on-the-branch-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:49.610Z",
+    "generatedAt": "2026-07-31T06:28:38.893Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1371450290,
+        "providerRequestId": "1f57ccf9-bac9-4b5e-b192-f0bd1cd75f60",
+        "generatedAt": "2026-07-31T05:56:49.610Z",
+        "imagePath": "content\\coloring-pages\\attempts\\tiger-tiger-on-the-branch-07-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
-      "flags": [],
+      "flags": [
+        "edge-clipping"
+      ],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 989482,
-      "checkedAt": "2026-07-31T05:56:49.610Z"
+      "fileBytes": 1694924,
+      "checkedAt": "2026-07-31T06:36:17.177Z"
     },
     "lastError": null
   },
@@ -6351,26 +6765,35 @@
     "subjectPrompt": "A tiger doing a big morning stretch, front paws forward and back arched, beside a sunrise over hills.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "9d6c56b6-9c74-46b2-98c7-11255e0ba6db",
-    "seed": 853634746,
+    "model": "flux-2-pro",
+    "providerRequestId": "bea86384-ce8c-48b2-b8b1-c963e64e75fa",
+    "seed": 1719399393,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/tiger/morning-stretch.png",
     "previewPath": "/coloring-pages/tiger/morning-stretch.webp",
     "thumbnailPath": "/coloring-pages/tiger/morning-stretch-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:49.905Z",
+    "generatedAt": "2026-07-31T06:28:50.976Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 853634746,
+        "providerRequestId": "9d6c56b6-9c74-46b2-98c7-11255e0ba6db",
+        "generatedAt": "2026-07-31T05:56:49.905Z",
+        "imagePath": "content\\coloring-pages\\attempts\\tiger-morning-stretch-08-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 629787,
-      "checkedAt": "2026-07-31T05:56:49.905Z"
+      "fileBytes": 1647681,
+      "checkedAt": "2026-07-31T06:36:17.204Z"
     },
     "lastError": null
   },
@@ -6383,26 +6806,35 @@
     "subjectPrompt": "One big happy baby elephant spraying a fountain of water from its trunk over its own back. No background.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "df3c16b5-b099-4a14-8093-871ffdf5b460",
-    "seed": 200296396,
+    "model": "flux-2-pro",
+    "providerRequestId": "db7510be-575a-4e2a-b18a-efb6b1f75bcd",
+    "seed": 41917492,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/elephant/baby-elephant-splash.png",
     "previewPath": "/coloring-pages/elephant/baby-elephant-splash.webp",
     "thumbnailPath": "/coloring-pages/elephant/baby-elephant-splash-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:55.685Z",
+    "generatedAt": "2026-07-31T06:29:02.980Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 200296396,
+        "providerRequestId": "df3c16b5-b099-4a14-8093-871ffdf5b460",
+        "generatedAt": "2026-07-31T05:56:55.685Z",
+        "imagePath": "content\\coloring-pages\\attempts\\elephant-baby-elephant-splash-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 615035,
-      "checkedAt": "2026-07-31T05:56:55.685Z"
+      "fileBytes": 863031,
+      "checkedAt": "2026-07-31T06:36:17.225Z"
     },
     "lastError": null
   },
@@ -6415,26 +6847,35 @@
     "subjectPrompt": "Three elephants marching in a line, trunk holding tail, from big to small, across a simple plain with one tree.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "5214e0b4-16a6-4231-9d08-708c24f22983",
-    "seed": 984624398,
+    "model": "flux-2-pro",
+    "providerRequestId": "dda10fef-2473-4d00-b8d5-a5b96c314a96",
+    "seed": 180492289,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/elephant/elephant-family-march.png",
     "previewPath": "/coloring-pages/elephant/elephant-family-march.webp",
     "thumbnailPath": "/coloring-pages/elephant/elephant-family-march-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:55.661Z",
+    "generatedAt": "2026-07-31T06:29:03.985Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 984624398,
+        "providerRequestId": "5214e0b4-16a6-4231-9d08-708c24f22983",
+        "generatedAt": "2026-07-31T05:56:55.661Z",
+        "imagePath": "content\\coloring-pages\\attempts\\elephant-elephant-family-march-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 538375,
-      "checkedAt": "2026-07-31T05:56:55.662Z"
+      "fileBytes": 709177,
+      "checkedAt": "2026-07-31T06:36:17.244Z"
     },
     "lastError": null
   },
@@ -6447,26 +6888,35 @@
     "subjectPrompt": "A detailed jungle scene of an elephant bathing near a waterfall with layered rocks, ferns, splashes and a rainbow in the mist.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "8a90be41-79a1-4e72-a1fb-da9815a41976",
-    "seed": 1623312547,
+    "model": "flux-2-pro",
+    "providerRequestId": "799cc6ca-6209-4214-8828-d0566510b89a",
+    "seed": 1848734948,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/elephant/elephant-at-the-waterfall.png",
     "previewPath": "/coloring-pages/elephant/elephant-at-the-waterfall.webp",
     "thumbnailPath": "/coloring-pages/elephant/elephant-at-the-waterfall-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:55.943Z",
+    "generatedAt": "2026-07-31T06:29:16.353Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1623312547,
+        "providerRequestId": "8a90be41-79a1-4e72-a1fb-da9815a41976",
+        "generatedAt": "2026-07-31T05:56:55.943Z",
+        "imagePath": "content\\coloring-pages\\attempts\\elephant-elephant-at-the-waterfall-03-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1571530,
-      "checkedAt": "2026-07-31T05:56:55.943Z"
+      "fileBytes": 2084850,
+      "checkedAt": "2026-07-31T06:36:17.274Z"
     },
     "lastError": null
   },
@@ -6479,26 +6929,35 @@
     "subjectPrompt": "One big smiling elephant with wide ears standing and holding a single flower in its raised trunk.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "7507fc86-e8ca-4f55-a85c-68708742fa24",
-    "seed": 1996762202,
+    "model": "flux-2-pro",
+    "providerRequestId": "37b904fc-dbdd-4dc4-8e6f-84a402c98c56",
+    "seed": 1131973495,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/elephant/big-friendly-elephant.png",
     "previewPath": "/coloring-pages/elephant/big-friendly-elephant.webp",
     "thumbnailPath": "/coloring-pages/elephant/big-friendly-elephant-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:59.575Z",
+    "generatedAt": "2026-07-31T06:29:15.245Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1996762202,
+        "providerRequestId": "7507fc86-e8ca-4f55-a85c-68708742fa24",
+        "generatedAt": "2026-07-31T05:56:59.575Z",
+        "imagePath": "content\\coloring-pages\\attempts\\elephant-big-friendly-elephant-04-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 502551,
-      "checkedAt": "2026-07-31T05:56:59.575Z"
+      "fileBytes": 719892,
+      "checkedAt": "2026-07-31T06:36:17.299Z"
     },
     "lastError": null
   },
@@ -6511,26 +6970,35 @@
     "subjectPrompt": "An elephant sitting in a river happily splashing water, with a scrubbing brush on the bank and bubbles in the air.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "1f39d847-ab69-4888-971d-a59444e279b8",
-    "seed": 113120546,
+    "model": "flux-2-pro",
+    "providerRequestId": "4de53c73-e3a3-4994-b2b9-6c1314ef0e93",
+    "seed": 1789218959,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/elephant/elephant-bath-time.png",
     "previewPath": "/coloring-pages/elephant/elephant-bath-time.webp",
     "thumbnailPath": "/coloring-pages/elephant/elephant-bath-time-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:59.777Z",
+    "generatedAt": "2026-07-31T06:29:18.835Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 113120546,
+        "providerRequestId": "1f39d847-ab69-4888-971d-a59444e279b8",
+        "generatedAt": "2026-07-31T05:56:59.777Z",
+        "imagePath": "content\\coloring-pages\\attempts\\elephant-elephant-bath-time-05-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 734044,
-      "checkedAt": "2026-07-31T05:56:59.777Z"
+      "fileBytes": 1297707,
+      "checkedAt": "2026-07-31T06:36:17.325Z"
     },
     "lastError": null
   },
@@ -6543,26 +7011,35 @@
     "subjectPrompt": "An elephant with a small bird perched on its head, trunk raised to greet it, with round bushes behind.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "7f4bd4bf-adaf-407b-bc7e-aca03df6761d",
-    "seed": 509179103,
+    "model": "flux-2-pro",
+    "providerRequestId": "19baaeb8-ef75-4943-bed1-694d5d921370",
+    "seed": 100069464,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/elephant/elephant-and-bird-friend.png",
     "previewPath": "/coloring-pages/elephant/elephant-and-bird-friend.webp",
     "thumbnailPath": "/coloring-pages/elephant/elephant-and-bird-friend-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:59.773Z",
+    "generatedAt": "2026-07-31T06:29:29.390Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 509179103,
+        "providerRequestId": "7f4bd4bf-adaf-407b-bc7e-aca03df6761d",
+        "generatedAt": "2026-07-31T05:56:59.773Z",
+        "imagePath": "content\\coloring-pages\\attempts\\elephant-elephant-and-bird-friend-06-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 543196,
-      "checkedAt": "2026-07-31T05:56:59.773Z"
+      "fileBytes": 685862,
+      "checkedAt": "2026-07-31T06:36:17.346Z"
     },
     "lastError": null
   },
@@ -6575,26 +7052,35 @@
     "subjectPrompt": "A cheerful elephant holding a big umbrella with its trunk during friendly rain, with a puddle and rubber boots on its front feet.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "af1d4b3c-5027-4438-a036-26e216169bb6",
-    "seed": 470617609,
+    "model": "flux-2-pro",
+    "providerRequestId": "2a6b7ee0-fe9a-4b0d-bc10-3447a66a7ad4",
+    "seed": 1277718598,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/elephant/elephant-in-the-rain.png",
     "previewPath": "/coloring-pages/elephant/elephant-in-the-rain.webp",
     "thumbnailPath": "/coloring-pages/elephant/elephant-in-the-rain-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:57:04.071Z",
+    "generatedAt": "2026-07-31T06:29:31.561Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 470617609,
+        "providerRequestId": "af1d4b3c-5027-4438-a036-26e216169bb6",
+        "generatedAt": "2026-07-31T05:57:04.071Z",
+        "imagePath": "content\\coloring-pages\\attempts\\elephant-elephant-in-the-rain-07-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 715742,
-      "checkedAt": "2026-07-31T05:57:04.071Z"
+      "fileBytes": 1061164,
+      "checkedAt": "2026-07-31T06:36:17.369Z"
     },
     "lastError": null
   },
@@ -6607,26 +7093,35 @@
     "subjectPrompt": "A joyful elephant dancing on one foot with its trunk swirled up, music notes around, and a small drum nearby.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "f7b3e261-6299-49a2-aeb6-3bcf44717d0f",
-    "seed": 118845962,
+    "model": "flux-2-pro",
+    "providerRequestId": "d52e5030-e656-446e-9ff5-b40d3c4b467f",
+    "seed": 1427204665,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/elephant/dancing-elephant.png",
     "previewPath": "/coloring-pages/elephant/dancing-elephant.webp",
     "thumbnailPath": "/coloring-pages/elephant/dancing-elephant-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:57:03.309Z",
+    "generatedAt": "2026-07-31T06:29:30.987Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 118845962,
+        "providerRequestId": "f7b3e261-6299-49a2-aeb6-3bcf44717d0f",
+        "generatedAt": "2026-07-31T05:57:03.309Z",
+        "imagePath": "content\\coloring-pages\\attempts\\elephant-dancing-elephant-08-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 630467,
-      "checkedAt": "2026-07-31T05:57:03.309Z"
+      "fileBytes": 1114204,
+      "checkedAt": "2026-07-31T06:36:17.392Z"
     },
     "lastError": null
   },
@@ -6639,26 +7134,35 @@
     "subjectPrompt": "One big smiling sea turtle with large simple shell segments and flippers spread wide, floating with three bubbles.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "4ab0aa2b-2d22-4510-a5c3-15466cfde922",
-    "seed": 1478334170,
+    "model": "flux-2-pro",
+    "providerRequestId": "321de57e-ffcc-41c2-8c7d-04c6ba6a4b2a",
+    "seed": 1778828141,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/sea-turtle/little-sea-turtle.png",
     "previewPath": "/coloring-pages/sea-turtle/little-sea-turtle.webp",
     "thumbnailPath": "/coloring-pages/sea-turtle/little-sea-turtle-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:57:09.757Z",
+    "generatedAt": "2026-07-31T06:29:45.048Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1478334170,
+        "providerRequestId": "4ab0aa2b-2d22-4510-a5c3-15466cfde922",
+        "generatedAt": "2026-07-31T05:57:09.757Z",
+        "imagePath": "content\\coloring-pages\\attempts\\sea-turtle-little-sea-turtle-01-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 552573,
-      "checkedAt": "2026-07-31T05:57:09.758Z"
+      "fileBytes": 726047,
+      "checkedAt": "2026-07-31T06:36:17.413Z"
     },
     "lastError": null
   },
@@ -6671,26 +7175,35 @@
     "subjectPrompt": "A sea turtle gliding through the water with a school of three small striped fish swimming alongside, seaweed below.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "b65bfb0f-023e-4af6-aba2-2dc97e64e203",
-    "seed": 653724705,
+    "model": "flux-2-pro",
+    "providerRequestId": "f9835b68-6e93-4472-a3c4-1fc45642db58",
+    "seed": 1605325628,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/sea-turtle/sea-turtle-and-fish-friends.png",
     "previewPath": "/coloring-pages/sea-turtle/sea-turtle-and-fish-friends.webp",
     "thumbnailPath": "/coloring-pages/sea-turtle/sea-turtle-and-fish-friends-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:57:09.784Z",
+    "generatedAt": "2026-07-31T06:29:48.351Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 653724705,
+        "providerRequestId": "b65bfb0f-023e-4af6-aba2-2dc97e64e203",
+        "generatedAt": "2026-07-31T05:57:09.784Z",
+        "imagePath": "content\\coloring-pages\\attempts\\sea-turtle-sea-turtle-and-fish-friends-02-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 843581,
-      "checkedAt": "2026-07-31T05:57:09.784Z"
+      "fileBytes": 987153,
+      "checkedAt": "2026-07-31T06:36:17.435Z"
     },
     "lastError": null
   },
@@ -6703,26 +7216,35 @@
     "subjectPrompt": "A detailed sea turtle swimming over a coral reef with patterned fan corals, an anemone, a seahorse, starfish and streams of bubbles.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "7c2522c7-904a-468e-800d-d9825ca092e5",
-    "seed": 478400708,
+    "model": "flux-2-pro",
+    "providerRequestId": "c1cdeaa2-b96b-4393-9a3f-eb4e21519ffd",
+    "seed": 637643047,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/sea-turtle/reef-journey.png",
     "previewPath": "/coloring-pages/sea-turtle/reef-journey.webp",
     "thumbnailPath": "/coloring-pages/sea-turtle/reef-journey-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:57:10.856Z",
+    "generatedAt": "2026-07-31T06:29:47.003Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 478400708,
+        "providerRequestId": "7c2522c7-904a-468e-800d-d9825ca092e5",
+        "generatedAt": "2026-07-31T05:57:10.856Z",
+        "imagePath": "content\\coloring-pages\\attempts\\sea-turtle-reef-journey-03-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1236241,
-      "checkedAt": "2026-07-31T05:57:10.856Z"
+      "fileBytes": 1874524,
+      "checkedAt": "2026-07-31T06:36:17.460Z"
     },
     "lastError": null
   },
@@ -6735,26 +7257,35 @@
     "subjectPrompt": "One baby sea turtle scampering across the sand toward two friendly waves, with one small shell beside it.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "338d2ec1-5f2c-4a7f-8635-8f1d8bd736e1",
-    "seed": 2004139418,
+    "model": "flux-2-pro",
+    "providerRequestId": "9618135f-c89f-48c4-9a17-405bcc0b9edb",
+    "seed": 1137870964,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/sea-turtle/baby-turtle-beach-dash.png",
     "previewPath": "/coloring-pages/sea-turtle/baby-turtle-beach-dash.webp",
     "thumbnailPath": "/coloring-pages/sea-turtle/baby-turtle-beach-dash-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:57:13.462Z",
+    "generatedAt": "2026-07-31T06:29:59.140Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 2004139418,
+        "providerRequestId": "338d2ec1-5f2c-4a7f-8635-8f1d8bd736e1",
+        "generatedAt": "2026-07-31T05:57:13.462Z",
+        "imagePath": "content\\coloring-pages\\attempts\\sea-turtle-baby-turtle-beach-dash-04-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 542573,
-      "checkedAt": "2026-07-31T05:57:13.462Z"
+      "fileBytes": 985610,
+      "checkedAt": "2026-07-31T06:36:17.481Z"
     },
     "lastError": null
   },
@@ -6767,26 +7298,35 @@
     "subjectPrompt": "A sea turtle joyfully riding a big curling wave with flippers out like a surfer, splash drops around.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "5128da4a-8ca5-42d9-acf6-9dfd9cd11e48",
-    "seed": 2055440418,
+    "model": "flux-2-pro",
+    "providerRequestId": "d1c30c54-7193-4dae-b786-57a2574f2b20",
+    "seed": 1870202133,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/sea-turtle/riding-the-wave.png",
     "previewPath": "/coloring-pages/sea-turtle/riding-the-wave.webp",
     "thumbnailPath": "/coloring-pages/sea-turtle/riding-the-wave-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:57:14.284Z",
+    "generatedAt": "2026-07-31T06:30:00.957Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 2055440418,
+        "providerRequestId": "5128da4a-8ca5-42d9-acf6-9dfd9cd11e48",
+        "generatedAt": "2026-07-31T05:57:14.284Z",
+        "imagePath": "content\\coloring-pages\\attempts\\sea-turtle-riding-the-wave-05-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 720516,
-      "checkedAt": "2026-07-31T05:57:14.284Z"
+      "fileBytes": 1725414,
+      "checkedAt": "2026-07-31T06:36:17.508Z"
     },
     "lastError": null
   },
@@ -6799,26 +7339,35 @@
     "subjectPrompt": "A gentle old sea turtle with a patterned weathered shell gliding slowly past a rock, with a tiny fish tucked under its flipper.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "44a14dc2-ad0f-489f-90f0-a4baee571f82",
-    "seed": 2000312821,
+    "model": "flux-2-pro",
+    "providerRequestId": "fea83f7c-20fc-459f-9425-d66fcdd262ad",
+    "seed": 449464428,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/sea-turtle/wise-old-sea-turtle.png",
     "previewPath": "/coloring-pages/sea-turtle/wise-old-sea-turtle.webp",
     "thumbnailPath": "/coloring-pages/sea-turtle/wise-old-sea-turtle-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:57:14.502Z",
+    "generatedAt": "2026-07-31T06:30:04.606Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 2000312821,
+        "providerRequestId": "44a14dc2-ad0f-489f-90f0-a4baee571f82",
+        "generatedAt": "2026-07-31T05:57:14.502Z",
+        "imagePath": "content\\coloring-pages\\attempts\\sea-turtle-wise-old-sea-turtle-06-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 699230,
-      "checkedAt": "2026-07-31T05:57:14.502Z"
+      "fileBytes": 1091862,
+      "checkedAt": "2026-07-31T06:36:17.534Z"
     },
     "lastError": null
   },
@@ -6831,26 +7380,35 @@
     "subjectPrompt": "A child snorkeler waving hello to a friendly sea turtle underwater, with bubbles rising and a starfish on a rock below.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "4dc743b0-cbfb-48c2-b5d3-3bd19ca155e1",
-    "seed": 1241932687,
+    "model": "flux-2-pro",
+    "providerRequestId": "cdda42ee-d5ec-4b31-a252-602dd5e79636",
+    "seed": 228053744,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/sea-turtle/snorkel-hello.png",
     "previewPath": "/coloring-pages/sea-turtle/snorkel-hello.webp",
     "thumbnailPath": "/coloring-pages/sea-turtle/snorkel-hello-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:57:16.997Z",
+    "generatedAt": "2026-07-31T06:30:15.974Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1241932687,
+        "providerRequestId": "4dc743b0-cbfb-48c2-b5d3-3bd19ca155e1",
+        "generatedAt": "2026-07-31T05:57:16.997Z",
+        "imagePath": "content\\coloring-pages\\attempts\\sea-turtle-snorkel-hello-07-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 733386,
-      "checkedAt": "2026-07-31T05:57:16.997Z"
+      "fileBytes": 979934,
+      "checkedAt": "2026-07-31T06:36:17.554Z"
     },
     "lastError": null
   },
@@ -6863,26 +7421,35 @@
     "subjectPrompt": "A mother sea turtle on a quiet beach at night beside her nest in the sand, under a crescent moon and stars, with gentle waves behind.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "75e37fa6-ff0f-4a6d-b4b2-acfa721f7880",
-    "seed": 680192811,
+    "model": "flux-2-pro",
+    "providerRequestId": "3194793d-23c8-426d-bbaa-3376fb11b277",
+    "seed": 250573107,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/sea-turtle/moonlight-nesting.png",
     "previewPath": "/coloring-pages/sea-turtle/moonlight-nesting.webp",
     "thumbnailPath": "/coloring-pages/sea-turtle/moonlight-nesting-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:57:18.885Z",
+    "generatedAt": "2026-07-31T06:30:13.134Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 680192811,
+        "providerRequestId": "75e37fa6-ff0f-4a6d-b4b2-acfa721f7880",
+        "generatedAt": "2026-07-31T05:57:18.885Z",
+        "imagePath": "content\\coloring-pages\\attempts\\sea-turtle-moonlight-nesting-08-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 666631,
-      "checkedAt": "2026-07-31T05:57:18.885Z"
+      "fileBytes": 917410,
+      "checkedAt": "2026-07-31T06:36:17.575Z"
     },
     "lastError": null
   }

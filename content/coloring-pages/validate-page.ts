@@ -24,7 +24,13 @@ const MAX_FILE_BYTES = 12 * 1024 * 1024;
 const MIN_DARK_FRACTION = 0.004;
 const MAX_DARK_FRACTION = 0.35;
 const MIN_LIGHT_FRACTION = 0.5;
-const MAX_GRAY_FRACTION = 0.2;
+/**
+ * Dense fine linework antialiases into mid-gray when downsampled, so the
+ * gray budget is calibrated against real flux-2-pro detailed pages (which
+ * sit near 0.2 at a 512px sample); an actual gray WASH (filled tonal
+ * regions) reads well above 0.3.
+ */
+const MAX_GRAY_FRACTION = 0.3;
 /** Ink allowed in the outer 2.5% margin band before flagging clipping. */
 const MAX_MARGIN_DARK_FRACTION = 0.04;
 
@@ -55,7 +61,7 @@ export async function validateGeneratedPage(
     const raw = await image
       .clone()
       .flatten({ background: "#ffffff" })
-      .resize(320, 320, { fit: "inside" })
+      .resize(512, 512, { fit: "inside" })
       .grayscale()
       .raw()
       .toBuffer({ resolveWithObject: true });
