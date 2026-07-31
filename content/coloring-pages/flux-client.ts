@@ -25,7 +25,9 @@ export function fluxConfig() {
   if (!apiKey) throw new Error("BFL_API_KEY is not configured");
   return {
     apiKey,
-    model: env("BFL_MODEL") ?? "flux-2-klein-9b",
+    // The coloring pipeline can run a stronger model than the photo
+    // converter: COLORING_BFL_MODEL wins, then the shared BFL_MODEL.
+    model: env("COLORING_BFL_MODEL") ?? env("BFL_MODEL") ?? "flux-2-klein-9b",
     baseUrl: (env("BFL_API_BASE_URL") ?? "https://api.us.bfl.ai").replace(/\/$/, ""),
   };
 }

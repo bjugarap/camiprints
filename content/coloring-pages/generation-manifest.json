@@ -5926,26 +5926,35 @@
     "subjectPrompt": "A detailed family portrait of a lion pride: a maned lion, a lioness and two cubs together under an acacia tree with patterned leaves and tall grass.",
     "status": "generated",
     "provider": "flux",
-    "model": "flux-2-klein-9b",
-    "providerRequestId": "e6d52be5-8d4c-4b8f-aa6e-e4af75c09411",
-    "seed": 1040287760,
+    "model": "flux-2-pro",
+    "providerRequestId": "da276611-17e0-4e05-a8be-9a10e02a8a64",
+    "seed": 1383596471,
     "promptVersion": "coloring-page-v1",
     "outputPath": "/coloring-pages/lion/lion-pride-portrait.png",
     "previewPath": "/coloring-pages/lion/lion-pride-portrait.webp",
     "thumbnailPath": "/coloring-pages/lion/lion-pride-portrait-thumb.webp",
     "reviewStatus": "pending",
     "rejectionReason": null,
-    "generatedAt": "2026-07-31T05:56:30.051Z",
+    "generatedAt": "2026-07-31T06:08:25.653Z",
     "publishedAt": null,
-    "attempt": 1,
-    "history": [],
+    "attempt": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "seed": 1040287760,
+        "providerRequestId": "e6d52be5-8d4c-4b8f-aa6e-e4af75c09411",
+        "generatedAt": "2026-07-31T05:56:30.051Z",
+        "imagePath": "content\\coloring-pages\\attempts\\lion-lion-pride-portrait-03-attempt-1.png",
+        "rejectionReason": null
+      }
+    ],
     "validation": {
       "ok": true,
       "flags": [],
       "width": 1088,
       "height": 1408,
-      "fileBytes": 1535302,
-      "checkedAt": "2026-07-31T05:56:30.051Z"
+      "fileBytes": 1957910,
+      "checkedAt": "2026-07-31T06:08:25.654Z"
     },
     "lastError": null
   },

@@ -112,7 +112,10 @@ async function main() {
     process.exit(1);
   }
 
-  const model = process.env.BFL_MODEL ?? "flux-2-klein-9b";
+  const model =
+    process.env.COLORING_BFL_MODEL ??
+    process.env.BFL_MODEL ??
+    "flux-2-klein-9b";
   let generated = 0;
   let failed = 0;
   let writeChain: Promise<void> = Promise.resolve();
