@@ -92,7 +92,12 @@ export async function ListingView({
         {title}
       </h1>
 
-      <PictureStrip categories={categories} selectedSlug={categorySlug} />
+      {/* On a subcategory (lion), the strip highlights its parent
+          (Animals) — the strip only carries top-level categories. */}
+      <PictureStrip
+        categories={categories}
+        selectedSlug={category?.parentSlug ?? categorySlug}
+      />
 
       {subcategories.length > 0 ? (
         <section
