@@ -1,27 +1,27 @@
 # Coloring-page generation report
 
-Generated 2026-07-31T07:36:21.751Z · 252 manifest entries
+Generated 2026-07-31T07:48:40.821Z · 252 manifest entries
 
 ## Status totals
 
-- generated: 187
-- published: 65
+- rejected: 3
+- published: 249
 
 ## By category
 
 | Category | planned | generated | failed | approved | rejected | published | flagged |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Video Games | 0 | 17 | 0 | 0 | 0 | 3 | 1 |
-| Kids TV Shows | 0 | 17 | 0 | 0 | 0 | 3 | 4 |
-| For Girls | 0 | 17 | 0 | 0 | 0 | 3 | 2 |
-| Summer | 0 | 17 | 0 | 0 | 0 | 3 | 0 |
-| For Adults | 0 | 17 | 0 | 0 | 0 | 3 | 3 |
-| For Toddlers | 0 | 17 | 0 | 0 | 0 | 3 | 0 |
-| Fairy Tales & Magic | 0 | 17 | 0 | 0 | 0 | 3 | 4 |
-| Kawaii | 0 | 17 | 0 | 0 | 0 | 3 | 2 |
-| Kids Movies | 0 | 17 | 0 | 0 | 0 | 3 | 5 |
-| Dinosaurs | 0 | 17 | 0 | 0 | 0 | 3 | 3 |
-| Superheroes | 0 | 17 | 0 | 0 | 0 | 3 | 0 |
+| Video Games | 0 | 0 | 0 | 0 | 0 | 20 | 1 |
+| Kids TV Shows | 0 | 0 | 0 | 0 | 2 | 18 | 4 |
+| For Girls | 0 | 0 | 0 | 0 | 0 | 20 | 2 |
+| Summer | 0 | 0 | 0 | 0 | 0 | 20 | 0 |
+| For Adults | 0 | 0 | 0 | 0 | 0 | 20 | 3 |
+| For Toddlers | 0 | 0 | 0 | 0 | 0 | 20 | 0 |
+| Fairy Tales & Magic | 0 | 0 | 0 | 0 | 0 | 20 | 4 |
+| Kawaii | 0 | 0 | 0 | 0 | 1 | 19 | 2 |
+| Kids Movies | 0 | 0 | 0 | 0 | 0 | 20 | 5 |
+| Dinosaurs | 0 | 0 | 0 | 0 | 0 | 20 | 3 |
+| Superheroes | 0 | 0 | 0 | 0 | 0 | 20 | 0 |
 | Lions | 0 | 0 | 0 | 0 | 0 | 8 | 0 |
 | Tigers | 0 | 0 | 0 | 0 | 0 | 8 | 4 |
 | Elephants | 0 | 0 | 0 | 0 | 0 | 8 | 0 |
