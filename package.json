@@ -19,7 +19,8 @@
     "coloring:regenerate": "tsx scripts/coloring/regenerate.ts",
     "coloring:validate": "tsx scripts/coloring/validate.ts",
     "coloring:report": "tsx scripts/coloring/report.ts",
-    "coloring:publish": "tsx scripts/coloring/publish.ts"
+    "coloring:publish": "tsx scripts/coloring/publish.ts",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.5.7",
