@@ -86,12 +86,18 @@ describe("content plan", () => {
     }
   });
 
-  it("does not collide with existing hand-written catalog slugs", () => {
-    const existing = new Set(
-      seedPages.map((page) => `${page.categorySlug}/${page.slug}`),
+  it("every published catalog page traces back to the plan", () => {
+    // The catalog is now FED by the pipeline, so instead of a collision
+    // check the invariant is provenance: no page exists that the concept
+    // plan doesn't know.
+    const planned = new Set(
+      entries.map((entry) => `${entry.categorySlug}/${entry.slug}`),
     );
-    for (const entry of entries) {
-      expect(existing.has(`${entry.categorySlug}/${entry.slug}`)).toBe(false);
+    for (const page of seedPages) {
+      expect(
+        planned.has(`${page.categorySlug}/${page.slug}`),
+        `${page.categorySlug}/${page.slug}`,
+      ).toBe(true);
     }
   });
 

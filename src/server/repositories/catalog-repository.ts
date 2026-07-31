@@ -15,7 +15,7 @@ export interface CategoryWithCount extends Category {
 }
 
 export interface CatalogRepository {
-  /** Top-level categories only (no subcategories). */
+  /** Populated top-level categories only (no subcategories, no empties). */
   listCategories(): Promise<CategoryWithCount[]>;
   /** Subcategories of one parent, e.g. the animals under "animals". */
   listSubcategories(parentSlug: string): Promise<CategoryWithCount[]>;

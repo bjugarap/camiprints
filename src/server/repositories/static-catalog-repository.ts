@@ -31,10 +31,13 @@ export class StaticCatalogRepository implements CatalogRepository {
   };
 
   async listCategories(): Promise<CategoryWithCount[]> {
+    // Only populated top-level categories are listed — a category with no
+    // pages yet (counting its subcategories) would be a dead end tile.
     return [...this.categories]
       .filter((category) => category.parentSlug === null)
       .sort((a, b) => a.order - b.order)
-      .map(this.withCount);
+      .map(this.withCount)
+      .filter((category) => category.pageCount > 0);
   }
 
   async listSubcategories(parentSlug: string): Promise<CategoryWithCount[]> {
