@@ -257,29 +257,6 @@ export const CONCEPTS: Record<string, Concept[]> = {
     ["detailed", "Dinosaur Size Parade", "An educational lineup of five dinosaurs walking in order from smallest to largest across the page, each with distinct patterned skin."],
   ]),
 
-  educational: asConcepts([
-    ["toddler", "Count to Five Balloons", "Five big balloons in a row, each printed with one large numeral from 1 to 5, held by a smiling child. The numerals must be correct and clearly drawn."],
-    ["kids", "Butterfly Life Cycle", "The life cycle of a butterfly in four connected circles: egg on a leaf, caterpillar, chrysalis and butterfly, joined by arrows around a milkweed plant."],
-    ["detailed", "Solar System Tour", "The sun and eight planets in orbit arcs across the page, each planet with its own simple surface pattern, with a small rocket touring past. No labels or text."],
-    ["toddler", "Big Shapes", "Four very large shapes side by side with happy faces: a circle, a square, a triangle and a star."],
-    ["toddler", "A Is for Apple", "One very large capital letter A beside one big apple with a leaf. The letter must be a correct, clearly drawn capital A."],
-    ["toddler", "Rainbow Colors", "One big rainbow with five thick bands arching between two happy clouds."],
-    ["toddler", "Three Little Ducklings", "A mother duck followed by exactly three ducklings in a row on a simple pond line."],
-    ["toddler", "Fruit and Veggie Friends", "One big apple, one banana and one carrot standing in a row with happy faces."],
-    ["kids", "Weather Wheel", "A big wheel divided into four sections showing sunshine, rain, snow and wind, with an arrow pointer and a child in matching clothes beside each section."],
-    ["kids", "Plant Growth Steps", "Three flower pots in a row showing a seed sprouting, a small sprout with leaves, and a full flower, with a watering can and sun above."],
-    ["kids", "Community Helpers", "A firefighter, a doctor and a mail carrier standing together, each holding one tool of their job: a hose nozzle, a stethoscope and a letter."],
-    ["kids", "Musical Instruments Band", "A drum, a guitar, a trumpet and a xylophone arranged together with music notes floating above them."],
-    ["kids", "Ocean Animal Friends", "An underwater scene with a whale, a sea turtle, an octopus and a seahorse swimming among seaweed and bubbles."],
-    ["kids", "Farm Animal Friends", "A cow, a pig, a sheep and a hen together in a fenced farmyard with a barn and one hay bale."],
-    ["kids", "Recycling Helpers", "Two children sorting items into three bins marked with a bottle picture, a paper picture and an apple-core picture. Use pictures on the bins, not words."],
-    ["kids", "My Five Senses", "Five circles around a smiling child, each showing one sense: an eye, an ear, a nose, a hand touching a feather and a mouth with an apple."],
-    ["kids", "Simple Addition Picnic", "A picnic blanket showing two apples plus three apples with a plus sign and an equals sign leading to five apples. The numerals and signs must be correct."],
-    ["detailed", "World Map Adventure", "A simplified decorative world map with the continents as bold friendly shapes, sea waves, a compass rose, a sailing ship and animals on their home continents. No labels."],
-    ["detailed", "Science Tools Table", "A detailed science table with a microscope, a magnifying glass, a balance scale, test tubes in a rack and a leaf specimen on a dish."],
-    ["detailed", "Alphabet Animal Parade", "A detailed parade of five animals each carrying one large letter in order: A, B, C, D and E — an alligator, a bear, a cat, a dog and an elephant. The letters must be correct and clearly drawn."],
-  ]),
-
   superheroes: asConcepts([
     ["toddler", "Little Flying Hero", "One cheerful cartoon hero character in a simple costume with a flowing cape and a big star on the chest, soaring happily between three puffy clouds with arms spread wide."],
     ["kids", "Storm Rescue Hero", "An original young hero holding a big umbrella shield over a basket of kittens during friendly rain, with a rainbow starting behind."],
@@ -301,5 +278,51 @@ export const CONCEPTS: Record<string, Concept[]> = {
     ["detailed", "Team of Young Heroes", "A detailed group pose of five original kid heroes, each with a different simple emblem — a leaf, a droplet, a star, a gear and a paw — on a rooftop at sunrise."],
     ["detailed", "Costume Design Lab", "A detailed costume workshop with a drawing board of cape sketches, a mannequin wearing a work-in-progress suit, fabric rolls, scissors and an emblem stencil sheet."],
     ["detailed", "City Skyline Watch", "A detailed friendly city skyline at dusk with an original hero perched on a rooftop ledge, flags on buildings, water towers and birds settling for the night."],
+  ]),
+
+  // --- Animal subcategories: 8 concepts each (2 toddler · 5 kids · 1 detailed).
+
+  lion: asConcepts([
+    ["toddler", "Happy Lion Cub", "One big happy lion cub sitting with oversized paws, a fluffy tail tuft and a tiny starter mane. No background."],
+    ["kids", "Proud Lion on the Rock", "A proud lion with a full flowing mane standing on a rounded rock ledge, chest out, with two birds flying past."],
+    ["detailed", "Lion Pride Portrait", "A detailed family portrait of a lion pride: a maned lion, a lioness and two cubs together under an acacia tree with patterned leaves and tall grass."],
+    ["toddler", "Sleepy Lion", "One big lion napping curled up under a small tree, with its mane like a fluffy pillow and one 'z' of sleep as a curly line."],
+    ["kids", "Lion and the Butterfly", "A curious lion sitting nose-to-nose with a butterfly perched on its snout, tail curled, in short savanna grass."],
+    ["kids", "Lion Cub Playtime", "Two lion cubs playing together, one pouncing after a rolling ball of leaves while the other crouches to leap."],
+    ["kids", "Lion at the Watering Hole", "A lion drinking calmly at a watering hole with its reflection in the water and a little bird perched on its back."],
+    ["kids", "Savanna Walk", "A lion walking across the savanna at sunset with two acacia trees, distant hills and a few tall grass tufts."],
+  ]),
+
+  tiger: asConcepts([
+    ["toddler", "Baby Tiger", "One big smiling tiger cub sitting upright with bold simple stripes and rounded ears. No background."],
+    ["kids", "Jungle Tiger", "A tiger walking through big jungle leaves, stripes clear and bold, with a parrot watching from a branch."],
+    ["detailed", "Tiger in the Tall Grass", "A detailed tiger resting in tall patterned grass with layered blades, ferns and butterflies, its stripes weaving through the scene."],
+    ["toddler", "Playful Tiger Cub", "One happy tiger cub batting a big striped ball, tail up, on plain ground with one flower."],
+    ["kids", "Swimming Tiger", "A tiger happily swimming across a calm river with ripples around it and lily pads at the bank."],
+    ["kids", "Tiger Family Walk", "A mother tiger leading two cubs in a line along a jungle path with stepping stones."],
+    ["kids", "Tiger on the Branch", "A tiger lounging along a wide tree branch with one paw hanging down, leaves around it."],
+    ["kids", "Morning Stretch", "A tiger doing a big morning stretch, front paws forward and back arched, beside a sunrise over hills."],
+  ]),
+
+  elephant: asConcepts([
+    ["toddler", "Baby Elephant Splash", "One big happy baby elephant spraying a fountain of water from its trunk over its own back. No background."],
+    ["kids", "Elephant Family March", "Three elephants marching in a line, trunk holding tail, from big to small, across a simple plain with one tree."],
+    ["detailed", "Elephant at the Waterfall", "A detailed jungle scene of an elephant bathing near a waterfall with layered rocks, ferns, splashes and a rainbow in the mist."],
+    ["toddler", "Big Friendly Elephant", "One big smiling elephant with wide ears standing and holding a single flower in its raised trunk."],
+    ["kids", "Elephant Bath Time", "An elephant sitting in a river happily splashing water, with a scrubbing brush on the bank and bubbles in the air."],
+    ["kids", "Elephant and Bird Friend", "An elephant with a small bird perched on its head, trunk raised to greet it, with round bushes behind."],
+    ["kids", "Elephant in the Rain", "A cheerful elephant holding a big umbrella with its trunk during friendly rain, with a puddle and rubber boots on its front feet."],
+    ["kids", "Dancing Elephant", "A joyful elephant dancing on one foot with its trunk swirled up, music notes around, and a small drum nearby."],
+  ]),
+
+  "sea-turtle": asConcepts([
+    ["toddler", "Little Sea Turtle", "One big smiling sea turtle with large simple shell segments and flippers spread wide, floating with three bubbles."],
+    ["kids", "Sea Turtle and Fish Friends", "A sea turtle gliding through the water with a school of three small striped fish swimming alongside, seaweed below."],
+    ["detailed", "Reef Journey", "A detailed sea turtle swimming over a coral reef with patterned fan corals, an anemone, a seahorse, starfish and streams of bubbles."],
+    ["toddler", "Baby Turtle Beach Dash", "One baby sea turtle scampering across the sand toward two friendly waves, with one small shell beside it."],
+    ["kids", "Riding the Wave", "A sea turtle joyfully riding a big curling wave with flippers out like a surfer, splash drops around."],
+    ["kids", "Wise Old Sea Turtle", "A gentle old sea turtle with a patterned weathered shell gliding slowly past a rock, with a tiny fish tucked under its flipper."],
+    ["kids", "Snorkel Hello", "A child snorkeler waving hello to a friendly sea turtle underwater, with bubbles rising and a starfish on a rock below."],
+    ["kids", "Moonlight Nesting", "A mother sea turtle on a quiet beach at night beside her nest in the sand, under a crescent moon and stars, with gentle waves behind."],
   ]),
 };

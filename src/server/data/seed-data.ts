@@ -43,6 +43,7 @@ const featured = (
   thumbnailUrl: artBySlug.get(slug) ?? null,
   featured: true,
   order,
+  parentSlug: null,
 });
 
 const extra = (
@@ -58,6 +59,7 @@ const extra = (
   thumbnailUrl: artBySlug.get(slug) ?? null,
   featured: false,
   order,
+  parentSlug: null,
 });
 
 export const seedCategories: Category[] = [
@@ -228,6 +230,7 @@ const published = publishedColoringPages as PublishedPage[];
       thumbnailUrl: artBySlug.get(launch.slug) ?? null,
       featured: false,
       order: nextOrder++,
+      parentSlug: launch.parentSlug ?? null,
     });
   }
   for (const p of published) {

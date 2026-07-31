@@ -31,6 +31,7 @@ async function main() {
         thumbnailUrl: category.thumbnailUrl,
         featured: category.featured,
         order: category.order,
+        parentSlug: category.parentSlug,
       },
       create: {
         slug: category.slug,
@@ -40,6 +41,7 @@ async function main() {
         thumbnailUrl: category.thumbnailUrl,
         featured: category.featured,
         order: category.order,
+        parentSlug: category.parentSlug,
       },
     });
   }

@@ -31,17 +31,22 @@ import { seedPages } from "../../src/server/data/seed-data";
 describe("content plan", () => {
   const entries = buildPlannedEntries();
 
-  it("plans exactly 20 concepts per category, 240 total", () => {
-    expect(entries).toHaveLength(240);
-    for (const slug of LAUNCH_CATEGORY_SLUGS) {
-      expect(entries.filter((e) => e.categorySlug === slug)).toHaveLength(20);
+  it("plans 20 concepts per top-level category and 8 per subcategory", () => {
+    // 11 top-level (educational removed) × 20 + 4 animal subcategories × 8.
+    expect(entries).toHaveLength(252);
+    for (const category of LAUNCH_CATEGORIES) {
+      expect(
+        entries.filter((e) => e.categorySlug === category.slug),
+        category.slug,
+      ).toHaveLength(category.parentSlug ? 8 : 20);
     }
-    expect(LAUNCH_CATEGORIES).toHaveLength(12);
+    expect(LAUNCH_CATEGORIES.filter((c) => !c.parentSlug)).toHaveLength(11);
+    expect(LAUNCH_CATEGORIES.filter((c) => c.parentSlug === "animals")).toHaveLength(4);
   });
 
   it("ids and per-category slugs are unique; slugs are kebab-case", () => {
     const ids = new Set(entries.map((e) => e.id));
-    expect(ids.size).toBe(240);
+    expect(ids.size).toBe(entries.length);
     for (const slug of LAUNCH_CATEGORY_SLUGS) {
       const slugs = entries
         .filter((e) => e.categorySlug === slug)
@@ -64,9 +69,13 @@ describe("content plan", () => {
     };
     expect(distribution("adults")).toEqual({ toddler: 0, kids: 4, detailed: 16 });
     expect(distribution("toddlers")).toEqual({ toddler: 16, kids: 4, detailed: 0 });
-    for (const slug of LAUNCH_CATEGORY_SLUGS) {
-      if (slug === "adults" || slug === "toddlers") continue;
-      expect(distribution(slug)).toEqual({ toddler: 6, kids: 10, detailed: 4 });
+    for (const category of LAUNCH_CATEGORIES) {
+      if (category.slug === "adults" || category.slug === "toddlers") continue;
+      expect(distribution(category.slug), category.slug).toEqual(
+        category.parentSlug
+          ? { toddler: 2, kids: 5, detailed: 1 }
+          : { toddler: 6, kids: 10, detailed: 4 },
+      );
     }
   });
 
@@ -112,7 +121,8 @@ describe("content plan", () => {
       } else if (slug === "toddlers") {
         expect(firstThree).toEqual(["toddler", "toddler", "kids"]);
       } else {
-        expect(firstThree).toEqual(["toddler", "kids", "detailed"]);
+        // Subcategories share the default spread.
+        expect(firstThree, slug).toEqual(["toddler", "kids", "detailed"]);
       }
     }
   });

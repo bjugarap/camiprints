@@ -75,3 +75,21 @@ model, prompt version, date — never the prompt). `seed-data.ts` merges
 `published.json` into the catalog: launch categories appear the first
 time one of their pages publishes, with card art from the existing
 category-artwork manifest.
+
+## Subcategories
+
+A launch category with `parentSlug` (lion, tiger, elephant, sea-turtle
+under animals) publishes as a child category: `Category.parentSlug` is
+set, `listCategories()` returns only top-level categories (so the
+homepage grid is unchanged), and the parent's listing page renders a
+"Pick an animal" tile grid via `listSubcategories()`. A child's pages
+live at `/coloring-pages/<child-slug>` — a normal listing with a
+breadcrumb through the parent. A parent's page count includes its
+children.
+
+## Removed categories
+
+**Educational** was removed from the plan (2026-07-30): flux-2-klein-9b
+cannot reliably draw numeral/letter sequences (three failed attempts on
+"count to five"). Its manifest entries and assets were deleted; the
+concepts remain in git history if a stronger model makes them viable.

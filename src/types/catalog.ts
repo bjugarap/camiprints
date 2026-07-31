@@ -47,6 +47,11 @@ export interface Category {
   /** Featured categories appear on home and in the listing picture strip. */
   featured: boolean;
   order: number;
+  /**
+   * Set → this is a SUBCATEGORY (e.g. lion under animals): it appears on
+   * its parent's listing page, not on the homepage or top-level listings.
+   */
+  parentSlug: string | null;
 }
 
 export interface ColoringPage {

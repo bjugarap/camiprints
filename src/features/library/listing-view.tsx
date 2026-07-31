@@ -5,6 +5,7 @@ import { filtersHref } from "@/lib/url-state";
 import { Button } from "@/shared/button";
 import type { PageFilters } from "@/types/catalog";
 
+import { CategoryTile } from "./category-tile";
 import { FilterBar } from "./filter-bar";
 import { ListingPagination } from "./listing-pagination";
 import { PageCard } from "./page-card";
@@ -26,10 +27,15 @@ export async function ListingView({
   categorySlug?: string;
 }) {
   const repo = getCatalogRepository();
-  const [categories, category] = await Promise.all([
+  const [categories, category, subcategories] = await Promise.all([
     repo.listCategories(),
     categorySlug ? repo.getCategory(categorySlug) : Promise.resolve(null),
+    categorySlug ? repo.listSubcategories(categorySlug) : Promise.resolve([]),
   ]);
+  // A subcategory (e.g. lion) breadcrumbs through its parent (animals).
+  const parent = category?.parentSlug
+    ? await repo.getCategory(category.parentSlug)
+    : null;
 
   const pathname = categorySlug
     ? `/coloring-pages/${categorySlug}`
@@ -59,6 +65,19 @@ export async function ListingView({
                 </Link>
               </li>
               <li aria-hidden>›</li>
+              {parent ? (
+                <>
+                  <li>
+                    <Link
+                      href={`/coloring-pages/${parent.slug}`}
+                      className="hover:text-accent"
+                    >
+                      {parent.name}
+                    </Link>
+                  </li>
+                  <li aria-hidden>›</li>
+                </>
+              ) : null}
               <li aria-current="page" className="text-ink">
                 {category.name}
               </li>
@@ -74,6 +93,22 @@ export async function ListingView({
       </h1>
 
       <PictureStrip categories={categories} selectedSlug={categorySlug} />
+
+      {subcategories.length > 0 ? (
+        <section
+          aria-labelledby="subcategory-picker"
+          className="mt-[22px] rounded-card border border-line bg-card p-4"
+        >
+          <h2 id="subcategory-picker" className="text-subsection text-ink">
+            {categorySlug === "animals" ? "Pick an animal" : "Pick a collection"}
+          </h2>
+          <div className="mt-3 grid grid-cols-2 gap-2.5 md:grid-cols-4 md:gap-[18px]">
+            {subcategories.map((subcategory) => (
+              <CategoryTile key={subcategory.slug} category={subcategory} />
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <FilterBar
         filters={filters}

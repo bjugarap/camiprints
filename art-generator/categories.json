@@ -173,5 +173,25 @@
     "title": "Shapes & Patterns",
     "slug": "shapes",
     "prompt": "Playful floating shapes with smiling faces. Circles, stars and triangles dancing in a bright cheerful pattern."
+  },
+  {
+    "title": "Lions",
+    "slug": "lion",
+    "prompt": "Proud friendly lion with a magnificent flowing mane sitting on a sunny savanna rock, a playful cub beside it. One acacia tree. Warm golden light."
+  },
+  {
+    "title": "Tigers",
+    "slug": "tiger",
+    "prompt": "Friendly smiling tiger with bold stripes walking through lush green jungle leaves. Dappled warm sunlight. A parrot on a branch."
+  },
+  {
+    "title": "Elephants",
+    "slug": "elephant",
+    "prompt": "Gentle happy elephant spraying a sparkling fountain of water over a baby elephant beside it. Soft blue sky. Warm sunshine."
+  },
+  {
+    "title": "Sea Turtles",
+    "slug": "sea-turtle",
+    "prompt": "Friendly sea turtle gliding through clear turquoise water above a colorful coral reef. Little striped fish. Gentle sunbeams and bubbles."
   }
 ]

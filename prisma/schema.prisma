@@ -54,6 +54,8 @@ model Category {
   thumbnailUrl String?
   featured     Boolean        @default(false)
   order        Int
+  /// Set → subcategory of the named parent (e.g. lion under animals).
+  parentSlug   String?
   pages        ColoringPage[]
 
   @@map("categories")

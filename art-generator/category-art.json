@@ -628,5 +628,77 @@
     "accentColor": "#FCC4C6",
     "backgroundColor": "#FFF4F5",
     "generatedAt": "2026-07-30T06:37:25.023Z"
+  },
+  {
+    "title": "Tigers",
+    "slug": "tiger",
+    "image": "/categories/tiger.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Friendly smiling tiger with bold stripes walking through lush green jungle leaves. Dappled warm sunlight. A parrot on a branch. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 415769702,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FCF9E8",
+      "#97AA76",
+      "#678869",
+      "#A8B578"
+    ],
+    "accentColor": "#F5EAC7",
+    "backgroundColor": "#FDFBF5",
+    "generatedAt": "2026-07-31T05:56:11.058Z"
+  },
+  {
+    "title": "Lions",
+    "slug": "lion",
+    "image": "/categories/lion.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Proud friendly lion with a magnificent flowing mane sitting on a sunny savanna rock, a playful cub beside it. One acacia tree. Warm golden light. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 899026436,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#FAF9E5",
+      "#D3EDF3",
+      "#F7B664",
+      "#FAF7DE"
+    ],
+    "accentColor": "#F7B664",
+    "backgroundColor": "#FEF2E3",
+    "generatedAt": "2026-07-31T05:56:12.387Z"
+  },
+  {
+    "title": "Elephants",
+    "slug": "elephant",
+    "image": "/categories/elephant.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Gentle happy elephant spraying a sparkling fountain of water over a baby elephant beside it. Soft blue sky. Warm sunshine. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1741068437,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#AED8F3",
+      "#B6DDF2",
+      "#D8EAEC",
+      "#D5BAB3"
+    ],
+    "accentColor": "#AED8F3",
+    "backgroundColor": "#F0F8FD",
+    "generatedAt": "2026-07-31T05:56:12.413Z"
+  },
+  {
+    "title": "Sea Turtles",
+    "slug": "sea-turtle",
+    "image": "/categories/sea-turtle.webp",
+    "prompt": "A premium children's picture-book illustration. Bright cheerful pastel color palette. Soft painterly digital artwork. Warm natural lighting. Highly expressive characters. Rounded shapes. Friendly faces. Gentle gradients. Whimsical atmosphere. Premium storybook quality. Beautiful composition. Simple clean backgrounds. No clutter. Large central subject. Minimal tiny details. Readable as a website thumbnail. Family friendly. Modern. Soft shadows. Vibrant but not oversaturated. Artwork should feel hand illustrated rather than AI generated. No realism. No anime. No Pixar imitation. No Disney imitation. No clip art. No vector art. Portrait composition. 3:4 aspect ratio. Safe margins for rounded cards. Warm white balance. Consistent lighting. Consistent artistic style. Friendly sea turtle gliding through clear turquoise water above a colorful coral reef. Little striped fish. Gentle sunbeams and bubbles. Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "negativePrompt": "Do not include: copyrighted characters, movie characters, television characters, video game characters, logos, watermarks, text, signatures, ugly hands, extra limbs, duplicate people, cropped faces, poor anatomy, low quality, blurry, dark horror, violence, weapons, blood, gore, busy compositions, oversaturated colors, noise, compression artifacts.",
+    "seed": 1534819400,
+    "model": "flux-2-klein-9b",
+    "dominantColors": [
+      "#F5F6E8",
+      "#C8E9D9",
+      "#D7EDDA",
+      "#B7E6D9"
+    ],
+    "accentColor": "#B7E6D9",
+    "backgroundColor": "#F2FAF8",
+    "generatedAt": "2026-07-31T05:56:14.577Z"
   }
 ]

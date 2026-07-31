@@ -16,13 +16,30 @@ export class StaticCatalogRepository implements CatalogRepository {
   private readonly categories = seedCategories;
   private readonly pages = seedPages;
 
-  private withCount = (category: (typeof seedCategories)[number]): CategoryWithCount => ({
-    ...category,
-    pageCount: this.pages.filter((p) => p.categorySlug === category.slug).length,
-  });
+  private withCount = (category: (typeof seedCategories)[number]): CategoryWithCount => {
+    // A parent's count includes its subcategories' pages.
+    const familySlugs = new Set([
+      category.slug,
+      ...this.categories
+        .filter((c) => c.parentSlug === category.slug)
+        .map((c) => c.slug),
+    ]);
+    return {
+      ...category,
+      pageCount: this.pages.filter((p) => familySlugs.has(p.categorySlug)).length,
+    };
+  };
 
   async listCategories(): Promise<CategoryWithCount[]> {
     return [...this.categories]
+      .filter((category) => category.parentSlug === null)
+      .sort((a, b) => a.order - b.order)
+      .map(this.withCount);
+  }
+
+  async listSubcategories(parentSlug: string): Promise<CategoryWithCount[]> {
+    return [...this.categories]
+      .filter((category) => category.parentSlug === parentSlug)
       .sort((a, b) => a.order - b.order)
       .map(this.withCount);
   }
