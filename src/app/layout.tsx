@@ -17,6 +17,8 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  // Canonical URLs and social-card images resolve against the real domain.
+  metadataBase: new URL("https://camiprints.com"),
   title: {
     default: "CamiPrints — Free coloring pages, made simple",
     template: "%s · CamiPrints",
