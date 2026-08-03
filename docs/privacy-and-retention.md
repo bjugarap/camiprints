@@ -57,6 +57,11 @@ timestamps — nothing about the page the image came from.
 contents in logs or analytics. Handoff endpoints return generic error
 messages and log nothing about image content.
 
+**Traffic measurement**: Vercel Web Analytics only — cookieless,
+anonymized page-view counts (page, referrer, country, device class). No
+cookies, no cross-site tracking, no user identifiers, no third-party ad
+tech; appropriate for a child-directed site without a consent banner.
+
 **Future accounts**: saved creations will be an explicit opt-in, stored in
 a private bucket behind the same repository/storage seams (ADR 004), with
 admin access audit-logged. Nothing in the current architecture needs to

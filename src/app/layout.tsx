@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Baloo_2, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
@@ -41,7 +42,13 @@ export default function RootLayout({
       <head>
         <CalmModeScript />
       </head>
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+        {/* Cookieless, anonymized page-view counts (Vercel Web
+            Analytics) — the only traffic measurement on the site; see
+            docs/privacy-and-retention.md. */}
+        <Analytics />
+      </body>
     </html>
   );
 }
