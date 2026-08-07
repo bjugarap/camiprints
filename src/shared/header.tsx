@@ -10,16 +10,18 @@ import { Toggle } from "@/shared/toggle";
 
 /**
  * Site header (handoff §Header): white, 1px bottom border, brand block, the
- * same four nav links on every public route (active = teal with a 2.5px teal
+ * same nav links on every public route (active = teal with a 2.5px teal
  * underline), a 44px pill search field on paper, and the Calm Mode pill.
  * Calm Mode removes the search field. Mobile collapses to brand + 44px
  * search and menu buttons.
+ *
+ * The handoff's fourth link, "How It Works", is out until that page exists —
+ * a nav link to a 404 is worse than no link.
  */
 const NAV_LINKS = [
   { href: "/coloring-pages", label: "Browse" },
   { href: "/categories", label: "Categories" },
   { href: "/create", label: "Create Your Own" },
-  { href: "/how-it-works", label: "How It Works" },
 ] as const;
 
 export function Brand({ boxClassName, textClassName }: { boxClassName?: string; textClassName?: string }) {
@@ -54,7 +56,7 @@ export function Header() {
       <div className="flex items-center gap-7 px-4 py-3.5 md:px-10">
         <Brand />
 
-        {/* Desktop nav — the same four links, always. */}
+        {/* Desktop nav — the same links, always. */}
         <nav
           aria-label="Main"
           className="hidden items-center gap-[22px] md:flex"

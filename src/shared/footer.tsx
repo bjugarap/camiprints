@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 /**
- * Site footer (handoff §Home): white, 1px top border, 8 links at 14.5/500
- * and a right-aligned © line.
+ * Site footer (handoff §Home): white, 1px top border, links at 14.5/500
+ * and a right-aligned © line. "How It Works" is out until that page
+ * exists — see the note in the header.
  */
 const FOOTER_LINKS = [
   { href: "/about", label: "About" },
-  { href: "/how-it-works", label: "How It Works" },
   { href: "/accessibility", label: "Accessibility" },
   { href: "/parent-guidance", label: "Parent guidance" },
   { href: "/privacy", label: "Privacy" },
