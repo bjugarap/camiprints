@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { DEFAULT_SETTINGS, type ConversionSettings } from "@/types/converter";
 
+import { flattenToPrintablePaper } from "./flatten-output";
 import { buildConversionPrompt } from "./prompt-builder";
 import {
   openConversionToken,
@@ -25,10 +26,22 @@ describe("prompt builder", () => {
       "enclosed coloring regions",
       "watermarks, logos, and text",
       "Do not add subjects",
-      "generous white margins",
     ]) {
       expect(prompt).toContain(fragment);
     }
+  });
+
+  it("forbids reframing — the user's crop is the frame", () => {
+    const prompt = buildConversionPrompt(DEFAULT_SETTINGS);
+    expect(prompt).toContain("Redraw the ENTIRE supplied frame");
+    expect(prompt).toContain("Do not crop, zoom in, pan, re-center");
+    expect(prompt).toContain("do not fill, extend, or outpaint them");
+  });
+
+  it("demands pure white paper, not merely a light one", () => {
+    const prompt = buildConversionPrompt(DEFAULT_SETTINGS);
+    expect(prompt).toContain("#FFFFFF, RGB 255,255,255");
+    expect(prompt).toContain("No grey, off-white, cream, beige, or tinted fill");
   });
 
   it("detail slider changes the wording", () => {
@@ -66,6 +79,54 @@ describe("prompt builder", () => {
       advanced: { ...DEFAULT_SETTINGS.advanced, invert: true },
     });
     expect(prompt).toContain("white line art on a solid black background");
+    // The two paper instructions contradict each other — only one ships.
+    expect(prompt).not.toContain("#FFFFFF, RGB 255,255,255");
+  });
+});
+
+/* ------------------------------------------------------- paper cleanup */
+
+describe("flattenToPrintablePaper", () => {
+  const png = async (grey: number) => {
+    const { default: sharp } = await import("sharp");
+    return new Uint8Array(
+      await sharp({
+        create: {
+          width: 64,
+          height: 64,
+          channels: 3,
+          background: { r: grey, g: grey, b: grey },
+        },
+      })
+        .png()
+        .toBuffer(),
+    );
+  };
+  const firstPixel = async (bytes: Uint8Array) => {
+    const { default: sharp } = await import("sharp");
+    const raw = await sharp(Buffer.from(bytes)).raw().toBuffer();
+    return [raw[0], raw[1], raw[2]];
+  };
+
+  it("snaps a near-white page to pure white", async () => {
+    const cleaned = await flattenToPrintablePaper(await png(243));
+    expect(await firstPixel(cleaned)).toEqual([255, 255, 255]);
+  });
+
+  it("snaps near-black ink to pure black", async () => {
+    const cleaned = await flattenToPrintablePaper(await png(9));
+    expect(await firstPixel(cleaned)).toEqual([0, 0, 0]);
+  });
+
+  it("leaves mid-tones in between so outlines stay anti-aliased", async () => {
+    const [r] = await firstPixel(await flattenToPrintablePaper(await png(128)));
+    expect(r).toBeGreaterThan(0);
+    expect(r).toBeLessThan(255);
+  });
+
+  it("returns the original bytes rather than failing on junk", async () => {
+    const junk = new Uint8Array([1, 2, 3]);
+    expect(await flattenToPrintablePaper(junk)).toBe(junk);
   });
 });
 

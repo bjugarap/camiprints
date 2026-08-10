@@ -10,6 +10,7 @@ import { checkRateLimit } from "@/server/handoff/handoff-service";
 import type { ConversionSettings, ConverterErrorCode } from "@/types/converter";
 import { CONVERTER_ERROR_COPY } from "@/types/converter";
 
+import { flattenToPrintablePaper } from "./flatten-output";
 import { buildConversionPrompt } from "./prompt-builder";
 import {
   openConversionToken,
@@ -284,7 +285,9 @@ export async function fetchConversionOutput(
   const adapter = await getVendorAdapter();
   try {
     const bytes = await adapter.download(payload.resultUrl);
-    return { bytes, mimeType: "image/png" };
+    // Snap the paper to pure white before it leaves the server — a page
+    // with an off-white background prints as grey ink.
+    return { bytes: await flattenToPrintablePaper(bytes), mimeType: "image/png" };
   } catch {
     return null;
   }

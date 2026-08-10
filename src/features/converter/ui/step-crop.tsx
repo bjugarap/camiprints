@@ -18,8 +18,9 @@ import {
  * two pills for orientation. The zoom floor is contain-fit — a photo whose
  * shape differs from the page can always be zoomed out until ALL of it is
  * visible, with white paper filling the rest ("Fit whole photo" jumps
- * there). The transform math mirrors rasterizeCrop() exactly, so what the
- * frame shows is what gets converted.
+ * there), and that floor is also where the step opens (DEFAULT_CROP). The
+ * transform math mirrors rasterizeCrop() exactly, so what the frame shows
+ * is what gets converted.
  */
 const LETTER_ASPECT = 8.5 / 11;
 
@@ -102,8 +103,8 @@ export function StepCrop({
     <div className="mx-auto max-w-[640px]">
       <h2 className="text-subsection text-ink">Frame the picture</h2>
       <p className="mt-1.5 text-base/[1.5] text-ink-60">
-        Move the photo until the part you want fills the page — or zoom out
-        to fit all of it.
+        The whole photo is on the page to start. Zoom in and drag if you
+        would rather fill the page with just part of it.
       </p>
 
       {/* Orientation + rotate. */}

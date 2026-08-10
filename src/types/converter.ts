@@ -88,17 +88,29 @@ export interface CropState {
   orientation: "portrait" | "landscape";
   /** Quarter-turn rotation applied before the crop window. */
   rotation: 0 | 90 | 180 | 270;
-  /** 1 = fit the frame; larger values zoom into the photo. */
+  /**
+   * 1 = fill the frame (cover-fit); larger values zoom further into the
+   * photo. Anything at or below the contain-fit floor clamps up to it.
+   */
   zoom: number;
   /** Pan of the photo behind the frame, normalized -1..1 per axis. */
   offsetX: number;
   offsetY: number;
 }
 
+/**
+ * "Show me all of it." The contain-fit floor depends on the photo's aspect
+ * ratio, which isn't known until the photo is measured, so the default is a
+ * value below every possible floor — clampCropZoom() raises it to exactly
+ * contain-fit. The crop step therefore opens on the whole picture, white
+ * paper filling the rest, and zooming in is the deliberate act.
+ */
+export const FIT_WHOLE_PHOTO_ZOOM = 0;
+
 export const DEFAULT_CROP: CropState = {
   orientation: "portrait",
   rotation: 0,
-  zoom: 1,
+  zoom: FIT_WHOLE_PHOTO_ZOOM,
   offsetX: 0,
   offsetY: 0,
 };

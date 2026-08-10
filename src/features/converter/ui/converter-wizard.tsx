@@ -481,14 +481,16 @@ export function ConverterWizard() {
         </div>
       </div>
 
-      {/* The printable sheet — the only thing @media print leaves visible. */}
+      {/* The printable sheet — the only thing @media print leaves visible.
+          These dimensions are only next/image's required hint; print.css
+          hands the fit back to the image's own aspect ratio. */}
       {resultUrl ? (
         <div data-print-sheet className="hidden print:flex">
           <Image
             src={resultUrl}
             alt=""
-            width={850}
-            height={1100}
+            width={landscape ? 1100 : 850}
+            height={landscape ? 850 : 1100}
             unoptimized
           />
         </div>
